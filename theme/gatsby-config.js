@@ -1,6 +1,15 @@
-module.exports = {
+module.exports = options => ({
   siteMetadata: {
-    title: "Gatsby Theme Jam Example Submission",
+    title: "SeniorNet Dunedin Theme",
   },
-  plugins: ["gatsby-plugin-theme-ui"],
-}
+  plugins: [
+    "gatsby-plugin-theme-ui",
+    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: options.contentPath || "content/",
+      },
+    },
+  ],
+})

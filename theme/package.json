@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-theme-jam-example",
-  "author": "Jason Lengstorf <jason@gatsbyjs.com>",
+  "name": "seniornet-dunedin",
+  "author": "Jordan McRae",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlengstorf/gatsby-theme-jam-example.git"
+    "url": "https://github.com/imjordanm/seniornet-dunedin.git"
   },
   "version": "1.0.1",
   "main": "index.js",
@@ -22,6 +22,9 @@
     "@emotion/core": "^10.0.14",
     "@mdx-js/react": "^1.0.21",
     "gatsby-plugin-theme-ui": "^0.2.2",
+    "gatsby-source-filesystem": "^2.1.5",
+    "gatsby-transformer-remark": "^2.6.8",
+    "mkdirp": "^0.5.1",
     "theme-ui": "^0.2.2"
   },
   "keywords": [
