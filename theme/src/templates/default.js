@@ -16,17 +16,10 @@ export const query = graphql`
 `
 
 const DefaultTemplate = ({ pageContext, data }) => (
-  console.log(data),
-  (
-    <Layout>
-      <Styled.h1>data.markdownRemark.frontmatter.title</Styled.h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.markdownRemark.frontmatter.description,
-        }}
-      />
-    </Layout>
-  )
+  <Layout>
+    <Styled.h1>{data.markdownRemark.frontmatter.title}</Styled.h1>
+    <p>{data.markdownRemark.frontmatter.description}</p>
+  </Layout>
 )
 
 export default DefaultTemplate
