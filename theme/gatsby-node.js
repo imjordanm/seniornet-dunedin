@@ -3,11 +3,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allSanityPage {
+      allSanityPages {
         edges {
           node {
             title
             description
+            _rawBody(resolveReferences: { maxDepth: 10 })
             slug {
               current
             }
@@ -21,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  const pages = result.data.allSanityPage.edges || []
+  const pages = result.data.allSanityPages.edges || []
   pages.forEach((edge, index) => {
     const path = edge.node.slug.current
 

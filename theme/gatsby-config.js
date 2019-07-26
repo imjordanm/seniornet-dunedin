@@ -1,4 +1,10 @@
-module.exports = options => ({
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const isProduction = process.env.NODE_ENV === "production"
+
+module.exports = {
   siteMetadata: {
     title: `SeniorNet Dunedin`,
     description: `SeniorNet Dunedin Description to change`,
@@ -27,9 +33,9 @@ module.exports = options => ({
       options: {
         projectId: "7rdxbykg",
         dataset: "production",
-        overlayDrafts: true,
-        watchMode: true,
+        overlayDrafts: !isProduction,
+        watchMode: !isProduction,
       },
     },
   ],
-})
+}

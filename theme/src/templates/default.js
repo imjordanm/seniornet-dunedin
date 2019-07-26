@@ -3,13 +3,15 @@ import { graphql } from "gatsby"
 import { Styled } from "theme-ui"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout"
+import PortableText from "../components/portable-text"
 
 // Declaring query here allows us to shadow components
 export const query = graphql`
   query($slug: String!) {
-    sanityPage(slug: { current: { eq: $slug } }) {
+    sanityPages(slug: { current: { eq: $slug } }) {
       title
       description
+      _rawBody(resolveReferences: { maxDepth: 10 })
       slug {
         current
       }
@@ -17,14 +19,12 @@ export const query = graphql`
   }
 `
 
-const DefaultTemplate = ({ data, props }) => {
-  let page = data.sanityPage
-  console.log(props)
+const DefaultTemplate = ({ data }) => {
+  let page = data.sanityPages
   return (
     <Layout>
       <SEO title={page.title} description={page.description} />
-      <Styled.h1>{page.title}</Styled.h1>
-      <p>{page.description}</p>
+      <PortableText blocks={page._rawBody} />
     </Layout>
   )
 }
