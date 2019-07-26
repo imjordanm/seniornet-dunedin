@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Styled } from "theme-ui"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout"
+import PortableText from "../components/portable-text"
 
 // Declaring query here allows us to shadow components
 export const query = graphql`
