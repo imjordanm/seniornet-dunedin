@@ -6,17 +6,16 @@ import { StaticQuery, graphql } from "gatsby"
 export function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
-      query={detailsQuery}
+      query={seoQuery}
       render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description
+        const metaDescription = description || data.sanitySettings.description
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={`%s | ${data.sanitySettings.title}`}
             meta={[
               {
                 name: `description`,
@@ -39,8 +38,10 @@ export function SEO({ description, lang, meta, keywords, title }) {
                 content: `summary`,
               },
               {
+                /*{
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
+                content: data.sanitySettings.author,
+              }*/
               },
               {
                 name: `twitter:title`,
@@ -81,14 +82,11 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
+const seoQuery = graphql`
+  query seo {
+    sanitySettings {
+      title
+      description
     }
   }
 `

@@ -7,20 +7,21 @@ import Layout from "../components/layout"
 // Declaring query here allows us to shadow components
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        description
+    sanityPage(slug: { current: { eq: $slug } }) {
+      title
+      description
+      slug {
+        current
       }
     }
   }
 `
 
-const HomePageTemplate = ({ data }) => {
-  let page = data.markdownRemark.frontmatter
+const HomePageTemplate = ({ data, title }) => {
+  let page = data.sanityPage
   return (
     <Layout>
-      <SEO title={page.title} />
+      <SEO title={page.title} description={page.description} />
       <Styled.h1>{page.title}</Styled.h1>
       <p>{page.description}</p>
     </Layout>

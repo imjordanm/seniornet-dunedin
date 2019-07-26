@@ -7,9 +7,14 @@ import { HeaderWrapper as Header } from "../components/header"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      site {
-        siteMetadata {
+      sanitySettings {
+        title
+        description
+        headerPages {
           title
+          slug {
+            current
+          }
         }
       }
     }
@@ -24,7 +29,7 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <Header />
+      <Header pages={data.sanitySettings.headerPages} />
       <Main>
         <Container>{children}</Container>
       </Main>

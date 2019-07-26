@@ -9,7 +9,8 @@ module.exports = options => ({
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",
-    {
+    /*{{
+      
       resolve: "gatsby-source-filesystem",
       options: {
         path: options.contentPath || "content/",
@@ -19,6 +20,15 @@ module.exports = options => ({
       resolve: "gatsby-source-filesystem",
       options: {
         path: options.contentPath || "config/",
+      },
+    },*/
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "7rdxbykg",
+        dataset: "production",
+        overlayDrafts: true,
+        watchMode: true,
       },
     },
   ],
