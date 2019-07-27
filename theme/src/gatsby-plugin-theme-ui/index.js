@@ -23,7 +23,7 @@ export default {
   },
   sizes: {
     default: "90vw",
-    container: 800,
+    container: 1200,
   },
   breakpoints: ["40em", "56em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -49,16 +49,21 @@ export default {
         maxWidth: "container",
         width: "default",
       },
+      li: {
+        display: "inline-block",
+        a: {
+          textDecoration: "none",
+          color: "inherit",
+          "&:focus-within, &:hover": {
+            opacity: "0.8",
+          },
+        },
+      },
     },
     Main: {
       margin: "0 auto",
       maxWidth: "container",
       width: "default",
-    },
-    Container: {
-      padding: 0,
-      paddingBottom: 3,
-      paddingTop: 3,
     },
     h1: {
       color: "text",
@@ -70,15 +75,9 @@ export default {
       padding: 0,
       listStyle: "none",
     },
-    li: {
-      display: "inline-block",
-      a: {
-        textDecoration: "none",
-        color: "inherit",
-        "&:focus-within, &:hover": {
-          opacity: "0.8",
-        },
-      },
+    button: {
+      backgroundColor: "primary",
+      fontSize: [2, 3, 4],
     },
   },
 }

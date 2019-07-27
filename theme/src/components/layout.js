@@ -1,6 +1,6 @@
 import React from "react"
 import { css, Global } from "@emotion/core"
-import { Layout as StyledLayout, Main, Container } from "theme-ui"
+import { Layout as StyledLayout, Main } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
 
@@ -30,9 +30,7 @@ const Layout = ({ children }) => {
         `}
       />
       <Header pages={data.sanitySettings.headerPages} />
-      <Main>
-        <Container>{children}</Container>
-      </Main>
+      <Main>{children}</Main>
     </StyledLayout>
   )
 }

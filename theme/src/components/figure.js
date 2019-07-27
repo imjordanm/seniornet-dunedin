@@ -15,6 +15,7 @@ const Figure = ({ node }) => {
   return (
     <figure>
       <Img fluid={fluidProps} alt={node.alt} />
+      <figcaption>{node.alt}</figcaption>
     </figure>
   )
 }

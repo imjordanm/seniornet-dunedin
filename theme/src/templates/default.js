@@ -10,7 +10,7 @@ export const query = graphql`
     sanityPages(slug: { current: { eq: $slug } }) {
       title
       description
-      _rawBody(resolveReferences: { maxDepth: 10 })
+      _rawContent
       slug {
         current
       }
@@ -23,7 +23,7 @@ const DefaultTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={page.title} description={page.description} />
-      <PortableText blocks={page._rawBody} />
+      <PortableText blocks={page._rawContent} />
     </Layout>
   )
 }

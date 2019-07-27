@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             title
             description
-            _rawBody(resolveReferences: { maxDepth: 10 })
+            _rawContent
             slug {
               current
             }

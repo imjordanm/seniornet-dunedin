@@ -1,3 +1,5 @@
+import Link from "react-icons/lib/go/link"
+
 export default {
   name: "pages",
   title: "Pages",
@@ -7,12 +9,15 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      description:
+        "The name of the page that will be displayed for search engines.",
     },
     {
       name: "description",
       type: "text",
       title: "Description",
-      description: "Describe your blog for search engines and social media.",
+      description:
+        "Describe what the page is about for search engines and social media.",
     },
     {
       name: "slug",
@@ -22,26 +27,68 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      description:
+        "The path of the page that you enter in the address bar to find it (use generate button).",
     },
     {
-      name: "mainImage",
-      title: "Main image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      title: "Content",
+      name: "content",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "Heading", value: "h1" },
+            { title: "Subheading", value: "h2" },
+            { title: "Quote", value: "quote" },
+          ],
+          marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+              { title: "Underline", value: "u" },
+              { title: "Strikethrough", value: "s" },
+            ],
+            annotations: [
+              {
+                title: "Link",
+                name: "Link",
+                type: "object",
+                blockEditor: {
+                  icon: Link,
+                },
+                fields: [
+                  {
+                    title: "URL",
+                    name: "url",
+                    type: "url",
+                    validation: Rule =>
+                      Rule.uri({
+                        allowRelative: true,
+                        scheme: ["https", "http", "mailto", "tel"],
+                      }),
+                  },
+                  {
+                    title: "Open in new tab",
+                    name: "blank",
+                    type: "boolean",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        { type: "pageImage" },
+        { type: "button" },
+      ],
     },
   ],
 
   preview: {
     select: {
       title: "title",
-      media: "mainImage",
+      media: "image",
     },
     prepare(selection) {
       const { author } = selection

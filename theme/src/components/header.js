@@ -20,3 +20,12 @@ export const HeaderWrapper = props => (
     </React.Fragment>
   </Header>
 )
+
+/*
+<button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+        <Icon symbol='hamburger' />
+      </button>
+
+      <nav className={cn(styles.nav, showNav && styles.showNav)}>
+        
+*/

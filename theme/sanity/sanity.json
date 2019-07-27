@@ -14,6 +14,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/dashboard",
+    "@sanity/production-preview",
     "dashboard-widget-netlify"
   ],
   "parts": [
@@ -24,6 +25,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./resolveProductionUrl.js"
     }
   ]
 }
