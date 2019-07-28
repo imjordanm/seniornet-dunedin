@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ["seniornet-dunedin"],
+  plugins: ["gatsby-theme-imjordanm"],
 }

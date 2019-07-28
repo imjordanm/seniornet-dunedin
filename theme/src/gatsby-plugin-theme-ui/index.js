@@ -14,9 +14,17 @@ export default {
     body: "Roboto, sans-serif",
     heading: "Roboto, sans-serif",
     default:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+      'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
   fontSizes: [16, 18, 22, 28, 36, 48],
+  fontWeights: {
+    regular: "400",
+    bold: "700"
+  },
+  letterSpacings: {
+    heading: '-0.05em',
+    caps: '0.1em',
+  },
   lineHeights: {
     body: "1.45",
     heading: "1.1",
@@ -40,17 +48,19 @@ export default {
         "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
       color: "background",
       fontWeight: "bold",
-      margin: 0,
-      padding: 3,
-      span: {
-        display: "block",
-        fontSize: 3,
-        margin: "0 auto",
-        maxWidth: "container",
-        width: "default",
+      pt: 4,
+      pb: 4,
+      ul: {
+        padding: 0,
+        margin: 0,
+        listStyle: "none",
       },
       li: {
         display: "inline-block",
+        mr: 3,
+        "&:last-of-type": {
+          mr: 0
+        },
         a: {
           textDecoration: "none",
           color: "inherit",
@@ -65,19 +75,20 @@ export default {
       maxWidth: "container",
       width: "default",
     },
+    Footer: {
+      background:
+        "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
+      color: "background",
+      fontWeight: "bold",
+      pt: 4,
+      pb: 4,
+    },
     h1: {
       color: "text",
       fontSize: [3, 4, 5],
       lineHeight: "heading",
       overflowWrap: "break-word",
     },
-    ul: {
-      padding: 0,
-      listStyle: "none",
-    },
-    button: {
-      backgroundColor: "primary",
-      fontSize: [2, 3, 4],
-    },
+    
   },
 }

@@ -3,6 +3,7 @@ import { css, Global } from "@emotion/core"
 import { Layout as StyledLayout, Main } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
+import { FooterWrapper as Footer } from "../components/footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
       />
       <Header pages={data.sanitySettings.headerPages} />
       <Main>{children}</Main>
+      <Footer />
     </StyledLayout>
   )
 }

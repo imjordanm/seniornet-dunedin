@@ -1,23 +1,29 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Header } from "theme-ui"
 import { Link } from "gatsby"
-import { Styled, Header } from "theme-ui"
 
 export const HeaderWrapper = props => (
   <Header>
-    <React.Fragment>
+    <div sx={{
+      margin: "0 auto",
+      maxWidth: "container",
+      width: "default",
+      display: "flex",
+      justifyContent: "space-between"
+    }}>
       <div className="logo">
         <Link to="/" title="Home">
           <div>logo here</div>
         </Link>
       </div>
-      <Styled.ul>
+      <ul>
         {props.pages.map(page => (
-          <Styled.li key={page.title}>
+          <li key={page.title}>
             <Link to={page.slug.current}>{page.title}</Link>
-          </Styled.li>
+          </li>
         ))}
-      </Styled.ul>
-    </React.Fragment>
+      </ul>
+    </div>
   </Header>
 )
 
@@ -27,5 +33,5 @@ export const HeaderWrapper = props => (
       </button>
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
-        
+
 */
