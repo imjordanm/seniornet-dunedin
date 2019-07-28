@@ -1,3 +1,10 @@
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `SeniorNet Dunedin`,
@@ -11,8 +18,9 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "7rdxbykg",
-        dataset: "production",
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
         overlayDrafts: true,
         watchMode: true,
       },

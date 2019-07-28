@@ -7,8 +7,8 @@ const Figure = ({ node }) => {
     node.asset._ref,
     { maxWidth: 1200 },
     {
-      projectId: "7rdxbykg",
-      dataset: "production",
+      projectId: process.env.SANITY_PROJECT_ID,
+      dataset: process.env.SANITY_DATASET,
     }
   )
 
