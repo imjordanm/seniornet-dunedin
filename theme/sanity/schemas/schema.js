@@ -10,6 +10,8 @@ import pageImage from "./pageImage"
 
 // We import object and document schemas
 import blockContent from "./blockContent"
+import footer from "./footer"
+import social from "./social"
 import pages from "./pages"
 import settings from "./settings"
 import category from "./category"
@@ -28,6 +30,8 @@ export default createSchema({
     //components
     button,
     pageImage,
+    footer,
+    social,
     settings,
     pages,
     post,

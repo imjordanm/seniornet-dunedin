@@ -11,10 +11,35 @@ const Layout = ({ children }) => {
       sanitySettings {
         title
         description
+        logo {
+          asset {
+            url
+          }
+        }
         headerPages {
           title
           slug {
             current
+          }
+        }
+        footer {
+          leftHeading
+          rightHeading
+          mailingList
+          footerPages {
+            title
+            slug {
+              current
+            }
+          }
+          socialLinks {
+            icon {
+              asset {
+                url
+              }
+            }
+            label
+            url
           }
         }
       }
@@ -30,9 +55,12 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <Header pages={data.sanitySettings.headerPages} />
+      <Header
+        pages={data.sanitySettings.headerPages}
+        logo={data.sanitySettings.logo.asset.url}
+      />
       <Main>{children}</Main>
-      <Footer />
+      <Footer footer={data.sanitySettings.footer} />
     </StyledLayout>
   )
 }

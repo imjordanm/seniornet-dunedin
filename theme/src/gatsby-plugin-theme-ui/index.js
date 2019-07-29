@@ -5,36 +5,50 @@
  */
 export default {
   colors: {
-    text: "#232129",
+    text: "#054C63",
     background: "#fff",
-    primary: "#639",
-    secondary: "#555",
+    primary: "#066482",
+    secondary: "#D5E02D",
   },
   fonts: {
-    body: "Roboto, sans-serif",
-    heading: "Roboto, sans-serif",
+    body: '"Inter", Roboto, sans-serif',
+    heading: '"Gilroy", Roboto, sans-serif',
     default:
-      'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+      '"Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
-  fontSizes: [16, 18, 22, 28, 36, 48],
+  fontSizes: [14, 18, 22, 28, 36, 48, 64],
   fontWeights: {
     regular: "400",
-    bold: "700"
+    bold: "700",
   },
   letterSpacings: {
-    heading: '-0.05em',
-    caps: '0.1em',
+    heading: "-0.05em",
+    caps: "0.2em",
   },
   lineHeights: {
     body: "1.45",
     heading: "1.1",
   },
+  textStyles: {
+    heading: {
+      fontFamily: "heading",
+      lineHeight: "heading",
+      overflowWrap: "break-word",
+    },
+    caps: {
+      fontWeight: "bold",
+      letterSpacing: "caps",
+      textTransform: "uppercase",
+      fontFamily: "heading",
+      fontSize: [0, 0, 1],
+    },
+  },
   sizes: {
     default: "90vw",
-    container: 1200,
+    container: 1400,
   },
   breakpoints: ["40em", "56em", "64em"],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 6, 12, 24, 36, 48, 64, 128, 256, 512],
   styles: {
     Layout: {
       backgroundColor: "background",
@@ -48,8 +62,8 @@ export default {
         "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
       color: "background",
       fontWeight: "bold",
-      pt: 4,
-      pb: 4,
+      pt: 5,
+      pb: 5,
       ul: {
         padding: 0,
         margin: 0,
@@ -57,9 +71,9 @@ export default {
       },
       li: {
         display: "inline-block",
-        mr: 3,
+        mr: 5,
         "&:last-of-type": {
-          mr: 0
+          mr: 0,
         },
         a: {
           textDecoration: "none",
@@ -84,11 +98,15 @@ export default {
       pb: 4,
     },
     h1: {
-      color: "text",
+      variant: "textStyles.heading",
       fontSize: [3, 4, 5],
-      lineHeight: "heading",
-      overflowWrap: "break-word",
     },
-    
+    h2: {
+      variant: "textStyles.heading",
+      fontSize: [2, 3, 4],
+    },
+    p: {
+      fontSize: [0, 1, 2],
+    },
   },
 }

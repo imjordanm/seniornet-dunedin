@@ -4,21 +4,13 @@ import { Link } from "gatsby"
 
 export const HeaderWrapper = props => (
   <Header>
-    <div sx={{
-      margin: "0 auto",
-      maxWidth: "container",
-      width: "default",
-      display: "flex",
-      justifyContent: "space-between"
-    }}>
-      <div className="logo">
-        <Link to="/" title="Home">
-          <div>logo here</div>
-        </Link>
-      </div>
+    <div sx={headerStyles}>
+      <Link to="/" title="Home">
+        <img sx={{ width: "100%", maxWidth: "12em", display: "block" }} src={props.logo} alt="SeniorNet Logo" />
+      </Link>
       <ul>
         {props.pages.map(page => (
-          <li key={page.title}>
+          <li key={page.title} sx={{ variant: "textStyles.caps" }}>
             <Link to={page.slug.current}>{page.title}</Link>
           </li>
         ))}
@@ -26,6 +18,15 @@ export const HeaderWrapper = props => (
     </div>
   </Header>
 )
+
+const headerStyles = {
+  margin: "0 auto",
+  maxWidth: "container",
+  width: "default",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+}
 
 /*
 <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>

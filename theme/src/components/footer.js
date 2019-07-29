@@ -1,16 +1,37 @@
 /** @jsx jsx */
-import { jsx, Footer } from "theme-ui"
+import { jsx, Footer, Styled } from "theme-ui"
+import { Link } from "gatsby"
 
 export const FooterWrapper = props => (
   <Footer>
-    <div sx={{
-      margin: "0 auto",
-      maxWidth: "container",
-      width: "default",
-      display: "flex",
-      justifyContent: "space-between"
-    }}>
-      Footer placeholder
+    <div sx={footerStyles}>
+      <div>
+        <Styled.h2>{props.footer.leftHeading}</Styled.h2>
+        {props.footer.footerPages.map(page => (
+          <li key={page.title} sx={{ variant: "textStyles.caps" }}>
+            <Link to={page.slug.current}>{page.title}</Link>
+          </li>
+        ))}
+        <span>Copyright © 2019 SeniorNet Dunedin. All Rights Reserved</span>
+      </div>
+      <div>
+        <Styled.h2>{props.footer.rightHeading}</Styled.h2>
+        <div>Mailing list here: {props.footer.mailingList}</div>
+        {props.footer.socialLinks.map(page => (
+          <li key={page.label} sx={{ variant: "textStyles.caps" }}>
+            <img src={page.icon.asset.url} alt={page.label} />
+            <Link to={page.url}>{page.label}</Link>
+          </li>
+        ))}
+      </div>
     </div>
   </Footer>
 )
+
+const footerStyles = {
+  margin: "0 auto",
+  maxWidth: "container",
+  width: "default",
+  display: "flex",
+  justifyContent: "space-between",
+}

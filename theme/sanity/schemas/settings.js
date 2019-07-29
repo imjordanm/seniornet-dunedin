@@ -26,6 +26,11 @@ export default {
       },
     },
     {
+      title: "Logo",
+      name: "logo",
+      type: "image",
+    },
+    {
       title: "Header Pages",
       name: "headerPages",
       type: "array",
@@ -36,5 +41,6 @@ export default {
         },
       ],
     },
+    { type: "footer", name: "footer" },
   ],
 }
