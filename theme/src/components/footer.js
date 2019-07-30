@@ -5,24 +5,30 @@ import { Link } from "gatsby"
 export const FooterWrapper = props => (
   <Footer>
     <div sx={footerStyles}>
-      <div>
+      <div sx={columnStyles}>
         <Styled.h2>{props.footer.leftHeading}</Styled.h2>
-        {props.footer.footerPages.map(page => (
-          <li key={page.title} sx={{ variant: "textStyles.caps" }}>
-            <Link to={page.slug.current}>{page.title}</Link>
-          </li>
-        ))}
+        <ul>
+          {props.footer.footerPages.map(page => (
+            <li key={page.title} sx={{ variant: "textStyles.caps" }}>
+              <Link to={page.slug.current}>{page.title}</Link>
+            </li>
+          ))}
+        </ul>
         <span>Copyright © 2019 SeniorNet Dunedin. All Rights Reserved</span>
       </div>
-      <div>
+      <div sx={columnStyles}>
         <Styled.h2>{props.footer.rightHeading}</Styled.h2>
         <div>Mailing list here: {props.footer.mailingList}</div>
-        {props.footer.socialLinks.map(page => (
-          <li key={page.label} sx={{ variant: "textStyles.caps" }}>
-            <img src={page.icon.asset.url} alt={page.label} />
-            <Link to={page.url}>{page.label}</Link>
-          </li>
-        ))}
+        <ul>
+          {props.footer.socialLinks.map(page => (
+            <li key={page.label} sx={{ variant: "textStyles.caps" }}>
+              <img src={page.icon.asset.url} alt={page.label} />
+              <a href={page.url} target="_blank" title={page.label}>
+                {page.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </Footer>
@@ -30,8 +36,11 @@ export const FooterWrapper = props => (
 
 const footerStyles = {
   margin: "0 auto",
-  maxWidth: "container",
   width: "default",
   display: "flex",
   justifyContent: "space-between",
+}
+
+const columnStyles = {
+  flex: "1 1",
 }

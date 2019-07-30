@@ -16,14 +16,13 @@ const buttonStyles = {
   border: "3px solid",
   borderColor: "secondary",
   bg: "transparent",
-  pt: 3,
-  pr: 4,
-  pb: 3,
-  pl: 4,
+  pt: [4, 4, 5],
+  pr: [6, 6, 7],
+  pb: [4, 4, 5],
+  pl: [6, 6, 7],
   textDecoration: "none",
   color: "secondary",
   variant: "textStyles.caps",
-  fontSize: [0, 0, 0],
   cursor: "pointer",
 }
 

@@ -6,7 +6,11 @@ export const HeaderWrapper = props => (
   <Header>
     <div sx={headerStyles}>
       <Link to="/" title="Home">
-        <img sx={{ width: "100%", maxWidth: "12em", display: "block" }} src={props.logo} alt="SeniorNet Logo" />
+        <img
+          sx={{ width: "100%", maxWidth: "10em", display: "block" }}
+          src={props.logo}
+          alt="SeniorNet Logo"
+        />
       </Link>
       <ul>
         {props.pages.map(page => (
@@ -21,7 +25,6 @@ export const HeaderWrapper = props => (
 
 const headerStyles = {
   margin: "0 auto",
-  maxWidth: "container",
   width: "default",
   display: "flex",
   justifyContent: "space-between",

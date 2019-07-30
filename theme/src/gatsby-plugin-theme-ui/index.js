@@ -4,6 +4,33 @@
  * @see https://theme-ui.com/gatsby-plugin/
  */
 export default {
+  breakpoints: ["680px", "1040px"],
+  space: [
+    "0",
+    "0.25em",
+    "0.5em",
+    "0.75em",
+    "1em",
+    "1.5em",
+    "2em",
+    "3em",
+    "4em",
+    "6em",
+    "8em",
+    "12em",
+    "16em",
+    "24em",
+  ],
+  fontSizes: [
+    "0.844em",
+    "1.125em",
+    "1.5em",
+    "2em",
+    "2.665em",
+    "3.5em",
+    "4.73em",
+    "6.3em",
+  ],
   colors: {
     text: "#054C63",
     background: "#fff",
@@ -16,7 +43,6 @@ export default {
     default:
       '"Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
-  fontSizes: [14, 18, 22, 28, 36, 48, 64],
   fontWeights: {
     regular: "400",
     bold: "700",
@@ -26,29 +52,50 @@ export default {
     caps: "0.2em",
   },
   lineHeights: {
-    body: "1.45",
-    heading: "1.1",
+    body: "1.75",
+    heading: "1.25",
   },
   textStyles: {
     heading: {
       fontFamily: "heading",
+      fontWeight: "bold",
       lineHeight: "heading",
       overflowWrap: "break-word",
+      mb: 0,
     },
     caps: {
       fontWeight: "bold",
+      lineHeight: "heading",
       letterSpacing: "caps",
       textTransform: "uppercase",
       fontFamily: "heading",
-      fontSize: [0, 0, 1],
+    },
+  },
+  navigation: {
+    ul: {
+      padding: 0,
+      margin: 0,
+      listStyle: "none",
+    },
+    li: {
+      display: "inline-block",
+      mr: [4, 6, 7],
+      "&:last-of-type": {
+        mr: 0,
+      },
+      a: {
+        textDecoration: "none",
+        color: "background",
+        "&:focus-within, &:hover": {
+          opacity: "0.8",
+        },
+      },
     },
   },
   sizes: {
-    default: "90vw",
-    container: 1400,
+    default: "80vw",
+    container: 1200,
   },
-  breakpoints: ["40em", "56em", "64em"],
-  space: [0, 6, 12, 24, 36, 48, 64, 128, 256, 512],
   styles: {
     Layout: {
       backgroundColor: "background",
@@ -62,30 +109,14 @@ export default {
         "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
       color: "background",
       fontWeight: "bold",
-      pt: 5,
-      pb: 5,
-      ul: {
-        padding: 0,
-        margin: 0,
-        listStyle: "none",
-      },
-      li: {
-        display: "inline-block",
-        mr: 5,
-        "&:last-of-type": {
-          mr: 0,
-        },
-        a: {
-          textDecoration: "none",
-          color: "inherit",
-          "&:focus-within, &:hover": {
-            opacity: "0.8",
-          },
-        },
-      },
+      pt: 7,
+      pb: 7,
+      variant: "navigation",
     },
     Main: {
       margin: "0 auto",
+      pt: 13,
+      pb: 13,
       maxWidth: "container",
       width: "default",
     },
@@ -94,19 +125,26 @@ export default {
         "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
       color: "background",
       fontWeight: "bold",
-      pt: 4,
-      pb: 4,
+      pt: 11,
+      pb: 11,
+      variant: "navigation",
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [3, 4, 5],
+      fontSize: [3, 5, 6],
     },
     h2: {
+      variant: "textStyles.caps",
+      color: "secondary",
+      fontSize: [2, 2, 3],
+      mb: [2, 3, 4],
+    },
+    h3: {
       variant: "textStyles.heading",
-      fontSize: [2, 3, 4],
+      fontSize: [1, 2, 3],
     },
     p: {
-      fontSize: [0, 1, 2],
+      fontSize: [1, 2, 3],
     },
   },
 }

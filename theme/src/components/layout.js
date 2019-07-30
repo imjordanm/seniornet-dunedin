@@ -50,8 +50,23 @@ const Layout = ({ children }) => {
     <StyledLayout>
       <Global
         styles={css`
-          body {
+          body,
+          div,
+          ul,
+          ol,
+          li,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          form,
+          fieldset,
+          button p {
             margin: 0;
+            padding: 0;
+            font: inherit;
           }
         `}
       />
