@@ -3,7 +3,12 @@ export default {
   name: "social",
   type: "object",
   fields: [
-    { title: "Social Icon", name: "icon", type: "image" },
+    {
+      title: "Social Icon",
+      name: "icon",
+      type: "image",
+      validation: Rule => Rule.required().error("You must add an icon."),
+    },
     {
       title: "Label",
       name: "label",

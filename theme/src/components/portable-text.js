@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import BasePortableText from "@sanity/block-content-to-react"
 import { Link } from "gatsby"
 import BlockRenderer from "./block-renderer"
@@ -7,6 +8,7 @@ import Figure from "./figure"
 
 const PortableText = ({ blocks }) => (
   <BasePortableText
+    sx={containerStyles}
     blocks={blocks}
     serializers={serializers}
     projectId={process.env.SANITY_PROJECT_ID}
@@ -37,6 +39,11 @@ const serializers = {
   // see: https://github.com/sanity-io/block-content-to-react#proptypes
   //list: Styled.ul,
   //listItem: Styled.li,
+}
+
+const containerStyles = {
+  display: "flex",
+  flexDirection: "column",
 }
 
 export default PortableText

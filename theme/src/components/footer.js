@@ -36,7 +36,7 @@ export const FooterWrapper = props => (
 
 const footerStyles = {
   margin: "0 auto",
-  width: "default",
+  width: "mobile",
   display: "flex",
   justifyContent: "space-between",
 }

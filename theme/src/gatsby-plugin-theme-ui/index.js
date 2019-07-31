@@ -4,7 +4,12 @@
  * @see https://theme-ui.com/gatsby-plugin/
  */
 export default {
-  breakpoints: ["680px", "1040px"],
+  breakpoints: ["680px", "1160px"],
+  sizes: {
+    mobile: "80vw",
+    desktop: "75vw",
+    container: 1000,
+  },
   space: [
     "0",
     "0.25em",
@@ -49,7 +54,7 @@ export default {
   },
   letterSpacings: {
     heading: "-0.05em",
-    caps: "0.2em",
+    caps: "0.15em",
   },
   lineHeights: {
     body: "1.75",
@@ -61,7 +66,6 @@ export default {
       fontWeight: "bold",
       lineHeight: "heading",
       overflowWrap: "break-word",
-      mb: 0,
     },
     caps: {
       fontWeight: "bold",
@@ -92,10 +96,6 @@ export default {
       },
     },
   },
-  sizes: {
-    default: "80vw",
-    container: 1200,
-  },
   styles: {
     Layout: {
       backgroundColor: "background",
@@ -105,28 +105,26 @@ export default {
       lineHeight: "body",
     },
     Header: {
-      background:
-        "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
+      bg: "primary",
       color: "background",
       fontWeight: "bold",
-      pt: 7,
-      pb: 7,
+      pt: 6,
+      pb: 6,
       variant: "navigation",
     },
     Main: {
       margin: "0 auto",
-      pt: 13,
-      pb: 13,
+      pt: 12,
+      pb: 12,
       maxWidth: "container",
-      width: "default",
+      width: ["mobile", "desktop"],
     },
     Footer: {
-      background:
-        "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(6, 100, 130, 0.94) 100%)",
+      bg: "primary",
       color: "background",
       fontWeight: "bold",
-      pt: 11,
-      pb: 11,
+      pt: 10,
+      pb: 10,
       variant: "navigation",
     },
     h1: {
@@ -136,8 +134,20 @@ export default {
     h2: {
       variant: "textStyles.caps",
       color: "secondary",
+      position: "relative",
       fontSize: [2, 2, 3],
-      mb: [2, 3, 4],
+      mb: [3, 4, 5],
+      "::before": {
+        content: '""',
+        display: "block",
+        position: "absolute",
+        top: "50%",
+        transform: "translateY(-50%)",
+        left: [0, null, -7],
+        px: [0, null, 4],
+        bg: "secondary",
+        height: 4,
+      },
     },
     h3: {
       variant: "textStyles.heading",
@@ -145,6 +155,7 @@ export default {
     },
     p: {
       fontSize: [1, 2, 3],
+      mb: 6,
     },
   },
 }

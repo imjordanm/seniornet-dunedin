@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, keyframes } from "theme-ui"
+//import { keyframes } from '@emotion/core'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
@@ -13,17 +14,34 @@ const Button = props => {
 }
 
 const buttonStyles = {
-  border: "3px solid",
-  borderColor: "secondary",
+  border: theme => `3px solid ${theme.colors.secondary}`,
   bg: "transparent",
-  pt: [4, 4, 5],
-  pr: [6, 6, 7],
-  pb: [4, 4, 5],
-  pl: [6, 6, 7],
+  py: [4, 5],
+  px: [6, 7],
+  fontSize: 0,
   textDecoration: "none",
-  color: "secondary",
+  color: "#afb918",
   variant: "textStyles.caps",
+  position: "relative",
   cursor: "pointer",
+
+  "::before": {
+    content: '""',
+    display: "block",
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    left: -6,
+    px: [0, 5],
+    bg: "#afb918",
+    height: 3,
+    transition: "transform 0.25s 0.1s",
+  },
+  ":hover": {
+    "::before": {
+      transform: "translateY(-50%) translateX(20%)",
+    },
+  },
 }
 
 Button.propTypes = {

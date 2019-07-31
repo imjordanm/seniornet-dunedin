@@ -25,7 +25,7 @@ export const HeaderWrapper = props => (
 
 const headerStyles = {
   margin: "0 auto",
-  width: "default",
+  width: "mobile",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
