@@ -11,15 +11,31 @@ const Layout = ({ children }) => {
       sanitySettings {
         title
         description
-        logo {
-          asset {
-            url
+        colours {
+          colourBG {
+            hex
+          }
+          colourPrimary {
+            hex
+          }
+          colourSecondary {
+            hex
+          }
+          colourText {
+            hex
           }
         }
-        headerPages {
-          title
-          slug {
-            current
+        header {
+          logo {
+            asset {
+              url
+            }
+          }
+          headerPages {
+            title
+            slug {
+              current
+            }
           }
         }
         footer {
@@ -70,8 +86,8 @@ const Layout = ({ children }) => {
         `}
       />
       <Header
-        pages={data.sanitySettings.headerPages}
-        logo={data.sanitySettings.logo.asset.url}
+        pages={data.sanitySettings.header.headerPages}
+        logo={data.sanitySettings.header.logo.asset.url}
       />
       <Main>{children}</Main>
       <Footer footer={data.sanitySettings.footer} />

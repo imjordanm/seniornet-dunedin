@@ -2,6 +2,7 @@ export default {
   title: "Footer",
   name: "footer",
   type: "object",
+  options: { collapsible: true, collapsed: true },
   fieldsets: [{ name: "social", title: "Social Details" }],
   fields: [
     {

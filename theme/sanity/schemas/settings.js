@@ -25,22 +25,8 @@ export default {
         layout: "tags",
       },
     },
-    {
-      title: "Logo",
-      name: "logo",
-      type: "image",
-    },
-    {
-      title: "Header Pages",
-      name: "headerPages",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "pages" }],
-        },
-      ],
-    },
+    { type: "colours", name: "colours", title: "Colours" },
+    { type: "header", name: "header" },
     { type: "footer", name: "footer" },
   ],
 }

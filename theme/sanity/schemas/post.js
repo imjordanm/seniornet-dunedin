@@ -30,11 +30,7 @@ export default {
       title: "Published at",
       type: "datetime",
     },
-    {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
-    },
+    { type: "section", name: "section", title: "Section" },
   ],
 
   preview: {

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout"
+import Banner from "../components/banner"
 import PortableText from "../components/portable-text"
 
 // Declaring query here allows us to shadow components
@@ -10,7 +11,22 @@ export const query = graphql`
     sanityPages(slug: { current: { eq: $slug } }) {
       title
       description
-      _rawContent
+      banner {
+        heading
+        button {
+          text
+          linkUrl
+        }
+        pageImage {
+          alt
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+      _rawSections
       slug {
         current
       }
@@ -23,7 +39,8 @@ const HomePageTemplate = ({ data, title }) => {
   return (
     <Layout>
       <SEO title={page.title} description={page.description} />
-      <PortableText blocks={page._rawContent} />
+      <Banner banner={page.banner} />
+      <PortableText blocks={page._rawSections} />
     </Layout>
   )
 }

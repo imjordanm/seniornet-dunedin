@@ -1,22 +1,20 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import Button from "./button"
-import Figure from "./figure"
+import Img from "gatsby-image"
 
 const Banner = props => {
-  if (!props.node) {
+  if (!props.banner) {
     return null
   }
-  let banner = props.node
+  let { heading, button, pageImage } = props.banner
   return (
     <div sx={{ bg: "primary" }}>
       <div sx={bannerStyles}>
-        <Styled.h1 sx={{ color: "background" }}>{banner.heading}</Styled.h1>
-        {typeof banner.button != "undefined" && banner.button.linkUrl ? (
-          <Button node={banner.button} />
-        ) : null}
-        {typeof banner.pageImage != "undefined" && banner.pageImage.asset ? (
-          <Figure node={banner.pageImage} />
+        <Styled.h1 sx={{ color: "background" }}>{heading}</Styled.h1>
+        {button && button.linkUrl ? <Button node={button} /> : null}
+        {pageImage && pageImage.asset ? (
+          <Img fluid={pageImage.asset.fluid} alt={pageImage.asset.alt} />
         ) : null}
       </div>
     </div>

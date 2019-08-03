@@ -8,7 +8,6 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             title
             description
-            _rawContent
             slug {
               current
             }

@@ -5,17 +5,25 @@ import { Link } from "gatsby"
 import BlockRenderer from "./block-renderer"
 import Button from "./button"
 import Figure from "./figure"
-import Banner from "./banner"
 
-const PortableText = ({ blocks }) => (
-  <BasePortableText
-    sx={containerStyles}
-    blocks={blocks}
-    serializers={serializers}
-    projectId={process.env.SANITY_PROJECT_ID}
-    dataset={process.env.SANITY_DATASET}
-  />
-)
+const PortableText = ({ blocks }) => {
+  if (!blocks) {
+    return null
+  }
+
+  return blocks.map(section => (
+    <div sx={PrimaryBGStyles}>
+      <BasePortableText
+        sx={containerStyles}
+        blocks={section.content}
+        serializers={serializers}
+        projectId={process.env.SANITY_PROJECT_ID}
+        dataset={process.env.SANITY_DATASET}
+        key={section.sectionName}
+      />
+    </div>
+  ))
+}
 
 const serializers = {
   marks: {
@@ -35,7 +43,6 @@ const serializers = {
     block: BlockRenderer,
     button: Button,
     pageImage: Figure,
-    banner: Banner,
   },
   // For a full list of magic types that don’t go in the `types` object,
   // see: https://github.com/sanity-io/block-content-to-react#proptypes
@@ -46,6 +53,11 @@ const serializers = {
 const containerStyles = {
   display: "flex",
   flexDirection: "column",
+  margin: "0 auto",
+  width: ["mobile", "desktop"],
+  maxWidth: "container",
 }
+
+const PrimaryBGStyles = {}
 
 export default PortableText
