@@ -60,6 +60,7 @@ const Layout = ({ children }) => {
           h3,
           p,
           form,
+          figure,
           fieldset,
           button {
             margin: 0;

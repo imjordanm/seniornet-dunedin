@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import BlockRenderer from "./block-renderer"
 import Button from "./button"
 import Figure from "./figure"
+import Banner from "./banner"
 
 const PortableText = ({ blocks }) => (
   <BasePortableText
@@ -34,6 +35,7 @@ const serializers = {
     block: BlockRenderer,
     button: Button,
     pageImage: Figure,
+    banner: Banner,
   },
   // For a full list of magic types that don’t go in the `types` object,
   // see: https://github.com/sanity-io/block-content-to-react#proptypes

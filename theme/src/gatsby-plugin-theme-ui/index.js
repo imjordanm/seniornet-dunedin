@@ -7,7 +7,7 @@ export default {
   breakpoints: ["680px", "1160px"],
   sizes: {
     mobile: "80vw",
-    desktop: "75vw",
+    desktop: "70vw",
     container: 1000,
   },
   space: [
@@ -105,20 +105,17 @@ export default {
       lineHeight: "body",
     },
     Header: {
-      bg: "primary",
+      background:
+        "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(15, 117, 150, 1) 100%)",
+      boxShadow: "0px 3px 4px rgba(4, 77, 101, 0.25)",
+      zIndex: 2,
       color: "background",
       fontWeight: "bold",
       pt: 6,
       pb: 6,
       variant: "navigation",
     },
-    Main: {
-      margin: "0 auto",
-      pt: 12,
-      pb: 12,
-      maxWidth: "container",
-      width: ["mobile", "desktop"],
-    },
+    Main: {},
     Footer: {
       bg: "primary",
       color: "background",

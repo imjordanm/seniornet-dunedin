@@ -1,10 +1,13 @@
 /** @jsx jsx */
-import { jsx, keyframes } from "theme-ui"
+import { jsx } from "theme-ui"
 //import { keyframes } from '@emotion/core'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Button = props => {
+  if (!props.node) {
+    return null
+  }
   let button = props.node
   return (
     <Link to={button.linkUrl}>

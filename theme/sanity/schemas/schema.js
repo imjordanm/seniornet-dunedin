@@ -7,6 +7,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 //components
 import button from "./button"
 import pageImage from "./pageImage"
+import banner from "./banner"
 
 // We import object and document schemas
 import blockContent from "./blockContent"
@@ -14,9 +15,7 @@ import footer from "./footer"
 import social from "./social"
 import pages from "./pages"
 import settings from "./settings"
-import category from "./category"
 import post from "./post"
-import author from "./author"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,13 +29,12 @@ export default createSchema({
     //components
     button,
     pageImage,
+    banner,
     footer,
     social,
     settings,
     pages,
     post,
-    author,
-    category,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

@@ -23,7 +23,12 @@ export const FooterWrapper = props => (
           {props.footer.socialLinks.map(page => (
             <li key={page.label} sx={{ variant: "textStyles.caps" }}>
               <img src={page.icon.asset.url} alt={page.label} />
-              <a href={page.url} target="_blank" title={page.label}>
+              <a
+                href={page.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={page.label}
+              >
                 {page.label}
               </a>
             </li>
@@ -36,7 +41,7 @@ export const FooterWrapper = props => (
 
 const footerStyles = {
   margin: "0 auto",
-  width: "mobile",
+  width: ["mobile", "desktop"],
   display: "flex",
   justifyContent: "space-between",
 }

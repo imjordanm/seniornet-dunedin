@@ -82,6 +82,7 @@ export default {
         },
         { type: "pageImage" },
         { type: "button" },
+        { type: "banner" },
       ],
     },
   ],

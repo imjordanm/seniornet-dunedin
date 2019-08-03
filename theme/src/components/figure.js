@@ -3,6 +3,9 @@ import Img from "gatsby-image"
 import { getFluidGatsbyImage } from "gatsby-source-sanity"
 
 const Figure = ({ node }) => {
+  if (!node || !node.asset) {
+    return null
+  }
   const fluidProps = getFluidGatsbyImage(
     node.asset._ref,
     { maxWidth: 1200 },
