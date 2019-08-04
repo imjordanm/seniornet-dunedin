@@ -6,9 +6,10 @@
 export default {
   breakpoints: ["680px", "1160px"],
   sizes: {
-    mobile: "80vw",
-    desktop: "70vw",
-    container: 1000,
+    mobile: "85vw",
+    desktop: "75vw",
+    content: 1000,
+    outer: 1216,
   },
   space: [
     "0",
@@ -149,10 +150,14 @@ export default {
     h3: {
       variant: "textStyles.heading",
       fontSize: [1, 2, 3],
+      mb: 2,
     },
     p: {
       fontSize: [1, 2, 3],
       mb: 6,
+      "&:last-of-type": {
+        mb: 0,
+      },
     },
   },
 }

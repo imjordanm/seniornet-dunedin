@@ -13,9 +13,31 @@ export default function resolveProductionUrl(document) {
     // And return a template string reflecting the URL structure we want. In this case, we're doing a
     // simple conditional to return '&isDraft=true' as a param for drafts as we'll query them
     // differently in the front-end
-    return `https://naughty-chandrasekhar-75b3be.netlify.com/preview?pageId=${id}${
+    return `http://localhost:8000/${document.slug.current}?pageId=${id}${
       isDraft(document._id) ? "&isDraft=true" : ""
     }`
   }
   return undefined
 }
+
+/*
+const isDraft = id => id.includes('drafts')
+
+export default function resolveProductionUrl(document) {
+  if (!isDraft(document._id)) return undefined
+
+  if (document._type === 'recipe') {
+    return `http://localhost:8080/rezept/${document.slug.current}?id=${
+      document._id
+    }`
+  }
+
+  if (document._type === 'page') {
+    return `http://localhost:8080/${document.slug.current}?id=${document._id}`
+  }
+
+  return undefined
+}
+
+`
+*/

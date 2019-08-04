@@ -25,7 +25,8 @@ const bannerStyles = {
   margin: "0 auto",
   pt: 11,
   pb: 10,
-  width: ["mobile", "desktop"],
+  width: ["mobile", null, "desktop"],
+  maxWidth: "outer",
 }
 
 export default Banner

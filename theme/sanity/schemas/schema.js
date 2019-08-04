@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 import button from "./button"
 import pageImage from "./pageImage"
 import banner from "./banner"
+import grid from "./grid"
 
 // We import object and document schemas
 import colours from "./colours"
@@ -26,6 +27,7 @@ export default createSchema({
     button,
     pageImage,
     banner,
+    grid,
     header,
     footer,
     social,

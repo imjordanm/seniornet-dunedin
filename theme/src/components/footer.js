@@ -41,7 +41,8 @@ export const FooterWrapper = props => (
 
 const footerStyles = {
   margin: "0 auto",
-  width: ["mobile", "desktop"],
+  width: ["mobile"],
+  maxWidth: "outer",
   display: "flex",
   justifyContent: "space-between",
 }
