@@ -16,7 +16,9 @@ const Grid = props => {
           ) : null}
           {item.heading ? <Styled.h3>{item.heading}</Styled.h3> : null}
           {item.text ? (
-            <Styled.p sx={{ fontSize: [0, 1, 2] }}>{item.text}</Styled.p>
+            <Styled.p sx={{ fontSize: [0, 1, 2], lineHeight: "smallBody" }}>
+              {item.text}
+            </Styled.p>
           ) : null}
         </div>
       ))}
@@ -27,7 +29,9 @@ const Grid = props => {
 const gridStyles = {
   display: "grid",
   gridTemplateColumns: "repeat(2, 1fr)",
-  gridGap: 8,
+  gridGap: [6, 8],
+  ml: [null, null, "-110px"],
+  width: ["100%", null, "calc(100% + 220px)"],
 }
 
 const itemStyles = {}

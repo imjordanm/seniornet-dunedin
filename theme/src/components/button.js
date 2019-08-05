@@ -21,7 +21,7 @@ const buttonStyles = {
   bg: "transparent",
   py: [4, 5],
   px: [6, 7],
-  mt: [7, 9],
+  mt: [7, null, 9],
   fontSize: 0,
   textDecoration: "none",
   color: "#afb918",

@@ -13,7 +13,7 @@ const PortableText = ({ blocks }) => {
   }
 
   return blocks.map(section => (
-    <div sx={sectionStyles}>
+    <div sx={{ bg: section.background }}>
       <BasePortableText
         sx={contentStyles}
         blocks={section.content}
@@ -21,6 +21,7 @@ const PortableText = ({ blocks }) => {
         projectId={process.env.SANITY_PROJECT_ID}
         dataset={process.env.SANITY_DATASET}
         key={section.sectionName}
+        background={section.background}
       />
     </div>
   ))
@@ -40,7 +41,6 @@ const serializers = {
     },
   },
   types: {
-    // if you want to change headings, etc., you have to edit this component
     block: BlockRenderer,
     button: Button,
     pageImage: Figure,
@@ -58,11 +58,7 @@ const contentStyles = {
   margin: "0 auto",
   width: ["mobile", null, "desktop"],
   maxWidth: "content",
-  py: 10,
-}
-
-const sectionStyles = {
-  my: 10,
+  py: [9, null, 12],
 }
 
 export default PortableText

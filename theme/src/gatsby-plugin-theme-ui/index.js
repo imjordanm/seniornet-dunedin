@@ -59,6 +59,7 @@ export default {
   },
   lineHeights: {
     body: "1.75",
+    smallBody: "1.6",
     heading: "1.25",
   },
   textStyles: {
@@ -134,7 +135,7 @@ export default {
       color: "secondary",
       position: "relative",
       fontSize: [2, 2, 3],
-      mb: [3, 4, 5],
+      mb: [4, 5, 6],
       "::before": {
         content: '""',
         display: "block",

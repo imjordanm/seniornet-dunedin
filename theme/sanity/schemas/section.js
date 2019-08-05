@@ -10,8 +10,13 @@ export default {
       title: "Background",
       name: "background",
       type: "string",
+      validation: Rule => Rule.required(),
       options: {
-        list: ["Primary", "Secondary", "Off-White", "Background"],
+        list: [
+          { title: "Background", value: "background" },
+          { title: "Primary", value: "primary" },
+          { title: "Secondary", value: "secondary" },
+        ],
       },
     },
     {
