@@ -14,6 +14,7 @@ export default {
       options: {
         list: [
           { title: "Background", value: "background" },
+          { title: "Muted Background", value: "muted" },
           { title: "Primary", value: "primary" },
           { title: "Secondary", value: "secondary" },
         ],

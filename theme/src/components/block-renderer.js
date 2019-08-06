@@ -5,10 +5,8 @@
 import React from "react"
 import { Styled } from "theme-ui"
 
-const BlockRenderer = ({ node, children, background }) => {
+const BlockRenderer = ({ node, children }) => {
   const style = node.style || "normal"
-
-  console.log(background)
 
   switch (style) {
     case "h1":

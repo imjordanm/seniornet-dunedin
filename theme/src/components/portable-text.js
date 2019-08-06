@@ -13,7 +13,7 @@ const PortableText = ({ blocks }) => {
   }
 
   return blocks.map(section => (
-    <div sx={{ bg: section.background }}>
+    <div sx={{ bg: section.background }} className={section.background}>
       <BasePortableText
         sx={contentStyles}
         blocks={section.content}
@@ -58,7 +58,7 @@ const contentStyles = {
   margin: "0 auto",
   width: ["mobile", null, "desktop"],
   maxWidth: "content",
-  py: [9, null, 12],
+  py: [10, null, 12],
 }
 
 export default PortableText

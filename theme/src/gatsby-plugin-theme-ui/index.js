@@ -42,6 +42,7 @@ export default {
     background: "#fff",
     primary: "#066482",
     secondary: "#D5E02D",
+    muted: "#F7F7F7",
   },
   fonts: {
     body: '"Inter", Roboto, sans-serif',

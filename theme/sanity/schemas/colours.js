@@ -24,5 +24,12 @@ export default {
       type: "color",
       title: "Background",
     },
+    {
+      name: "colourMuted",
+      type: "color",
+      title: "Muted",
+      description:
+        "Typically a slighty darker shade than the background colour.",
+    },
   ],
 }

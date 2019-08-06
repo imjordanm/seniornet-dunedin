@@ -19,5 +19,18 @@ export default {
       validation: Rule => Rule.uri({ allowRelative: "true" }),
       description: "Link to navigate to when button is clicked.",
     },
+    {
+      title: "Alignment",
+      name: "alignment",
+      type: "string",
+      validation: Rule => Rule.required(),
+      options: {
+        list: [
+          { title: "Left", value: "left" },
+          { title: "Center", value: "center" },
+          { title: "Right", value: "right" },
+        ],
+      },
+    },
   ],
 }

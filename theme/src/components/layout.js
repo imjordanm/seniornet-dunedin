@@ -83,6 +83,14 @@ const Layout = ({ children }) => {
             padding: 0;
             font: inherit;
           }
+          .primary {
+            h3 {
+              color: #fff;
+            }
+            p {
+              color: rgba(255, 255, 255, 0.85);
+            }
+          }
         `}
       />
       <Header

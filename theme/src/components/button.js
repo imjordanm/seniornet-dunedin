@@ -10,7 +10,7 @@ const Button = props => {
   }
   let button = props.node
   return (
-    <Link to={button.linkUrl} sx={{ textAlign: "right" }}>
+    <Link to={button.linkUrl} sx={{ textAlign: button.alignment }}>
       <button sx={buttonStyles}>{button.text}</button>
     </Link>
   )
@@ -21,7 +21,7 @@ const buttonStyles = {
   bg: "transparent",
   py: [4, 5],
   px: [6, 7],
-  mt: [7, null, 9],
+  mt: [8, null, 9],
   fontSize: 0,
   textDecoration: "none",
   color: "#afb918",
