@@ -5,6 +5,8 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
+const isProduction = process.env.NODE_ENV === "production"
+
 module.exports = {
   siteMetadata: {
     title: `SeniorNet Dunedin`,
@@ -21,8 +23,8 @@ module.exports = {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
         token: process.env.SANITY_TOKEN,
-        overlayDrafts: true,
-        watchMode: true,
+        overlayDrafts: !isProduction,
+        watchMode: !isProduction,
       },
     },
   ],
