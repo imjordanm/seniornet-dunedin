@@ -10,7 +10,14 @@ const Button = props => {
   }
   let button = props.node
   return (
-    <Link to={button.linkUrl} sx={{ textAlign: button.alignment }}>
+    <Link
+      to={button.linkUrl}
+      sx={{
+        display: "inline-block",
+        alignSelf: button.alignment,
+        mt: [8, null, 9],
+      }}
+    >
       <button sx={buttonStyles}>{button.text}</button>
     </Link>
   )
@@ -21,10 +28,9 @@ const buttonStyles = {
   bg: "transparent",
   py: [4, 5],
   px: [6, 7],
-  mt: [8, null, 9],
   fontSize: 0,
   textDecoration: "none",
-  color: "#afb918",
+  color: "#bfca1d",
   variant: "textStyles.caps",
   position: "relative",
   cursor: "pointer",
@@ -37,7 +43,7 @@ const buttonStyles = {
     transform: "translateY(-50%)",
     left: -6,
     px: [0, 5],
-    bg: "#afb918",
+    bg: "#bfca1d",
     height: 3,
     transition: "transform 0.25s 0.1s",
   },

@@ -25,6 +25,7 @@ export default {
     "8em",
     "12em",
     "16em",
+    "20em",
     "24em",
   ],
   fontSizes: [
@@ -42,7 +43,7 @@ export default {
     background: "#fff",
     primary: "#066482",
     secondary: "#D5E02D",
-    muted: "#F7F7F7",
+    muted: "#F3F3F3",
   },
   fonts: {
     body: '"Inter", Roboto, sans-serif',
@@ -60,7 +61,7 @@ export default {
   },
   lineHeights: {
     body: "1.75",
-    smallBody: "1.6",
+    smallBody: "1.5",
     heading: "1.25",
   },
   textStyles: {
@@ -129,7 +130,7 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [3, 5, 6],
+      fontSize: [4, 5, 6],
     },
     h2: {
       variant: "textStyles.caps",
@@ -152,7 +153,7 @@ export default {
     h3: {
       variant: "textStyles.heading",
       fontSize: [1, 2, 3],
-      mb: 2,
+      mb: [2, 3],
     },
     p: {
       fontSize: [1, 2, 3],

@@ -83,12 +83,15 @@ const Layout = ({ children }) => {
             padding: 0;
             font: inherit;
           }
+          button {
+            font: initial;
+          }
           .primary {
             h3 {
               color: #fff;
             }
             p {
-              color: rgba(255, 255, 255, 0.85);
+              color: rgba(255, 255, 255, 0.9);
             }
           }
         `}

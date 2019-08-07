@@ -26,11 +26,18 @@ export default {
       validation: Rule => Rule.required(),
       options: {
         list: [
-          { title: "Left", value: "left" },
+          { title: "Left", value: "flex-start" },
           { title: "Center", value: "center" },
-          { title: "Right", value: "right" },
+          { title: "Right", value: "flex-end" },
         ],
       },
     },
   ],
+
+  preview: {
+    select: {
+      title: "text",
+      subtitle: "linkUrl",
+    },
+  },
 }

@@ -9,6 +9,7 @@ import button from "./button"
 import pageImage from "./pageImage"
 import banner from "./banner"
 import grid from "./grid"
+import form from "./form"
 
 // We import object and document schemas
 import colours from "./colours"
@@ -28,6 +29,7 @@ export default createSchema({
     pageImage,
     banner,
     grid,
+    form,
     header,
     footer,
     social,

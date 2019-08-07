@@ -11,10 +11,16 @@ const Banner = props => {
   return (
     <div sx={{ bg: "primary" }}>
       <div sx={bannerStyles}>
-        <Styled.h1 sx={{ color: "background" }}>{heading}</Styled.h1>
-        {button && button.linkUrl ? <Button node={button} /> : null}
+        <div>
+          <Styled.h1 sx={{ color: "background" }}>{heading}</Styled.h1>
+          {button && button.linkUrl ? <Button node={button} /> : null}
+        </div>
         {pageImage && pageImage.asset ? (
-          <Img fluid={pageImage.asset.fluid} alt={pageImage.asset.alt} />
+          <Img
+            sx={{ width: "100%" }}
+            fluid={pageImage.asset.fluid}
+            alt={pageImage.asset.alt}
+          />
         ) : null}
       </div>
     </div>
@@ -23,10 +29,11 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  pt: 11,
-  pb: 10,
+  pt: [8, 10, 11],
+  pb: [8, 10, 11],
   width: ["mobile", null, "desktop"],
   maxWidth: "outer",
+  display: "flex",
 }
 
 export default Banner
