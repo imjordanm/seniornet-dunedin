@@ -87,7 +87,7 @@ export default {
     },
     li: {
       display: "inline-block",
-      mr: [4, 6, 7],
+      mr: [4, 6],
       "&:last-of-type": {
         mr: 0,
       },

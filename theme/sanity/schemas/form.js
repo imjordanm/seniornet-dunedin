@@ -27,16 +27,10 @@ export default {
                 ],
               },
             },
-            { title: "Required?", name: "required", type: "boolean" },
+            { title: "Required?", name: "required", type: "boolean", description: "Select if this field must be entered." },
           ],
         },
       ],
-    },
-    {
-      title: "Email to Receive",
-      name: "receivingEmail",
-      type: "string",
-      description: "The email address that will receive these emails.",
     },
   ],
 
