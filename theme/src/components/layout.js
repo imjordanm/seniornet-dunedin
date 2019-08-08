@@ -51,7 +51,9 @@ const Layout = ({ children }) => {
           socialLinks {
             icon {
               asset {
-                url
+                fluid(maxWidth: 50) {
+                  ...GatsbySanityImageFluid
+                }
               }
             }
             label
@@ -78,7 +80,9 @@ const Layout = ({ children }) => {
           form,
           figure,
           fieldset,
-          button {
+          button,
+          input,
+          textarea {
             margin: 0;
             padding: 0;
             font: inherit;

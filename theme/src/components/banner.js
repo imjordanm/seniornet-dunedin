@@ -13,7 +13,9 @@ const Banner = props => {
       <div sx={bannerStyles}>
         <div>
           <Styled.h1 sx={{ color: "background" }}>{heading}</Styled.h1>
-          {button && button.linkUrl ? <Button node={button} /> : null}
+          {button && button.linkUrl ? (
+            <Button node={button} style="buttons.primary" />
+          ) : null}
         </div>
         {pageImage && pageImage.asset ? (
           <Img
@@ -29,8 +31,7 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  pt: [8, 10, 11],
-  pb: [8, 10, 11],
+  py: [8, 10],
   width: ["mobile", null, "desktop"],
   maxWidth: "outer",
   display: "flex",

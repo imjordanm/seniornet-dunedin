@@ -15,10 +15,12 @@ const Button = props => {
       sx={{
         display: "inline-block",
         alignSelf: button.alignment,
-        mt: [8, null, 9],
+        mt: [7, null, 9],
       }}
     >
-      <button sx={buttonStyles}>{button.text}</button>
+      <button sx={props.style ? { variant: props.style } : buttonStyles}>
+        {button.text}
+      </button>
     </Link>
   )
 }

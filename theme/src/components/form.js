@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx } from "theme-ui"
 import React from "react"
 
 export default class Form extends React.PureComponent {
@@ -114,7 +114,7 @@ const FormSignup = props => (
     <div sx={signupStyles}>
       <label
         htmlFor="signupEmail"
-        style={{ position: "absolute", opacity: "0" }}
+        style={{ position: "absolute", opacity: "0", zIndex: "-2" }}
       >
         Subscribe to our Newsletter
       </label>
@@ -140,17 +140,23 @@ const FormSignup = props => (
           </div>
         </div>
       )}
-      <button type="submit">Subscribe</button>
+      <button sx={{ variant: "buttons.primary" }} type="submit">
+        Subscribe
+      </button>
     </div>
   </form>
 )
 
 const signupStyles = {
   display: "flex",
-  mb: [4, 6, 7],
+  boxShadow: theme => `2px 2px 8px ${theme.colors.text}85`,
+  mb: 6,
   input: {
     flex: "2 1",
-    p: [2, 5],
+    p: [4, 3, 4],
+    fontFamily: "body",
+    fontSize: 0,
+    fontWeight: "regular",
   },
   button: {
     flex: "1 1",

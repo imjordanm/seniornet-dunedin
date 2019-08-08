@@ -100,6 +100,19 @@ export default {
       },
     },
   },
+  buttons: {
+    primary: {
+      bg: "rgba(255,255,255,0.15)",
+      border: "none",
+      color: "#fff",
+      variant: "textStyles.caps",
+      py: [4, 5],
+      px: [5, 6],
+      boxShadow: theme => `0px 2px 8px ${theme.colors.text}85`,
+      cursor: "pointer",
+      fontSize: 0,
+    },
+  },
   styles: {
     Layout: {
       backgroundColor: "background",
@@ -124,8 +137,8 @@ export default {
       bg: "primary",
       color: "background",
       fontWeight: "bold",
-      pt: 10,
-      pb: 10,
+      pt: [8, 10],
+      pb: [8, 10],
       variant: "navigation",
     },
     h1: {
@@ -138,14 +151,15 @@ export default {
       position: "relative",
       fontSize: [2, 2, 3],
       mb: [4, 5, 6],
+      ml: [0, 7, 0],
       "::before": {
         content: '""',
         display: "block",
         position: "absolute",
         top: "50%",
         transform: "translateY(-50%)",
-        left: [0, null, -7],
-        px: [0, null, 4],
+        left: [0, -7],
+        px: [0, 4, 4],
         bg: "secondary",
         height: 4,
       },
