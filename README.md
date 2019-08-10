@@ -1,71 +1,51 @@
-# Gatsby Theme Jam Submission Example
+# Gatsby Theme Jam Example Submission
 
-This repo is an example and potential starting point for theme creators.
+This is a bare-bones Gatsby theme to showcase how a [Theme Jam](https://themejam.gatsbyjs.org) submission should look.
 
-It includes:
+See the [live site](https://gatsby-theme-jam-example.netlify.com)
 
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a site site (located in `site/`) that installs the theme
-- a Yarn workspaces configuration so the theme and site can be worked on
-  simultaneously
+## Installation
 
-## How to use this repo
+To use this theme in your Gatsby sites, follow these instructions:
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and
-`THEMENAME` with your theme name.
-
-1.  Fork this repo.
-
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace
-    `THEMENAME` with your chosen name.)
-
-3.  Get the theme set up locally.
+1.  Install the theme
 
     ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
-
-    # move into the directory
-    cd gatsby-theme-THEMENAME
-
-    # install dependencies
-    yarn
+    npm install --save gatsby-theme-jam-example
     ```
 
-4.  Update `theme/package.json` with your info.
+2.  Add the theme to your `gatsby-config.js`:
 
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
+    ```js
+    module.exports = {
+      plugins: ["gatsby-theme-jam-example"],
+    }
     ```
 
-5.  Start the site site.
-
+3.  Start your site
     ```sh
-    yarn workspace site develop
+    gatsby develop
     ```
 
-    The site will start at http://localhost:8000
+## Submission Checklist
 
-    **NOTE:** If you’re new to Yarn workspaces, check out
-    [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/)
-    for details.
+To ensure your Theme Jam submission [follows the rules](https://themejam.gatsbyjs.org/rules), use this checklist:
 
-6.  Start editing the theme! The site site is configured to use the local theme,
-    so any changes you make to the local `theme` directory will be reflected on
-    the site site for easy local development.
+- [ ] Use our [accessibility guide][a11y] to ensure your site meets our accessibility standards
+- [ ] Run a performance audit using [Lighthouse][] and/or [WebPageTest][]
+- [ ] Set up a live site using [Netlify][] or [GitHub Pages][]
+- [ ] Add installation documentation to the README
+- [ ] Update the `name` field in `package.json`
+- [ ] Update the `author` field in `package.json`
+- [ ] Update the `repository` field in `package.json`
+- [ ] Make sure the theme’s `keywords` in `package.json` include `gatsby`, `gatsby-theme`, and `gatsby-plugin`
+- [ ] Publish your theme to npm ([docs][npmpublish])
+- [ ] Submit your theme at https://themejam.gatsbyjs.org
 
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to
-    make sure your theme qualifies to win!
-
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
-
-## More information
-
-For contest rules and more information, see
-[the Theme Jam website](https://themejam.gatsbyjs.org).
+[a11y]: https://gatsbyjs.org/docs/making-your-site-accessible#how-to-improve-accessibility
+[lighthouse]: https://developers.google.com/web/tools/lighthouse/
+[axe]: https://www.deque.com/axe/
+[webpagetest]: http://webpagetest.org/
+[netlify]: https://netlify.com
+[github pages]: https://pages.github.com/
+[npmpublish]: https://docs.npmjs.com/cli/publish

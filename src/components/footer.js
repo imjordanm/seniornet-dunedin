@@ -48,20 +48,20 @@ export const FooterWrapper = props => (
         <Form signup={true} />
         <div sx={{ display: "flex", flexDirection: "column" }}>
           {props.footer.socialLinks.map(page => (
-            <div sx={socialStyles} key={page.label}>
+            <a
+              sx={socialStyles}
+              key={page.label}
+              href={page.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={page.label}
+            >
               <figure sx={iconStyles}>
                 <Img fluid={page.icon.asset.fluid} alt={page.label} />
               </figure>
-              <a
-                sx={{ flex: "10 1", textDecoration: "none", color: "#fff" }}
-                href={page.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={page.label}
-              >
-                {page.label}
-              </a>
-            </div>
+
+              <span>{page.label}</span>
+            </a>
           ))}
         </div>
         <span
@@ -86,7 +86,7 @@ const footerStyles = {
   maxWidth: "outer",
   display: "grid",
   gridTemplateColumns: [null, null, "repeat(2, 1fr)"],
-  gridColumnGap: [null, 7, 9],
+  gridColumnGap: [null, 9],
   gridRowGap: [7, 9],
 }
 
@@ -116,6 +116,8 @@ const socialStyles = {
   display: "flex",
   alignItems: "center",
   mb: [3, 4],
+  textDecoration: "none",
+  color: "#fff",
 }
 
 const iconStyles = {
@@ -123,8 +125,8 @@ const iconStyles = {
   bg: "rgba(255,255,255,0.15)",
   borderRadius: "4px",
   boxShadow: theme => `0px 3px 6px ${theme.colors.text}85`,
-  height: "1.5em",
-  width: "1.5em",
+  height: "1em",
+  width: "1em",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",

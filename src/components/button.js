@@ -15,7 +15,7 @@ const Button = props => {
       sx={{
         display: "inline-block",
         alignSelf: button.alignment,
-        mt: [7, null, 9],
+        mt: [6, 7, 9],
       }}
     >
       <button sx={props.style ? { variant: props.style } : buttonStyles}>

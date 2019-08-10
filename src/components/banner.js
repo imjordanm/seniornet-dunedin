@@ -11,7 +11,7 @@ const Banner = props => {
   return (
     <div sx={{ bg: "primary" }}>
       <div sx={bannerStyles}>
-        <div>
+        <div sx={{ marginBottom: [7, 0] }}>
           <Styled.h1 sx={{ color: "background" }}>{heading}</Styled.h1>
           {button && button.linkUrl ? (
             <Button node={button} style="buttons.primary" />
@@ -32,9 +32,10 @@ const Banner = props => {
 const bannerStyles = {
   margin: "0 auto",
   py: [8, 10],
-  width: ["mobile", null, "desktop"],
+  width: "mobile",
   maxWidth: "outer",
   display: "flex",
+  flexDirection: ["column", "row"],
 }
 
 export default Banner

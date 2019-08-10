@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Header } from "theme-ui"
 import { Link } from "gatsby"
+import Hamburger from "./hamburger"
 
 export const HeaderWrapper = props => (
   <Header>
@@ -14,18 +15,25 @@ export const HeaderWrapper = props => (
       </Link>
       <ul>
         {props.pages.map(page => (
-          <li key={page.title} sx={{ variant: "textStyles.caps" }}>
+          <li
+            key={page.title}
+            sx={{
+              display: ["none", null, "inline-block"],
+              variant: "textStyles.caps",
+            }}
+          >
             <Link to={page.slug.current}>{page.title}</Link>
           </li>
         ))}
       </ul>
+      <Hamburger pages={props.pages} />
     </div>
   </Header>
 )
 
 const headerStyles = {
   margin: "0 auto",
-  width: ["mobile"],
+  width: "mobile",
   maxWidth: "outer",
   display: "flex",
   justifyContent: "space-between",

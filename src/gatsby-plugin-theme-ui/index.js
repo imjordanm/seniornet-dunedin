@@ -86,7 +86,6 @@ export default {
       listStyle: "none",
     },
     li: {
-      display: "inline-block",
       mr: [4, 6],
       "&:last-of-type": {
         mr: 0,

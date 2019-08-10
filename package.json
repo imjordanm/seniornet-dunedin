@@ -1,7 +1,42 @@
 {
-  "private": true,
-  "workspaces": [
-    "theme",
-    "site"
+  "name": "seniornet",
+  "author": "Jordan McRae",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imjordanm/seniornet-dunedin.git"
+  },
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "gatsby": "^2.13.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "@emotion/core": "^10.0.14",
+    "@mdx-js/react": "^1.0.21",
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/cli": "^0.141.6",
+    "gatsby-image": "^2.2.7",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-theme-ui": "^0.2.2",
+    "gatsby-source-sanity": "^5.0.1",
+    "react-helmet": "^5.2.1",
+    "theme-ui": "^0.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin"
   ]
 }
