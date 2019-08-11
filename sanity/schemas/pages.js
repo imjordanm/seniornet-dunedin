@@ -4,6 +4,13 @@ export default {
   type: "document",
   fields: [
     {
+      name: "templateKey",
+      title: "Template Key",
+      type: "string",
+      hidden: true,
+      readOnly: true,
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",
@@ -33,7 +40,7 @@ export default {
       title: "Sections",
       name: "sections",
       type: "array",
-      of: [{ type: "section", name: "section", title: "Section" }],
+      of: [{ type: "section" }],
     },
   ],
 

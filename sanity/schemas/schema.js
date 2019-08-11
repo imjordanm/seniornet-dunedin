@@ -8,7 +8,9 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 import button from "./button"
 import pageImage from "./pageImage"
 import banner from "./banner"
+import gridItem from "./gridItem"
 import grid from "./grid"
+import formField from "./formField"
 import form from "./form"
 
 // We import object and document schemas
@@ -19,7 +21,7 @@ import footer from "./footer"
 import social from "./social"
 import pages from "./pages"
 import settings from "./settings"
-import post from "./post"
+import posts from "./posts"
 
 export default createSchema({
   name: "default",
@@ -28,14 +30,16 @@ export default createSchema({
     button,
     pageImage,
     banner,
+    gridItem,
     grid,
+    formField,
     form,
     header,
     footer,
     social,
     settings,
     pages,
-    post,
+    posts,
     section,
   ]),
 })

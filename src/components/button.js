@@ -26,16 +26,11 @@ const Button = props => {
 }
 
 const buttonStyles = {
+  variant: "buttons.base",
   border: theme => `3px solid ${theme.colors.secondary}`,
   bg: "transparent",
-  py: [4, 5],
-  px: [6, 7],
-  fontSize: 0,
-  textDecoration: "none",
   color: "#bfca1d",
-  variant: "textStyles.caps",
   position: "relative",
-  cursor: "pointer",
 
   "::before": {
     content: '""',

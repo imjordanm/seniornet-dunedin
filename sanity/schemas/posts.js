@@ -1,12 +1,19 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "posts",
+  title: "Posts",
   type: "document",
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
+    },
+    {
+      name: "description",
+      type: "text",
+      title: "Description",
+      description:
+        "Describe what the page is about for search engines and social media.",
     },
     {
       name: "slug",
@@ -17,6 +24,7 @@ export default {
         maxLength: 96,
       },
     },
+    { type: "banner", name: "banner", title: "Banner" },
     {
       name: "mainImage",
       title: "Main image",
@@ -30,7 +38,12 @@ export default {
       title: "Published at",
       type: "datetime",
     },
-    { type: "section", name: "section", title: "Section" },
+    {
+      title: "Sections",
+      name: "sections",
+      type: "array",
+      of: [{ type: "section" }],
+    },
   ],
 
   preview: {

@@ -16,7 +16,7 @@ const PortableText = ({ blocks }) => {
   return blocks.map(section => (
     <div sx={{ bg: section.background }} className={section.background}>
       <BasePortableText
-        sx={contentStyles}
+        sx={{ variant: "sections.base" }}
         blocks={section.content}
         serializers={serializers}
         projectId={process.env.SANITY_PROJECT_ID}
@@ -52,15 +52,6 @@ const serializers = {
   // see: https://github.com/sanity-io/block-content-to-react#proptypes
   //list: Styled.ul,
   //listItem: Styled.li,
-}
-
-const contentStyles = {
-  display: "flex",
-  flexDirection: "column",
-  margin: "0 auto",
-  width: ["mobile", null, "desktop"],
-  maxWidth: "content",
-  py: [10, null, 12],
 }
 
 export default PortableText

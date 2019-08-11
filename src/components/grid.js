@@ -3,10 +3,22 @@ import { jsx, Styled } from "theme-ui"
 import Figure from "./figure"
 
 const Grid = props => {
-  if (!props.node && !props.node.items) {
+  if (!props.posts && !props.node && !props.node.items) {
     return null
   }
-  let grid = props.node.items
+  let grid
+  if (props.node && props.node.items) {
+    grid = props.node.items
+  } else if (props.posts) {
+    console.log(props.posts)
+    grid = props.posts.map(post => ({
+      heading: post.node.title,
+      text: post.node.slug.current,
+    }))
+  } else {
+    return
+  }
+
   let hasImage = grid.some(item => item.hasOwnProperty("itemImage"))
   return (
     <div>
@@ -24,12 +36,12 @@ const ImageGrid = props => (
             <Figure node={item.itemImage} width={"500"} grid={true} />
           </div>
         ) : null}
-        {item.heading ? <Styled.h3>{item.heading}</Styled.h3> : null}
-        {item.text ? (
+        {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
+        {item.text && (
           <Styled.p sx={{ fontSize: [0, 1, 2], lineHeight: "smallBody" }}>
             {item.text}
           </Styled.p>
-        ) : null}
+        )}
       </div>
     ))}
   </div>
@@ -39,12 +51,12 @@ const NoImageGrid = props => (
   <div sx={gridStyles}>
     {props.grid.map(item => (
       <div key={item.heading} sx={itemStyles}>
-        {item.heading ? <Styled.h3>{item.heading}</Styled.h3> : null}
-        {item.text ? (
+        {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
+        {item.text && (
           <Styled.p sx={{ fontSize: [0, 1, 2], lineHeight: "smallBody" }}>
             {item.text}
           </Styled.p>
-        ) : null}
+        )}
       </div>
     ))}
   </div>

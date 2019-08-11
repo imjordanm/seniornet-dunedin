@@ -100,16 +100,32 @@ export default {
     },
   },
   buttons: {
+    base: {
+      py: [4, 5],
+      px: [6, 7],
+      fontSize: 0,
+      textDecoration: "none",
+      variant: "textStyles.caps",
+      cursor: "pointer",
+    },
     primary: {
+      variant: "buttons.base",
       bg: "rgba(255,255,255,0.15)",
       border: "none",
       color: "#fff",
-      variant: "textStyles.caps",
       py: [4, 5],
       px: [5, 6],
       boxShadow: theme => `0px 2px 8px ${theme.colors.text}85`,
-      cursor: "pointer",
-      fontSize: 0,
+    },
+  },
+  sections: {
+    base: {
+      display: "flex",
+      flexDirection: "column",
+      margin: "0 auto",
+      width: ["mobile", null, "desktop"],
+      maxWidth: "content",
+      py: [10, null, 12],
     },
   },
   styles: {
