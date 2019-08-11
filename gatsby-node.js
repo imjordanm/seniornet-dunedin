@@ -34,7 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const pages = result.data.allSanityPages.edges || []
-  const parentDir;
+  let parentDir
 
   pages.forEach((edge, index) => {
     const path = edge.node.slug.current

@@ -10,7 +10,6 @@ const Grid = props => {
   if (props.node && props.node.items) {
     grid = props.node.items
   } else if (props.posts) {
-    console.log(props.posts)
     grid = props.posts.map(post => ({
       heading: post.node.title,
       text: post.node.slug.current,
