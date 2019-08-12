@@ -8,6 +8,7 @@ import Helmet from "react-helmet"
 
 import Gilroy from "../fonts/Gilroy-ExtraBold.woff2"
 import Inter from "../fonts/Inter-Regular.woff2"
+import Fonts from "../fonts/fonts.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -90,14 +91,13 @@ const Layout = ({ children }) => {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <style type="text/css" href="../fonts/fonts.css" />
+        <style type="text/css" href={Fonts} />
         <script type="text/javascript">{`(function() {
   if ("fonts" in document) {
     // Optimization for Repeat Views
     if (sessionStorage.fontsLoadedCriticalFoftPreload) {
       document.documentElement.className += " fonts-loaded-2"
-      return
-    }
+    } else {
     document.fonts.load("800 1em Gilroy").then(function() {
       document.documentElement.className += " fonts-loaded-1"
       Promise.all([document.fonts.load("400 1em Inter")]).then(function() {
@@ -106,6 +106,7 @@ const Layout = ({ children }) => {
         sessionStorage.fontsLoadedCriticalFoftPreload = true
       })
     })
+    }
   }
 })()`}</script>
       </Helmet>
