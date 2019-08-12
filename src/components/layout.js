@@ -8,7 +8,6 @@ import Helmet from "react-helmet"
 
 import Gilroy from "../fonts/Gilroy-ExtraBold.woff2"
 import Inter from "../fonts/Inter-Regular.woff2"
-import Fonts from "../fonts/fonts.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -91,7 +90,7 @@ const Layout = ({ children }) => {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <style type="text/css" href={Fonts} />
+        <style type="text/css" href="../fonts/fonts.css" />
         <script type="text/javascript">{`(function() {
   if ("fonts" in document) {
     // Optimization for Repeat Views
