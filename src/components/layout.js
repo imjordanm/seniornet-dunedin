@@ -5,7 +5,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
 import { FooterWrapper as Footer } from "../components/footer"
 import Helmet from "react-helmet"
-import Fonts from "../fonts/fonts.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -78,7 +77,7 @@ const Layout = ({ children }) => {
           {`
         (function() {
           var css = document.createElement('link');
-          css.href = ${Fonts};
+          css.href = '../fonts/fonts.css';
           css.rel = 'stylesheet';
           css.property = 'stylesheet';
           css.type = 'text/css';
@@ -102,6 +101,7 @@ const Layout = ({ children }) => {
         })()
       `}
         </script>
+        <noscript>{`<link rel="stylesheet" href="../fonts/fonts.css">`}</noscript>
       </Helmet>
       <Header
         pages={data.sanitySettings.header.headerPages}
