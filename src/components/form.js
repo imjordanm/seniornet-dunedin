@@ -139,25 +139,6 @@ const FormSignup = props => (
         required={true}
         placeholder="Enter email to join our mailing list."
       />
-
-      {props.isValid === true ? (
-        <div
-          id="recaptcha"
-          className="g-recaptcha"
-          data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
-        />
-      ) : (
-        <div className="captcha-form">
-          <div
-            id="recaptcha"
-            className="g-recaptcha"
-            data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
-          />
-          <div className="captcha-text">
-            <span>Please tick the reCAPTCHA before resubmitting the form.</span>
-          </div>
-        </div>
-      )}
       <button sx={{ variant: "buttons.primary" }} type="submit">
         Subscribe
       </button>
