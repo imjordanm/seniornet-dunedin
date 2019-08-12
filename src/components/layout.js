@@ -74,19 +74,17 @@ const Layout = ({ children }) => {
         `}
       />
       <Helmet>
-        <script type="text/javascript">
-          {`
-        var giftofspeed = document.createElement('link');
-        giftofspeed.rel = 'stylesheet';
-        giftofspeed.href = ${Fonts};
-        giftofspeed.type = 'text/css';
-        var godefer = document.getElementsByTagName('link')[0];
-        godefer.parentNode.insertBefore(giftofspeed, godefer);
-      `}
-        </script>
-        <script async defer type="text/javascript">
+        <noscript>{`<link rel="stylesheet" href=${Fonts}>`}</noscript>
+        <script defer type="text/javascript">
           {`
         (function() {
+          var css = document.createElement('link');
+          css.href = ${Fonts};
+          css.rel = 'stylesheet';
+          css.property = 'stylesheet';
+          css.type = 'text/css';
+          document.getElementsByTagName('head')[0].appendChild(css);
+
           if ("fonts" in document) {
             // Optimization for Repeat Views
             if (sessionStorage.fontsLoadedCriticalFoftPreload) {
@@ -105,9 +103,6 @@ const Layout = ({ children }) => {
         })()
       `}
         </script>
-        <noscript>
-          {`<link rel="stylesheet" type="text/css" href=${Fonts} />`}
-        </noscript>
       </Helmet>
       <Header
         pages={data.sanitySettings.header.headerPages}
