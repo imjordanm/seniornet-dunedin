@@ -6,6 +6,9 @@ import { HeaderWrapper as Header } from "../components/header"
 import { FooterWrapper as Footer } from "../components/footer"
 import Helmet from "react-helmet"
 
+import Gilroy from "../fonts/Gilroy-ExtraBold.woff2"
+import Inter from "../fonts/Inter-Regular.woff2"
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -75,18 +78,18 @@ const Layout = ({ children }) => {
       <Helmet>
         <link
           rel="preload"
-          href="/static/gilroy-extrabold-e30bf7c3b3a5e81c36ad69840c17ff5e.woff2"
           as="font"
+          href={Gilroy}
           type="font/woff2"
-          crossorigin
-        ></link>
+          crossOrigin="anonymous"
+        />
         <link
           rel="preload"
-          href="/static/inter-regular-0b0b3f3c5998ada1b7cb56f675598fc2.woff2"
           as="font"
+          href={Inter}
           type="font/woff2"
-          crossorigin
-        ></link>
+          crossOrigin="anonymous"
+        />
       </Helmet>
       <Header
         pages={data.sanitySettings.header.headerPages}
