@@ -9,6 +9,7 @@ import PortableText from "../components/portable-text"
 export const query = graphql`
   query($slug: String!) {
     sanityPages(slug: { current: { eq: $slug } }) {
+      templateKey
       title
       description
       banner {
@@ -36,9 +37,18 @@ export const query = graphql`
 
 const DefaultTemplate = ({ data }) => {
   let page = data.sanityPages
+  let captcha = false
+  if (page.templateKey === "contact") {
+    captcha = true
+  }
+
   return (
     <Layout>
-      <SEO title={page.title} description={page.description} />
+      <SEO
+        title={page.title}
+        description={page.description}
+        captcha={captcha}
+      />
       <Banner banner={page.banner} />
       <PortableText blocks={page._rawSections} />
     </Layout>

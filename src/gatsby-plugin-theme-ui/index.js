@@ -117,6 +117,31 @@ export default {
       px: [5, 6],
       boxShadow: theme => `0px 2px 8px ${theme.colors.text}85`,
     },
+    secondary: {
+      variant: "buttons.base",
+      border: theme => `3px solid ${theme.colors.secondary}`,
+      bg: "transparent",
+      color: "#bfca1d",
+      position: "relative",
+
+      "::before": {
+        content: '""',
+        display: "block",
+        position: "absolute",
+        top: "50%",
+        transform: "translateY(-50%)",
+        left: -6,
+        px: [0, 5],
+        bg: "#bfca1d",
+        height: 3,
+        transition: "transform 0.25s 0.1s",
+      },
+      ":hover": {
+        "::before": {
+          transform: "translateY(-50%) translateX(20%)",
+        },
+      },
+    },
   },
   sections: {
     base: {
@@ -125,7 +150,7 @@ export default {
       margin: "0 auto",
       width: ["mobile", null, "desktop"],
       maxWidth: "content",
-      py: [10, null, 12],
+      py: [9, 11, 12],
     },
   },
   styles: {

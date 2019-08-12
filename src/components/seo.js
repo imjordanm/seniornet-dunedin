@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-
-{/*Add this to <Helmet>?:
+{
+  /*Add this to <Helmet>?:
 <link href="https://cdn.sanity.io/" rel="preconnect" crossorigin />
         <link
           rel="preload"
@@ -15,9 +15,10 @@ import { StaticQuery, graphql } from "gatsby"
           rel="preload"
           href="/static/ftn45-webfont-c2439033a37a428d148b673062131f47.woff2"
           as="font"
-        />*/}
+        />*/
+}
 
-export function SEO({ description, lang, meta, keywords, title }) {
+export function SEO({ description, lang, meta, keywords, title, captcha }) {
   return (
     <StaticQuery
       query={seoQuery}
@@ -30,6 +31,17 @@ export function SEO({ description, lang, meta, keywords, title }) {
             }}
             title={title}
             titleTemplate={`%s | ${data.sanitySettings.title}`}
+            script={
+              captcha
+                ? [
+                    {
+                      src: "https://www.google.com/recaptcha/api.js",
+                      async: true,
+                      defer: true,
+                    },
+                  ]
+                : null
+            }
             meta={[
               {
                 name: `description`,

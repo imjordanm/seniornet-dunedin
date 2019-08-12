@@ -5,7 +5,6 @@ import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Banner from "../components/banner"
 import Grid from "../components/grid"
-import PortableText from "../components/portable-text"
 
 // Declaring query here allows us to shadow components
 export const query = graphql`

@@ -14,14 +14,17 @@ export default class Form extends React.PureComponent {
   }
 
   formValid(event) {
-    /*if (grecaptcha.getResponse() === "") {
-      event.preventDefault()
-      if (this.state.isValid) {
-        this.setState({ isValid: false })
+    console.log(typeof grecaptcha)
+    if (typeof grecaptcha !== "undefined") {
+      if (typeof grecaptcha === "") {
+        event.preventDefault()
+        if (this.state.isValid) {
+          this.setState({ isValid: false })
+        }
+      } else if (this.state.isValid === false) {
+        this.setState({ isValid: true })
       }
-    } else if (this.state.isValid === false) {
-      this.setState({ isValid: true })
-    }*/
+    }
   }
 
   render() {
@@ -30,7 +33,7 @@ export default class Form extends React.PureComponent {
       form = this.props.node.fields
     }
     return (
-      <React.Fragment>
+      <>
         {this.props.signup ? (
           <FormSignup isValid={this.state.isValid} formValid={this.formValid} />
         ) : form ? (
@@ -40,13 +43,14 @@ export default class Form extends React.PureComponent {
             formValid={this.formValid}
           />
         ) : null}
-      </React.Fragment>
+      </>
     )
   }
 }
 
 const FormContact = props => (
   <form
+    sx={formStyles}
     name="contact"
     autoComplete="nope"
     method="POST"
@@ -56,7 +60,7 @@ const FormContact = props => (
   >
     <input type="hidden" name="form-name" value="contact" />
     {props.form.map(item => (
-      <div key={item.label}>
+      <div className="formFields" sx={formStyles} key={item.label}>
         <label htmlFor={item.label}>
           {item.label}
           {item.required ? "*" : ""}
@@ -88,16 +92,26 @@ const FormContact = props => (
     ))}
 
     {props.isValid === true ? (
-      <div id="recaptcha" className="g-recaptcha" data-sitekey="enterhere" />
+      <div
+        id="recaptcha"
+        className="g-recaptcha"
+        data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
+      />
     ) : (
       <div className="captcha-form">
-        <div id="recaptcha" className="g-recaptcha" data-sitekey="enterhere" />
+        <div
+          id="recaptcha"
+          className="g-recaptcha"
+          data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
+        />
         <div className="captcha-text">
           <span>Please tick the reCAPTCHA before resubmitting the form.</span>
         </div>
       </div>
     )}
-    <button type="submit">Send Message</button>
+    <button sx={{ variant: "buttons.secondary" }} type="submit">
+      Send Message
+    </button>
   </form>
 )
 
@@ -127,13 +141,17 @@ const FormSignup = props => (
       />
 
       {props.isValid === true ? (
-        <div id="recaptcha" className="g-recaptcha" data-sitekey="enterhere" />
+        <div
+          id="recaptcha"
+          className="g-recaptcha"
+          data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
+        />
       ) : (
         <div className="captcha-form">
           <div
             id="recaptcha"
             className="g-recaptcha"
-            data-sitekey="enterhere"
+            data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
           />
           <div className="captcha-text">
             <span>Please tick the reCAPTCHA before resubmitting the form.</span>
@@ -146,6 +164,31 @@ const FormSignup = props => (
     </div>
   </form>
 )
+
+const formStyles = {
+  mt: [4, 5, 7],
+  ".g-recaptcha": {
+    mb: [3, 5],
+  },
+  ".formFields": {
+    display: "flex",
+    flexDirection: "column",
+    mb: [6, 8],
+    label: {
+      variant: "textStyles.caps",
+      mb: 4,
+    },
+    "input, textarea": {
+      border: theme => `3px solid ${theme.colors.secondary}`,
+      color: "text",
+      padding: [3, 4],
+    },
+    textarea: {
+      height: ["8em", "12em"],
+      resize: "vertical",
+    },
+  },
+}
 
 const signupStyles = {
   display: "flex",
