@@ -18,3 +18,10 @@
         url("./Inter-Regular.woff") format("woff");
 
 }
+
+.fonts-loaded-1 body {
+    font-family: Gilroy;
+}
+.fonts-loaded-2 body {
+    font-family: Inter;
+}
