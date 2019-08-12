@@ -4,11 +4,26 @@ import { Layout as StyledLayout, Main } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
 import { FooterWrapper as Footer } from "../components/footer"
-import Helmet from "react-helmet"
 
-import Gilroy from "../fonts/Gilroy-ExtraBold.woff2"
-import Inter from "../fonts/Inter-Regular.woff2"
-import Fonts from "../fonts/fonts.css"
+import "../fonts/fonts.css"
+
+if (typeof window !== "undefined") {
+  if ("fonts" in document) {
+    // Optimization for Repeat Views
+    if (sessionStorage.fontsLoadedCriticalFoftDataUri) {
+      document.documentElement.className += " fonts-loaded-2"
+    } else {
+      document.fonts.load("1em Gilroy").then(function() {
+        document.documentElement.className += " fonts-loaded-1"
+        Promise.all([document.fonts.load("400 1em Inter")]).then(function() {
+          document.documentElement.className += " fonts-loaded-2"
+          // Optimization for Repeat Views
+          sessionStorage.fontsLoadedCriticalFoftDataUri = true
+        })
+      })
+    }
+  }
+}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -76,40 +91,6 @@ const Layout = ({ children }) => {
           ${globalStyles}
         `}
       />
-      <Helmet>
-        <link
-          rel="preload"
-          as="font"
-          href={Gilroy}
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="font"
-          href={Inter}
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <style type="text/css" href={Fonts} />
-        <script async defer type="text/javascript">{`(function() {
-  if ("fonts" in document) {
-    // Optimization for Repeat Views
-    if (sessionStorage.fontsLoadedCriticalFoftPreload) {
-      document.documentElement.className += " fonts-loaded-2"
-    } else {
-    document.fonts.load("800 1em Gilroy").then(function() {
-      document.documentElement.className += " fonts-loaded-1"
-      Promise.all([document.fonts.load("400 1em Inter")]).then(function() {
-        document.documentElement.className += " fonts-loaded-2"
-        // Optimization for Repeat Views
-        sessionStorage.fontsLoadedCriticalFoftPreload = true
-      })
-    })
-    }
-  }
-})()`}</script>
-      </Helmet>
       <Header
         pages={data.sanitySettings.header.headerPages}
         logo={data.sanitySettings.header.logo.asset.url}
