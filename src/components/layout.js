@@ -74,7 +74,6 @@ const Layout = ({ children }) => {
         `}
       />
       <Helmet>
-        <noscript>{`<link rel="stylesheet" href=${Fonts}>`}</noscript>
         <script defer type="text/javascript">
           {`
         (function() {
