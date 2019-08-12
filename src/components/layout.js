@@ -94,7 +94,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link
           rel="preload"
-          href="./Gilroy-ExtraBold.woff2"
+          href="../fonts/Gilroy-ExtraBold.woff2"
           as="font"
           type="font/woff2"
           crossorigin
