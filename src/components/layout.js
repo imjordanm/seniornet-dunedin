@@ -4,7 +4,7 @@ import { Layout as StyledLayout, Main } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
 import { FooterWrapper as Footer } from "../components/footer"
-import Helmet from "react-helmet"
+import Fonts from "../fonts/fonts.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -72,37 +72,6 @@ const Layout = ({ children }) => {
           ${globalStyles}
         `}
       />
-      <Helmet>
-        <script defer type="text/javascript">
-          {`
-        (function() {
-          var css = document.createElement('link');
-          css.href = '../fonts/fonts.css';
-          css.rel = 'stylesheet';
-          css.property = 'stylesheet';
-          css.type = 'text/css';
-          document.getElementsByTagName('head')[0].appendChild(css);
-
-          if ("fonts" in document) {
-            // Optimization for Repeat Views
-            if (sessionStorage.fontsLoadedCriticalFoftPreload) {
-              document.documentElement.className += " fonts-loaded-2"
-            } else {
-            document.fonts.load("800 1em Gilroy").then(function() {
-              document.documentElement.className += " fonts-loaded-1"
-              Promise.all([document.fonts.load("400 1em Inter")]).then(function() {
-                document.documentElement.className += " fonts-loaded-2"
-                // Optimization for Repeat Views
-                sessionStorage.fontsLoadedCriticalFoftPreload = true
-              })
-            })
-            }
-          }
-        })()
-      `}
-        </script>
-        <noscript>{`<link rel="stylesheet" href="../fonts/fonts.css">`}</noscript>
-      </Helmet>
       <Header
         pages={data.sanitySettings.header.headerPages}
         logo={data.sanitySettings.header.logo.asset.url}
