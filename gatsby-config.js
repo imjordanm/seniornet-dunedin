@@ -18,15 +18,6 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-react-helmet",
     {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["Gilroy", "Inter"],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
-    },
-    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: process.env.SANITY_PROJECT_ID,

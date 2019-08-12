@@ -5,17 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 {
   /*Add this to <Helmet>?:
-<link href="https://cdn.sanity.io/" rel="preconnect" crossorigin />
-        <link
-          rel="preload"
-          href="/static/ftn65-webfont-0ddc10d20bd3c3e162e4ea9b49c82856.woff2"
-          as="font"
-        />
-        <link
-          rel="preload"
-          href="/static/ftn45-webfont-c2439033a37a428d148b673062131f47.woff2"
-          as="font"
-        />*/
+<link href="https://cdn.sanity.io/" rel="preconnect" crossorigin /> */
 }
 
 export function SEO({ description, lang, meta, keywords, title, captcha }) {
