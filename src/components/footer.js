@@ -116,6 +116,9 @@ const socialStyles = {
   display: "flex",
   alignItems: "center",
   mb: [3, 4],
+  "&:last-of-type": {
+    mb: 0,
+  },
   textDecoration: "none",
   color: "#fff",
 }
