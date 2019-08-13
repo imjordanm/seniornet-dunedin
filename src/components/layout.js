@@ -4,7 +4,7 @@ import { Layout as StyledLayout, Main } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
 import { FooterWrapper as Footer } from "../components/footer"
-import Fonts from "../fonts/fonts.css"
+import "../fonts/fonts.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

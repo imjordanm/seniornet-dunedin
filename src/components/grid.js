@@ -35,12 +35,14 @@ const ImageGrid = props => (
             <Figure node={item.itemImage} width={"500"} grid={true} />
           </div>
         ) : null}
-        {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
-        {item.text && (
-          <Styled.p sx={{ fontSize: [0, 1, 2], lineHeight: "smallBody" }}>
-            {item.text}
-          </Styled.p>
-        )}
+        <div sx={{ px: [6] }}>
+          {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
+          {item.text && (
+            <Styled.p sx={{ fontSize: [0, 1, 2], lineHeight: "smallBody" }}>
+              {item.text}
+            </Styled.p>
+          )}
+        </div>
       </div>
     ))}
   </div>
@@ -73,7 +75,7 @@ const gridStyles = {
 
 const itemStyles = {
   bg: "background",
-  p: [6, 7, 8],
+  p: [6, null, 8],
   boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
 }
 

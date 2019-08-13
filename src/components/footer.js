@@ -73,7 +73,8 @@ export const FooterWrapper = props => (
             mt: 7,
           }}
         >
-          Copyright © 2019 SeniorNet Dunedin. All Rights Reserved
+          Copyright © {new Date().getFullYear()} SeniorNet Dunedin. All Rights
+          Reserved
         </span>
       </div>
     </div>
@@ -82,8 +83,8 @@ export const FooterWrapper = props => (
 
 const footerStyles = {
   margin: "0 auto",
-  width: ["mobile"],
-  maxWidth: "outer",
+  width: "mobile",
+  maxWidth: "1600px",
   display: "grid",
   gridTemplateColumns: [null, null, "repeat(2, 1fr)"],
   gridColumnGap: [null, 9],
@@ -109,7 +110,7 @@ const listStyles = {
   display: "grid",
   gridTemplateColumns: ["repeat(2, 1fr)"],
   gridRowGap: [2, 3, 4],
-  li: { mr: 0 },
+  li: { mr: 0, fontFamily: "heading", letterSpacing: "0.05em" },
 }
 
 const socialStyles = {
@@ -121,6 +122,8 @@ const socialStyles = {
   },
   textDecoration: "none",
   color: "#fff",
+  fontFamily: "heading",
+  letterSpacing: "0.05em",
 }
 
 const iconStyles = {

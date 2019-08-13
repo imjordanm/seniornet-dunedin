@@ -34,7 +34,7 @@ export const HeaderWrapper = props => (
 const headerStyles = {
   margin: "0 auto",
   width: "mobile",
-  maxWidth: "outer",
+  maxWidth: "1600px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",

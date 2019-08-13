@@ -14,7 +14,6 @@ export default class Form extends React.PureComponent {
   }
 
   formValid(event) {
-    console.log(typeof grecaptcha)
     if (typeof grecaptcha !== "undefined") {
       if (typeof grecaptcha === "") {
         event.preventDefault()

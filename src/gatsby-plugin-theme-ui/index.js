@@ -56,7 +56,7 @@ export default {
     bold: "700",
   },
   letterSpacings: {
-    heading: "-0.05em",
+    heading: "0em",
     caps: "0.15em",
   },
   lineHeights: {
@@ -148,9 +148,9 @@ export default {
       display: "flex",
       flexDirection: "column",
       margin: "0 auto",
-      width: ["mobile", null, "desktop"],
+      width: ["mobile", "mobile", "desktop"],
       maxWidth: "content",
-      py: [9, 11, 12],
+      py: [9, 10, 11],
     },
   },
   styles: {
@@ -183,7 +183,7 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [4, 5, 6],
+      fontSize: [5, 6, 7],
     },
     h2: {
       variant: "textStyles.caps",
