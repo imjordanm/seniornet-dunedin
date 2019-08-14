@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import BasePortableText from "@sanity/block-content-to-react"
 import { Link } from "gatsby"
 import BlockRenderer from "./block-renderer"
+import ListRenderer from "./list-renderer"
 import Button from "./button"
 import Figure from "./figure"
 import Grid from "./grid"
@@ -13,10 +14,18 @@ const PortableText = ({ blocks }) => {
     return null
   }
 
-  return blocks.map(section => (
+  return blocks.map((section, index, sections) => (
     <div sx={{ bg: section.background }} className={section.background}>
       <BasePortableText
-        sx={{ variant: "sections.base" }}
+        sx={
+          index > 0 &&
+          sections[index].background == sections[index - 1].background
+            ? {
+                variant: "sections.base",
+                pt: "0 !important",
+              }
+            : { variant: "sections.base" }
+        }
         blocks={section.content}
         serializers={serializers}
         projectId={process.env.SANITY_PROJECT_ID}
@@ -50,8 +59,8 @@ const serializers = {
   },
   // For a full list of magic types that don’t go in the `types` object,
   // see: https://github.com/sanity-io/block-content-to-react#proptypes
-  //list: Styled.ul,
-  //listItem: Styled.li,
+  list: ListRenderer,
+  //listItem: ListRenderer,
 }
 
 export default PortableText

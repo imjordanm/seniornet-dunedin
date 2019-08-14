@@ -81,11 +81,13 @@ export default {
   },
   navigation: {
     ul: {
+      fontSize: 0,
       padding: 0,
       margin: 0,
       listStyle: "none",
     },
     li: {
+      fontSize: 2,
       mr: [4, 6],
       "&:last-of-type": {
         mr: 0,
@@ -212,6 +214,17 @@ export default {
     p: {
       fontSize: [1, 2, 3],
       mb: 6,
+      "&:last-of-type": {
+        mb: 0,
+      },
+    },
+    ul: {
+      fontSize: [1, 2, 3],
+      pl: 4,
+    },
+    li: {
+      pl: 2,
+      mb: 2,
       "&:last-of-type": {
         mb: 0,
       },

@@ -3,11 +3,6 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
-{
-  /*Add this to <Helmet>?:
-<link href="https://cdn.sanity.io/" rel="preconnect" crossorigin /> */
-}
-
 export function SEO({ description, lang, meta, keywords, title, captcha }) {
   return (
     <StaticQuery

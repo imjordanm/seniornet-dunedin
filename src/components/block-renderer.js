@@ -1,7 +1,3 @@
-// Sanity uses Portable Text, which adds extra complexity for displaying
-// content. In order to apply theme styles to our output, we need to write a
-// bunch of business logic in this component to detect “styles” and return
-// React components for them.
 import React from "react"
 import { Styled } from "theme-ui"
 

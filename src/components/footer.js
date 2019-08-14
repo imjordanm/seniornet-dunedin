@@ -35,12 +35,13 @@ export const FooterWrapper = props => (
           sx={{
             fontSize: 0,
             fontWeight: "normal",
-            fontStyle: "italic",
+            opacity: "0.8",
             display: ["none", "block"],
             mt: [null, 8, 9],
           }}
         >
-          Copyright © 2019 SeniorNet Dunedin. All Rights Reserved
+          Copyright © {new Date().getFullYear()} SeniorNet Dunedin. All Rights
+          Reserved
         </span>
       </div>
       <div>
@@ -68,7 +69,7 @@ export const FooterWrapper = props => (
           sx={{
             fontSize: 0,
             fontWeight: "normal",
-            fontStyle: "italic",
+            opacity: "0.8",
             display: ["block", "none"],
             mt: 7,
           }}
