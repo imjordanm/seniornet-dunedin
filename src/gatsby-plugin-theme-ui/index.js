@@ -4,10 +4,10 @@
  * @see https://theme-ui.com/gatsby-plugin/
  */
 export default {
-  breakpoints: ["680px", "1160px"],
+  breakpoints: ["680px", "860px", "1190px"],
   sizes: {
-    mobile: "85vw",
-    desktop: "75vw",
+    mobile: "80vw",
+    desktop: "85vw",
     content: 1000,
     outer: 1216,
   },
@@ -81,13 +81,12 @@ export default {
   },
   navigation: {
     ul: {
-      fontSize: 0,
       padding: 0,
       margin: 0,
       listStyle: "none",
     },
     li: {
-      fontSize: 2,
+      fontSize: [null, 1],
       mr: [4, 6],
       "&:last-of-type": {
         mr: 0,
@@ -150,9 +149,14 @@ export default {
       display: "flex",
       flexDirection: "column",
       margin: "0 auto",
-      width: ["mobile", "mobile", "desktop"],
+      width: [
+        "mobile",
+        "mobile",
+        "mobile",
+        theme => `calc(${theme.sizes.desktop} - 220px)`,
+      ],
       maxWidth: "content",
-      py: [9, 10, 11],
+      py: [9, 10, null, 11],
     },
   },
   styles: {
@@ -185,15 +189,15 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [5, 6, 7],
+      fontSize: [5, 6, null, 7],
     },
     h2: {
       variant: "textStyles.caps",
       color: "secondary",
       position: "relative",
-      fontSize: [2, 2, 3],
-      mb: [4, 5, 6],
-      ml: [0, 7, 0],
+      fontSize: [2, 2, 2, 3],
+      mb: [4, 5, 5, 6],
+      ml: [0, 7, 7, 0],
       "::before": {
         content: '""',
         display: "block",
@@ -201,28 +205,28 @@ export default {
         top: "50%",
         transform: "translateY(-50%)",
         left: [0, -7],
-        px: [0, 4, 4],
+        px: [0, 4],
         bg: "secondary",
         height: 4,
       },
     },
     h3: {
       variant: "textStyles.heading",
-      fontSize: [1, 2, 3],
+      fontSize: [1, 2, null, 3],
       mb: [2, 3],
     },
     p: {
-      fontSize: [1, 2, 3],
+      fontSize: [1, 2, null, 3],
       mb: 6,
       "&:last-of-type": {
         mb: 0,
       },
     },
     ul: {
-      fontSize: [1, 2, 3],
       pl: 4,
     },
     li: {
+      fontSize: [null, 2, null, 3],
       pl: 2,
       mb: 2,
       "&:last-of-type": {

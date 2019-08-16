@@ -25,7 +25,7 @@ const Hamburger = props => {
         className={isOpen ? `active` : `inactive`}
         onClick={() => setOpen(!isOpen)}
         sx={{
-          display: ["block", null, "none"],
+          display: ["block", null, null, "none"],
           background: `none`,
           border: 0,
           cursor: `pointer`,
@@ -73,7 +73,7 @@ const Hamburger = props => {
       {isOpen && (
         <div
           sx={{
-            display: [`flex`, null, `none`],
+            display: [`flex`, null, null, `none`],
             alignItems: `center`,
             bg: `primary`,
             transition: theme => `all 250ms`,

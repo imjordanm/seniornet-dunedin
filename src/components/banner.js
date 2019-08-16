@@ -44,7 +44,7 @@ const Banner = props => {
         </div>
         {pageImage && pageImage.asset && (
           <Img
-            sx={{ width: "100%", mt: [6, 0], flex: "1 1" }}
+            sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
             fluid={pageImage.asset.fluid}
             alt={pageImage.asset.alt}
           />
@@ -56,11 +56,11 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  py: [7, 8, 10],
-  width: "mobile",
+  py: [7, 8, null, 10],
+  width: ["mobile", null, null, "desktop"],
   maxWidth: "1600px",
   display: "flex",
-  flexDirection: ["column", "row"],
+  flexDirection: ["column", null, null, "row"],
 }
 
 export default Banner

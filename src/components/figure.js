@@ -18,8 +18,16 @@ const Figure = ({ node, grid, width }) => {
   )
 
   return (
-    <figure sx={grid ? imageStyles : { mt: [6, 8, 10] }}>
-      <Img fluid={fluidProps} alt={node.alt} />
+    <figure sx={grid ? imageStyles : { mt: [6, 8, null, 10] }}>
+      <Img
+        fluid={fluidProps}
+        alt={node.alt}
+        imgStyle={{
+          width: "unset",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      />
       <figcaption sx={{ opacity: "0" }}>{node.alt}</figcaption>
     </figure>
   )
@@ -30,8 +38,7 @@ const imageStyles = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  height: [null, "250px", "350px"],
-  maxWidth: ["250px", null, "none"],
+  height: ["100px", "150px", null, "350px"],
 }
 
 export default Figure

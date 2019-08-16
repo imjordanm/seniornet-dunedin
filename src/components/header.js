@@ -18,7 +18,7 @@ export const HeaderWrapper = props => (
           <li
             key={page.title}
             sx={{
-              display: ["none", null, "inline-block"],
+              display: ["none", null, null, "inline-block"],
               variant: "textStyles.caps",
             }}
           >
@@ -33,7 +33,7 @@ export const HeaderWrapper = props => (
 
 const headerStyles = {
   margin: "0 auto",
-  width: "mobile",
+  width: ["mobile", null, null, "desktop"],
   maxWidth: "1600px",
   display: "flex",
   justifyContent: "space-between",

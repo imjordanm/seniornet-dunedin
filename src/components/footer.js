@@ -36,8 +36,8 @@ export const FooterWrapper = props => (
             fontSize: 0,
             fontWeight: "normal",
             opacity: "0.8",
-            display: ["none", "block"],
-            mt: [null, 8, 9],
+            display: ["none", null, null, "block"],
+            mt: [null, 8, null, 9],
           }}
         >
           Copyright © {new Date().getFullYear()} SeniorNet Dunedin. All Rights
@@ -47,7 +47,14 @@ export const FooterWrapper = props => (
       <div>
         <Styled.h3 sx={headingStyles}>{props.footer.rightHeading}</Styled.h3>
         <Form signup={true} />
-        <div sx={{ display: "flex", flexDirection: "column" }}>
+        <div
+          sx={{
+            display: "grid",
+            gridTemplateColumns: ["none", "none", "repeat(2, 1fr)", "none"],
+            gridColumnGap: [null, null, 4],
+            gridRowGap: 4,
+          }}
+        >
           {props.footer.socialLinks.map(page => (
             <a
               sx={socialStyles}
@@ -70,7 +77,7 @@ export const FooterWrapper = props => (
             fontSize: 0,
             fontWeight: "normal",
             opacity: "0.8",
-            display: ["block", "none"],
+            display: ["block", null, null, "none"],
             mt: 7,
           }}
         >
@@ -84,12 +91,12 @@ export const FooterWrapper = props => (
 
 const footerStyles = {
   margin: "0 auto",
-  width: "mobile",
+  width: ["mobile", null, null, "desktop"],
   maxWidth: "1600px",
   display: "grid",
-  gridTemplateColumns: [null, null, "repeat(2, 1fr)"],
+  gridTemplateColumns: [null, null, null, "repeat(2, 1fr)"],
   gridColumnGap: [null, 9],
-  gridRowGap: [7, 9],
+  gridRowGap: [7, 8, 9],
 }
 
 const headingStyles = {
@@ -102,25 +109,22 @@ const headingStyles = {
     bg: "secondary",
     height: "4px",
     display: "block",
-    mt: [2, 4],
-    mb: [5, 7],
+    mt: [2, 3],
+    mb: [5, 6],
   },
 }
 
 const listStyles = {
   display: "grid",
   gridTemplateColumns: ["repeat(2, 1fr)"],
-  gridRowGap: [2, 3, 4],
+  gridRowGap: [3, 4],
   li: { mr: 0, fontFamily: "heading", letterSpacing: "0.05em" },
 }
 
 const socialStyles = {
   display: "flex",
   alignItems: "center",
-  mb: [3, 4],
-  "&:last-of-type": {
-    mb: 0,
-  },
+  fontSize: [null, 1],
   textDecoration: "none",
   color: "#fff",
   fontFamily: "heading",

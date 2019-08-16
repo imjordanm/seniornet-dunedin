@@ -146,7 +146,7 @@ const FormSignup = props => (
 )
 
 const formStyles = {
-  mt: [4, 5, 7],
+  mt: [4, 5, null, 7],
   ".g-recaptcha": {
     mb: [3, 5],
   },
@@ -175,8 +175,8 @@ const signupStyles = {
   boxShadow: theme => `2px 2px 8px ${theme.colors.text}85`,
   mb: 6,
   input: {
-    flex: ["3 1", "4 1", "2 1"],
-    p: [4, 3, 4],
+    flex: ["3 1", "4 1", "4 1", "2 1"],
+    p: [4, 3, null, 4],
     fontFamily: "body",
     fontSize: 0,
     fontWeight: "regular",
