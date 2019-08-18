@@ -1,10 +1,5 @@
-/**
- * This theme uses `theme-ui` under the hood.
- * @see https://theme-ui.com/
- * @see https://theme-ui.com/gatsby-plugin/
- */
 export default {
-  breakpoints: ["680px", "860px", "1190px"],
+  breakpoints: ["680px", "860px", "1280px"],
   sizes: {
     mobile: "80vw",
     desktop: "85vw",
@@ -86,8 +81,7 @@ export default {
       listStyle: "none",
     },
     li: {
-      fontSize: [null, 1],
-      mr: [4, 6],
+      mr: [null, null, null, 6],
       "&:last-of-type": {
         mr: 0,
       },
@@ -174,8 +168,8 @@ export default {
       zIndex: 2,
       color: "background",
       fontWeight: "bold",
-      pt: 6,
-      pb: 6,
+      pt: [5, null, 6],
+      pb: [5, null, 6],
       variant: "navigation",
     },
     Main: {},

@@ -1,10 +1,10 @@
-import Link from "react-icons/lib/go/link"
+import Button from "react-icons/lib/io/share"
 
 export default {
   title: "Button",
   name: "button",
   type: "object",
-  icon: Link,
+  icon: Button,
   fields: [
     {
       type: "string",

@@ -175,7 +175,7 @@ const signupStyles = {
   boxShadow: theme => `2px 2px 8px ${theme.colors.text}85`,
   mb: 6,
   input: {
-    flex: ["3 1", "4 1", "4 1", "2 1"],
+    flex: ["3 1", "4 1", "3 1", "2 1"],
     p: [4, 3, null, 4],
     fontFamily: "body",
     fontSize: 0,

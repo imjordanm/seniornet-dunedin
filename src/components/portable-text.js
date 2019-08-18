@@ -19,7 +19,7 @@ const PortableText = ({ blocks }) => {
       <BasePortableText
         sx={
           index > 0 &&
-          sections[index].background == sections[index - 1].background
+          sections[index].background === sections[index - 1].background
             ? {
                 variant: "sections.base",
                 pt: "0 !important",

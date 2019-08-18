@@ -8,7 +8,11 @@ export const HeaderWrapper = props => (
     <div sx={headerStyles}>
       <Link to="/" title="Home">
         <img
-          sx={{ width: "100%", maxWidth: "10em", display: "block" }}
+          sx={{
+            width: "100%",
+            maxWidth: ["8em", null, "10em"],
+            display: "block",
+          }}
           src={props.logo}
           alt="SeniorNet Logo"
         />

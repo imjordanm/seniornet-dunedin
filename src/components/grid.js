@@ -69,7 +69,7 @@ const gridStyles = {
   display: "grid",
   gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],
   gridColumnGap: [0, 0, 6, 9],
-  gridRowGap: [7, null, null, 9],
+  gridRowGap: [7, 8, null, 9],
   ml: [null, null, null, "-110px"],
   my: 4,
   width: ["100%", null, null, "calc(100% + 220px)"],

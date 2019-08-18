@@ -1,7 +1,10 @@
+import Posts from "react-icons/lib/io/android-list"
+
 export default {
   name: "posts",
   title: "Posts",
   type: "document",
+  icon: Posts,
   fields: [
     {
       name: "title",

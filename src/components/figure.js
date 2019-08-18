@@ -38,7 +38,7 @@ const imageStyles = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  height: ["100px", "150px", null, "350px"],
+  height: ["100px", "175px", null, "270px"],
 }
 
 export default Figure

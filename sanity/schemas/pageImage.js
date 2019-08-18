@@ -1,7 +1,10 @@
+import Image from "react-icons/lib/ti/image"
+
 export default {
   title: "Image",
   name: "pageImage",
   type: "image",
+  icon: Image,
   options: {
     hotspot: true,
   },

@@ -1,6 +1,6 @@
 import React from "react"
 import { css, Global } from "@emotion/core"
-import { Layout as StyledLayout, Main } from "theme-ui"
+import { Layout as StyledLayout, Main, useThemeUI } from "theme-ui"
 import { graphql, useStaticQuery } from "gatsby"
 import { HeaderWrapper as Header } from "../components/header"
 import { FooterWrapper as Footer } from "../components/footer"
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
         title
         description
         colours {
-          colourBG {
+          colourText {
             hex
           }
           colourPrimary {
@@ -22,7 +22,10 @@ const Layout = ({ children }) => {
           colourSecondary {
             hex
           }
-          colourText {
+          colourBG {
+            hex
+          }
+          colourMuted {
             hex
           }
         }
@@ -64,6 +67,17 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  const context = useThemeUI()
+  const colours = context.theme.colors
+
+  if (colours) {
+    colours.text = data.sanitySettings.colours.colourText.hex
+    colours.primary = data.sanitySettings.colours.colourPrimary.hex
+    colours.secondary = data.sanitySettings.colours.colourSecondary.hex
+    colours.background = data.sanitySettings.colours.colourBG.hex
+    colours.muted = data.sanitySettings.colours.colourMuted.hex
+  }
 
   return (
     <StyledLayout>

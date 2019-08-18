@@ -1,7 +1,10 @@
+import Form from "react-icons/lib/ti/th-list"
+
 export default {
   title: "Form",
   name: "form",
   type: "object",
+  icon: Form,
   fields: [
     {
       title: "Fields",

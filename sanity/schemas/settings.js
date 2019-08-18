@@ -1,7 +1,10 @@
+import Settings from "react-icons/lib/io/android-settings"
+
 export default {
   name: "settings",
   type: "document",
   title: "Settings",
+  icon: Settings,
   __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
   fields: [
     {

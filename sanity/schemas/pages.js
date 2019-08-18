@@ -1,7 +1,10 @@
+import Pages from "react-icons/lib/io/android-document"
+
 export default {
   name: "pages",
   title: "Pages",
   type: "document",
+  icon: Pages,
   fields: [
     {
       name: "templateKey",

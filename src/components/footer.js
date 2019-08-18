@@ -118,16 +118,15 @@ const listStyles = {
   display: "grid",
   gridTemplateColumns: ["repeat(2, 1fr)"],
   gridRowGap: [3, 4],
-  li: { mr: 0, fontFamily: "heading", letterSpacing: "0.05em" },
+  li: { mr: 0, fontWeight: "regular", letterSpacing: "0.05em" },
 }
 
 const socialStyles = {
   display: "flex",
   alignItems: "center",
-  fontSize: [null, 1],
   textDecoration: "none",
   color: "#fff",
-  fontFamily: "heading",
+  fontWeight: "regular",
   letterSpacing: "0.05em",
 }
 

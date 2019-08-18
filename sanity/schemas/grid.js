@@ -1,10 +1,10 @@
-import Link from "react-icons/lib/go/link"
+import Grid from "react-icons/lib/ti/th-large"
 
 export default {
   title: "Grid",
   name: "grid",
   type: "object",
-  icon: Link,
+  icon: Grid,
   fields: [
     {
       title: "Items",
