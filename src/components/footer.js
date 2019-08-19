@@ -33,7 +33,7 @@ export const FooterWrapper = props => (
         </ul>
         <span
           sx={{
-            fontSize: 0,
+            fontSize: ["0.633em", 0],
             fontWeight: "normal",
             opacity: "0.8",
             display: ["none", null, null, "block"],
@@ -74,7 +74,7 @@ export const FooterWrapper = props => (
         </div>
         <span
           sx={{
-            fontSize: 0,
+            fontSize: ["0.633em", 0],
             fontWeight: "normal",
             opacity: "0.8",
             display: ["block", null, null, "none"],
@@ -118,7 +118,14 @@ const listStyles = {
   display: "grid",
   gridTemplateColumns: ["repeat(2, 1fr)"],
   gridRowGap: [3, 4],
-  li: { mr: 0, fontWeight: "regular", letterSpacing: "0.05em" },
+  overflow: "hidden",
+  maxWidth: ["mobile", "unset"],
+  li: {
+    mr: 0,
+    fontWeight: "regular",
+    letterSpacing: "0.05em",
+    fontSize: [0, "inherit"],
+  },
 }
 
 const socialStyles = {
@@ -128,6 +135,7 @@ const socialStyles = {
   color: "#fff",
   fontWeight: "regular",
   letterSpacing: "0.05em",
+  fontSize: [0, "inherit"],
 }
 
 const iconStyles = {

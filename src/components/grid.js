@@ -35,7 +35,7 @@ const ImageGrid = props => (
             <Figure node={item.itemImage} width={"500"} grid={true} />
           </div>
         ) : null}
-        <div sx={{ px: 6 }}>
+        <div sx={{ px: [3, 4] }}>
           {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
           {item.text && (
             <Styled.p
@@ -77,7 +77,7 @@ const gridStyles = {
 
 const itemStyles = {
   bg: "background",
-  p: [6, null, null, 8],
+  p: [5, 6, null, 8],
   boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
 }
 

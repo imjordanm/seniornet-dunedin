@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ["680px", "860px", "1280px"],
+  breakpoints: ["660px", "860px", "1280px"],
   sizes: {
     mobile: "80vw",
     desktop: "85vw",
@@ -98,7 +98,7 @@ export default {
     base: {
       py: [4, 5],
       px: [6, 7],
-      fontSize: 0,
+      fontSize: ["0.633em", 0],
       textDecoration: "none",
       variant: "textStyles.caps",
       cursor: "pointer",
@@ -106,8 +106,9 @@ export default {
     primary: {
       variant: "buttons.base",
       bg: "rgba(255,255,255,0.15)",
-      border: "none",
       color: "#fff",
+      border: "none",
+      fontSize: ["0.633em", 0],
       py: [4, 5],
       px: [5, 6],
       boxShadow: theme => `0px 2px 8px ${theme.colors.text}85`,
@@ -150,7 +151,7 @@ export default {
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
       maxWidth: "content",
-      py: [9, 10, null, 11],
+      py: [8, 10, null, 11],
     },
   },
   styles: {
@@ -183,13 +184,13 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [5, 6, null, 7],
+      fontSize: [4, 5, 6, 7],
     },
     h2: {
       variant: "textStyles.caps",
       color: "secondary",
       position: "relative",
-      fontSize: [2, 2, 2, 3],
+      fontSize: [1, 2, null, 3],
       mb: [4, 5, 5, 6],
       ml: [0, 7, 7, 0],
       "::before": {

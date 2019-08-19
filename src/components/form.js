@@ -153,15 +153,17 @@ const formStyles = {
   ".formFields": {
     display: "flex",
     flexDirection: "column",
-    mb: [6, 8],
+    mb: [6, 7, 8],
     label: {
+      fontSize: [0, "inherit"],
       variant: "textStyles.caps",
       mb: 4,
     },
     "input, textarea": {
       border: theme => `3px solid ${theme.colors.secondary}`,
       color: "text",
-      padding: [3, 4],
+      padding: [2, 4],
+      px: 4,
     },
     textarea: {
       height: ["8em", "12em"],
@@ -172,16 +174,18 @@ const formStyles = {
 
 const signupStyles = {
   display: "flex",
+  flexDirection: ["column", "row"],
   boxShadow: theme => `2px 2px 8px ${theme.colors.text}85`,
   mb: 6,
   input: {
-    flex: ["3 1", "4 1", "3 1", "2 1"],
-    p: [4, 3, null, 4],
+    flex: [null, "4 1", "3 1", "2 1"],
+    p: [3, null, null, 4],
     fontFamily: "body",
     fontSize: 0,
     fontWeight: "regular",
+    color: "text",
   },
   button: {
-    flex: "1 1",
+    flex: [null, "1 1"],
   },
 }

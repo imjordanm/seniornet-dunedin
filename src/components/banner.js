@@ -14,11 +14,25 @@ const Banner = props => {
 
   return (
     <div sx={{ bg: "primary" }}>
-      <div sx={bannerStyles}>
+      <div
+        sx={
+          pageImage
+            ? {
+                ...bannerStyles,
+                width: ["mobile", null, null, "desktop"],
+                maxWidth: "1600px",
+              }
+            : bannerStyles
+        }
+      >
         <div sx={{ flex: "1 1" }}>
           {templateKey === "home" ? (
             <Styled.h1
-              sx={{ color: "background", whiteSpace: "pre-wrap", mr: 3 }}
+              sx={{
+                color: "background",
+                whiteSpace: "pre-wrap",
+                mr: [0, null, 3],
+              }}
             >
               {headingWords.map((word, index) =>
                 index === 1 ? (
@@ -56,9 +70,14 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  py: [7, 8, null, 10],
-  width: ["mobile", null, null, "desktop"],
-  maxWidth: "1600px",
+  py: [7, 8, null, 9],
+  width: [
+    "mobile",
+    null,
+    null,
+    theme => `calc(${theme.sizes.desktop} - 220px)`,
+  ],
+  maxWidth: "content",
   display: "flex",
   flexDirection: ["column", null, null, "row"],
 }
