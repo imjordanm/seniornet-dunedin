@@ -4,12 +4,14 @@ export default {
   title: "Section",
   name: "section",
   type: "object",
+  fieldsets: [{ name: "background", title: "Background" }],
   fields: [
     { title: "Section Name", name: "sectionName", type: "string" },
     {
       title: "Background",
       name: "background",
       type: "string",
+      fieldset: "background",
       validation: Rule => Rule.required(),
       options: {
         list: [
@@ -19,6 +21,18 @@ export default {
           { title: "Secondary", value: "secondary" },
         ],
       },
+    },
+    {
+      title: "Waves?",
+      name: "waves",
+      type: "boolean",
+      fieldset: "background",
+    },
+    {
+      title: "Wave Direction",
+      name: "waveDirection",
+      type: "boolean",
+      fieldset: "background",
     },
     {
       title: "Content",

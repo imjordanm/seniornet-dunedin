@@ -99,7 +99,7 @@ const Hamburger = props => {
                 alignItems: "center",
                 listStyle: "none",
                 variant: "textStyles.caps",
-                fontSize: [3, 4],
+                fontSize: [2, 3],
               }}
             >
               {props.pages.map(page => (

@@ -109,7 +109,7 @@ export default {
       color: "#fff",
       border: "none",
       fontSize: ["0.633em", 0],
-      py: [4, 5],
+      py: 5,
       px: [5, 6],
       boxShadow: theme => `0px 2px 8px ${theme.colors.text}85`,
     },

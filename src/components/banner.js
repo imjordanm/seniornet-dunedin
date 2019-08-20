@@ -70,7 +70,7 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  py: [7, 8, null, 9],
+  py: [6, 8, null, 9],
   width: [
     "mobile",
     null,

@@ -15,7 +15,28 @@ const PortableText = ({ blocks }) => {
   }
 
   return blocks.map((section, index, sections) => (
-    <div sx={{ bg: section.background }} className={section.background}>
+    <div
+      sx={
+        index > 0 && section.waves
+          ? {
+              bg: section.background,
+              "::before": {
+                display: "block",
+                height: "10vw",
+                mt: "-4vw",
+                transform: `scaleX(${
+                  section.waveDirection ? 1 : -1
+                }) scaleY(-1.02)`,
+                content: '""',
+                mask: `url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22654%20-29%201920%20160.1%22%3E%0D%0A%20%20%3Cpath%20d%3D%22M654%20821h1920V120.7s-304.7%2013-676.9-64S990.6-29%20990.6-29H654v850z%22%2F%3E%0D%0A%3C%2Fsvg%3E) no-repeat 100%`,
+                maskSize: "cover",
+                bg: sections[index - 1].background,
+              },
+            }
+          : { bg: section.background }
+      }
+      className={section.background}
+    >
       <BasePortableText
         sx={
           index > 0 &&
