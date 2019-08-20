@@ -15,8 +15,8 @@ export default {
             title: "SeniorNet Website",
             apiId: "058e206e-a0b6-477b-ae36-4c7637c0c443",
             buildHookId:
-              "https://api.netlify.com/build_hooks/5d3d55a75da00007a92aa3e8",
-            name: "seniornet",
+              "https://api.netlify.com/build_hooks/5d5b879f46c1d7515fc8c180",
+            name: "seniornetdunedin",
           },
         ],
       },
