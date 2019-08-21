@@ -8,6 +8,7 @@ import Button from "./button"
 import Figure from "./figure"
 import Grid from "./grid"
 import Form from "./form"
+import Posts from "./posts"
 
 const PortableText = ({ blocks }) => {
   if (!blocks) {
@@ -77,6 +78,7 @@ const serializers = {
     pageImage: Figure,
     grid: Grid,
     form: Form,
+    newsPosts: Posts,
   },
   // For a full list of magic types that don’t go in the `types` object,
   // see: https://github.com/sanity-io/block-content-to-react#proptypes

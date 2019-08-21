@@ -18,7 +18,7 @@ const Figure = ({ node, grid, width }) => {
   )
 
   return (
-    <figure sx={grid ? imageStyles : { mt: [6, 8, null, 10] }}>
+    <figure sx={grid ? imageStyles : {}}>
       <Img
         fluid={fluidProps}
         alt={node.alt}

@@ -12,6 +12,7 @@ import gridItem from "./gridItem"
 import grid from "./grid"
 import formField from "./formField"
 import form from "./form"
+import newsPosts from "./newsPosts"
 
 // We import object and document schemas
 import colours from "./colours"
@@ -33,6 +34,7 @@ export default createSchema({
     gridItem,
     grid,
     formField,
+    newsPosts,
     form,
     header,
     footer,

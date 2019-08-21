@@ -20,4 +20,11 @@ export default {
       },
     },
   ],
+
+  preview: {
+    select: {
+      title: "pageImage",
+      media: "pageImage",
+    },
+  },
 }

@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ["660px", "860px", "1280px"],
+  breakpoints: ["660px", "860px", "1280px", "2000px"],
   sizes: {
     mobile: "80vw",
     desktop: "85vw",
@@ -57,7 +57,7 @@ export default {
   lineHeights: {
     body: "1.75",
     smallBody: "1.5",
-    heading: "1.25",
+    heading: "1.2",
   },
   textStyles: {
     heading: {
@@ -151,7 +151,25 @@ export default {
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
       maxWidth: "content",
-      py: [8, 10, null, 11],
+      py: [8, 10, null, 11, 12],
+    },
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],
+    gridColumnGap: [0, 0, 6, 9],
+    gridRowGap: [7, 8, null, 9],
+    ml: [null, null, null, "-110px"],
+    mt: 4,
+    mb: [6, 8, null, 9],
+    width: ["100%", null, null, "calc(100% + 220px)"],
+    span: {
+      variant: "textStyles.caps",
+      fontSize: ["0.633em", 0, null, 1],
+      color: "#cccccc",
+      mb: [4, 6],
+      mt: [-2, -3],
+      display: "block",
     },
   },
   styles: {
@@ -178,19 +196,19 @@ export default {
       bg: "primary",
       color: "background",
       fontWeight: "bold",
-      pt: [8, 10],
-      pb: [8, 10],
+      py: [8, 9, null, 10, 11],
       variant: "navigation",
     },
     h1: {
       variant: "textStyles.heading",
       fontSize: [4, 5, 6, 7],
+      mb: 3,
     },
     h2: {
       variant: "textStyles.caps",
       color: "secondary",
       position: "relative",
-      fontSize: [1, 2, null, 3],
+      fontSize: [1, 2, 2, 3],
       mb: [4, 5, 5, 6],
       ml: [0, 7, 7, 0],
       "::before": {
@@ -212,9 +230,12 @@ export default {
     },
     p: {
       fontSize: [1, 2, null, 3],
-      mb: 6,
-      "&:last-of-type": {
+      mb: 4,
+      "&:last-child": {
         mb: 0,
+      },
+      "&:not(:last-child):last-of-type": {
+        mb: [5, 6, null, 7],
       },
     },
     ul: {

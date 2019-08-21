@@ -3,21 +3,10 @@ import { jsx, Styled } from "theme-ui"
 import Figure from "./figure"
 
 const Grid = props => {
-  if (!props.posts && !props.node && !props.node.items) {
+  if (!props.node && !props.node.items) {
     return null
   }
-  let grid
-  if (props.node && props.node.items) {
-    grid = props.node.items
-  } else if (props.posts) {
-    grid = props.posts.map(post => ({
-      heading: post.node.title,
-      text: post.node.slug.current,
-    }))
-  } else {
-    return
-  }
-
+  let grid = props.node.items
   let hasImage = grid.some(item => item.hasOwnProperty("itemImage"))
   return (
     <div>
@@ -27,7 +16,7 @@ const Grid = props => {
 }
 
 const ImageGrid = props => (
-  <div sx={gridStyles}>
+  <div sx={{ variant: "grid" }}>
     {props.grid.map(item => (
       <div key={item.heading} sx={{ textAlign: "center" }}>
         {item.itemImage.asset ? (
@@ -51,7 +40,7 @@ const ImageGrid = props => (
 )
 
 const NoImageGrid = props => (
-  <div sx={gridStyles}>
+  <div sx={{ variant: "grid" }}>
     {props.grid.map(item => (
       <div key={item.heading} sx={itemStyles}>
         {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
@@ -64,16 +53,6 @@ const NoImageGrid = props => (
     ))}
   </div>
 )
-
-const gridStyles = {
-  display: "grid",
-  gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],
-  gridColumnGap: [0, 0, 6, 9],
-  gridRowGap: [7, 8, null, 9],
-  ml: [null, null, null, "-110px"],
-  my: 4,
-  width: ["100%", null, null, "calc(100% + 220px)"],
-}
 
 const itemStyles = {
   bg: "background",

@@ -96,7 +96,7 @@ const footerStyles = {
   display: "grid",
   gridTemplateColumns: [null, null, null, "repeat(2, 1fr)"],
   gridColumnGap: [null, 9],
-  gridRowGap: [7, 8, 9],
+  gridRowGap: [7, 8, null, 9],
 }
 
 const headingStyles = {
@@ -116,7 +116,12 @@ const headingStyles = {
 
 const listStyles = {
   display: "grid",
-  gridTemplateColumns: ["repeat(2, 1fr)"],
+  gridTemplateColumns: [
+    "repeat(2, 1fr)",
+    null,
+    "repeat(3, 1fr)",
+    "repeat(2, 1fr)",
+  ],
   gridRowGap: [3, 4],
   overflow: "hidden",
   maxWidth: ["mobile", "unset"],

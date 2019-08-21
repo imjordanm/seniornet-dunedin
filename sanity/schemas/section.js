@@ -88,6 +88,7 @@ export default {
         { type: "button" },
         { type: "grid" },
         { type: "form" },
+        { type: "newsPosts" },
       ],
     },
   ],
