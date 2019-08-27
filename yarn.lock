@@ -723,7 +723,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
@@ -4518,13 +4518,6 @@ gatsby-page-utils@^0.0.9:
     lodash "^4.17.15"
     micromatch "^3.1.10"
     slash "^1.0.0"
-
-gatsby-plugin-create-client-paths@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-create-client-paths/-/gatsby-plugin-create-client-paths-2.1.5.tgz#cd7d1115b944dd79822d7ac3e9b300f7ee8ef004"
-  integrity sha512-lExZB1olCePRMLDx7oA5eGHiKeeaTV23MyhYpPyYam5qZntCoqBBq5AZj1ZxQDLxSWHQxJbhWzhYr5IxQjYt2w==
-  dependencies:
-    "@babel/runtime" "^7.5.5"
 
 gatsby-plugin-page-creator@^2.1.9:
   version "2.1.9"

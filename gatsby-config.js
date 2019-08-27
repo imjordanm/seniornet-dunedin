@@ -18,9 +18,6 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-create-client-paths`,
-    },
-    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
