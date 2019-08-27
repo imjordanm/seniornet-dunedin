@@ -15,9 +15,7 @@ const Banner = props => {
   let fluidProps
   let sanityImage = false
 
-  console.log(props)
-
-  if (!pageImage.asset.fluid) {
+  if (!pageImage.asset && !pageImage.asset.fluid) {
     sanityImage = true
     fluidProps = getFluidGatsbyImage(
       pageImage.asset._ref,
