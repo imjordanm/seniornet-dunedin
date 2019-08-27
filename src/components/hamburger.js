@@ -7,7 +7,7 @@ const Hamburger = props => {
   const [isOpen, setOpen] = useState(false)
 
   const shared = {
-    bg: "#fff",
+    bg: isOpen ? "#fff" : "primary",
     height: 3,
     right: 0,
     width: "2em",
@@ -54,7 +54,7 @@ const Hamburger = props => {
             margin: `10px 0`,
             position: `relative`,
             zIndex: "2",
-            bg: isOpen ? "transparent" : "#fff",
+            bg: isOpen ? "transparent" : "primary",
             transition: `all 250ms cubic-bezier(.68,-.55,.265,1.55)`,
             ":before": {
               content: JSON.stringify(``),
@@ -92,6 +92,7 @@ const Hamburger = props => {
               margin: "0 auto",
               width: "mobile",
               maxWidth: "outer",
+              color: isOpen ? "#fff" : "primary",
             }}
           >
             <ul

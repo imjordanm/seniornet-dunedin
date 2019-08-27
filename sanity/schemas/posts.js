@@ -42,6 +42,14 @@ export default {
       type: "datetime",
     },
     {
+      title: "Excerpt",
+      name: "excerpt",
+      type: "text",
+      description:
+        "This is the short description of the post that shows up on previews of the post (max 150 characters).",
+      validation: Rule => Rule.required().max(150),
+    },
+    {
       title: "Sections",
       name: "sections",
       type: "array",

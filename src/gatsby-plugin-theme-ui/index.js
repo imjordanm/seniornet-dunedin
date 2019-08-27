@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ["660px", "860px", "1280px", "2000px"],
+  breakpoints: ["660px", "860px", "1280px", "1760px"],
   sizes: {
     mobile: "80vw",
     desktop: "85vw",
@@ -87,7 +87,7 @@ export default {
       },
       a: {
         textDecoration: "none",
-        color: "background",
+        color: "inherit",
         "&:focus-within, &:hover": {
           opacity: "0.8",
         },
@@ -102,6 +102,7 @@ export default {
       textDecoration: "none",
       variant: "textStyles.caps",
       cursor: "pointer",
+      bg: "transparent",
     },
     primary: {
       variant: "buttons.base",
@@ -116,7 +117,7 @@ export default {
     secondary: {
       variant: "buttons.base",
       border: theme => `3px solid ${theme.colors.secondary}`,
-      bg: "transparent",
+
       color: "#bfca1d",
       position: "relative",
 
@@ -163,14 +164,15 @@ export default {
     mt: 4,
     mb: [6, 8, null, 9],
     width: ["100%", null, null, "calc(100% + 220px)"],
-    span: {
-      variant: "textStyles.caps",
-      fontSize: ["0.633em", 0, null, 1],
-      color: "#cccccc",
-      mb: [4, 6],
-      mt: [-2, -3],
-      display: "block",
-    },
+  },
+  span: {
+    variant: "textStyles.caps",
+    fontFamily: "body",
+    fontSize: ["0.633em", null, null, 0],
+    color: "#cccccc",
+    mb: [5, 6, null, 7],
+    mt: [-1, -4],
+    display: "block",
   },
   styles: {
     Layout: {
@@ -181,14 +183,10 @@ export default {
       lineHeight: "body",
     },
     Header: {
-      background:
-        "linear-gradient(180deg, rgba(6, 100, 130, 0.7) 0%, rgba(15, 117, 150, 1) 100%)",
-      boxShadow: "0px 3px 4px rgba(4, 77, 101, 0.25)",
       zIndex: 2,
-      color: "background",
+      color: "primary",
       fontWeight: "bold",
-      pt: [5, null, 6],
-      pb: [5, null, 6],
+      py: [5, null, 6],
       variant: "navigation",
     },
     Main: {},
@@ -201,7 +199,7 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [4, 5, 6, 7],
+      fontSize: [4, 5, 6, null, 7],
       mb: 3,
     },
     h2: {

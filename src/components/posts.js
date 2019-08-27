@@ -18,6 +18,7 @@ const Posts = ({ node }) => {
           node {
             title
             description
+            excerpt
             slug {
               current
             }
@@ -32,31 +33,83 @@ const Posts = ({ node }) => {
   let posts = data.allSanityPosts.edges
 
   return (
-    <div sx={{ variant: "grid" }}>
-      {posts.slice(0, node.numPosts).map(item => (
-        <div key={item.node.title} sx={itemStyles}>
+    <>
+      {node.formatType === "grid" ? (
+        <Grid posts={posts} numPosts={node.numPosts} parent={parent} />
+      ) : (
+        <List posts={posts} numPosts={node.numPosts} parent={parent} />
+      )}
+    </>
+  )
+}
+
+const Grid = props => (
+  <div sx={{ variant: "grid" }}>
+    {props.posts.slice(0, props.numPosts).map(item => (
+      <div key={item.node.title} sx={itemStyles}>
+        <div>
           {item.node.title && <Styled.h3>{item.node.title}</Styled.h3>}
-          {item.node.publishedAt && <span>{item.node.publishedAt}</span>}
-          {item.node.description && (
+          {item.node.publishedAt && (
+            <span sx={{ variant: "span" }}>{item.node.publishedAt}</span>
+          )}
+          {item.node.excerpt && (
             <Styled.p
               sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
             >
-              {item.node.description}
+              {`${item.node.excerpt}..`}
             </Styled.p>
           )}
-          {item.node.slug.current && (
-            <Link to={`${parent}/${item.node.slug.current}`}>Read More</Link>
+        </div>
+        {item.node.slug.current && (
+          <Link
+            sx={linkStyles}
+            to={`${props.parent}/${item.node.slug.current}`}
+          >
+            Read More
+          </Link>
+        )}
+      </div>
+    ))}
+  </div>
+)
+
+const List = props => (
+  <div>
+    {props.posts.slice(0, props.numPosts).map(item => (
+      <div key={item.node.title} sx={itemStyles}>
+        <div>
+          {item.node.title && <Styled.h3>{item.node.title}</Styled.h3>}
+          {item.node.publishedAt && (
+            <span sx={{ variant: "span" }}>{item.node.publishedAt}</span>
+          )}
+          {item.node.excerpt && (
+            <Styled.p
+              sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
+            >
+              {`${item.node.excerpt}..`}
+            </Styled.p>
           )}
         </div>
-      ))}
-    </div>
-  )
-}
+        {item.node.slug.current && (
+          <Link
+            sx={linkStyles}
+            to={`${props.parent}/${item.node.slug.current}`}
+          >
+            Read More
+          </Link>
+        )}
+      </div>
+    ))}
+  </div>
+)
 
 const itemStyles = {
   bg: "background",
   p: [5, 6, null, 8],
   boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
 }
 
 const imageStyles = {
@@ -65,6 +118,37 @@ const imageStyles = {
   py: 7,
   px: [null, null, 7, 9],
   mb: [5, null, null, 7],
+}
+
+const linkStyles = {
+  mt: [6, 7, 8, 9],
+  fontSize: ["0.633em", 0],
+  color: "primary",
+  textDecoration: "none",
+  variant: "textStyles.caps",
+  cursor: "pointer",
+  display: "block",
+  textAlign: "right",
+  position: "relative",
+  alignSelf: "flex-end",
+
+  "::before": {
+    content: '""',
+    display: "block",
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    left: "-4.5em",
+    px: 5,
+    bg: "primary",
+    height: [2, 3],
+    transition: "transform 0.25s 0.1s",
+  },
+  ":hover": {
+    "::before": {
+      transform: "translateY(-50%) translateX(20%)",
+    },
+  },
 }
 
 export default Posts

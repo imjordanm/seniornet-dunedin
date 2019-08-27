@@ -37,7 +37,7 @@ export const FooterWrapper = props => (
             fontWeight: "normal",
             opacity: "0.8",
             display: ["none", null, null, "block"],
-            mt: [null, 8, null, 9],
+            mt: [null, 8, null, 8],
           }}
         >
           Copyright © {new Date().getFullYear()} SeniorNet Dunedin. All Rights
@@ -50,7 +50,13 @@ export const FooterWrapper = props => (
         <div
           sx={{
             display: "grid",
-            gridTemplateColumns: ["none", "none", "repeat(2, 1fr)", "none"],
+            gridTemplateColumns: [
+              "none",
+              "none",
+              "repeat(2, 1fr)",
+              "none",
+              "repeat(2, 1fr)",
+            ],
             gridColumnGap: [null, null, 4],
             gridRowGap: 4,
           }}
