@@ -3,6 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import React from "react"
 import Button from "./button"
 import Img from "gatsby-image"
+import { getFluidGatsbyImage } from "gatsby-source-sanity"
 
 const Banner = props => {
   if (!props.banner) {
@@ -11,6 +12,22 @@ const Banner = props => {
   let { heading, button, pageImage } = props.banner
   let templateKey = props.templateKey
   let headingWords = heading.split(" ")
+  let fluidProps
+  let sanityImage = false
+
+  console.log(props)
+
+  if (!pageImage.asset.fluid) {
+    sanityImage = true
+    fluidProps = getFluidGatsbyImage(
+      pageImage.asset._ref,
+      { maxWidth: 1000 },
+      {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+      }
+    )
+  }
 
   return (
     <div
@@ -72,13 +89,19 @@ const Banner = props => {
             <Button node={button} style="buttons.primary" />
           )}
         </div>
-        {pageImage && pageImage.asset && (
+        {!sanityImage ? (
           <Img
             sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
             fluid={pageImage.asset.fluid}
             alt={pageImage.asset.alt}
           />
-        )}
+        ) : sanityImage && fluidProps ? (
+          <Img
+            sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
+            fluid={fluidProps}
+            alt={pageImage.alt}
+          />
+        ) : null}
       </div>
     </div>
   )

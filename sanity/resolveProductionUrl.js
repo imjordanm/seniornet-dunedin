@@ -13,7 +13,7 @@ export default function resolveProductionUrl(document) {
     // And return a template string reflecting the URL structure we want. In this case, we're doing a
     // simple conditional to return '&isDraft=true' as a param for drafts as we'll query them
     // differently in the front-end
-    return `http://localhost:8000/${document.slug.current}?pageId=${id}${
+    return `http://seniornetdunedin.netlify.com/preview?pageId=${id}${
       isDraft(document._id) ? "&isDraft=true" : ""
     }`
   }
