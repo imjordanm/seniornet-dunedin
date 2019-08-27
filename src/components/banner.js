@@ -12,10 +12,10 @@ const Banner = props => {
   let { heading, button, pageImage } = props.banner
   let templateKey = props.templateKey
   let headingWords = heading.split(" ")
-  let fluidProps
+  let fluidProps = null
   let sanityImage = false
 
-  if (!pageImage.asset && !pageImage.asset.fluid) {
+  if (pageImage && !pageImage.asset.fluid && pageImage.asset._ref) {
     sanityImage = true
     fluidProps = getFluidGatsbyImage(
       pageImage.asset._ref,
@@ -87,13 +87,13 @@ const Banner = props => {
             <Button node={button} style="buttons.primary" />
           )}
         </div>
-        {!sanityImage ? (
+        {!sanityImage && pageImage && pageImage.asset.fluid ? (
           <Img
             sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
             fluid={pageImage.asset.fluid}
             alt={pageImage.asset.alt}
           />
-        ) : sanityImage && fluidProps ? (
+        ) : sanityImage && fluidProps !== "null" ? (
           <Img
             sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
             fluid={fluidProps}
