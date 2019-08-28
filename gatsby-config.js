@@ -18,6 +18,18 @@ module.exports = {
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-react-helmet",
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/preview`],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: process.env.SANITY_PROJECT_ID,

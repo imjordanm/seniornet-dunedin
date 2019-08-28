@@ -21,7 +21,12 @@ const ImageGrid = props => (
       <div key={item.heading} sx={{ textAlign: "center" }}>
         {item.itemImage.asset ? (
           <div sx={imageStyles}>
-            <Figure node={item.itemImage} width={"500"} grid={true} />
+            <Figure
+              node={item.itemImage}
+              alt={item.heading}
+              width={"500"}
+              grid={true}
+            />
           </div>
         ) : null}
         <div sx={{ px: [3, 4] }}>

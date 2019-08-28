@@ -116,7 +116,7 @@ export default {
     },
     secondary: {
       variant: "buttons.base",
-      border: theme => `3px solid ${theme.colors.secondary}`,
+      border: theme => `.2em solid ${theme.colors.secondary}`,
 
       color: "#bfca1d",
       position: "relative",
@@ -194,12 +194,12 @@ export default {
       bg: "primary",
       color: "background",
       fontWeight: "bold",
-      py: [8, 9, null, 10, 11],
+      py: [8, 9, null, 10],
       variant: "navigation",
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [4, 5, 6, null, 7],
+      fontSize: [4, 5, null, 6],
       mb: 3,
     },
     h2: {
@@ -227,7 +227,7 @@ export default {
       mb: [2, 3],
     },
     p: {
-      fontSize: [1, 2, null, 3],
+      fontSize: [null, 2, null, 3],
       mb: 4,
       "&:last-child": {
         mb: 0,

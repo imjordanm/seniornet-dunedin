@@ -64,11 +64,13 @@ const serializers = {
     Link: ({ mark, children }) => {
       const { blank, url } = mark
       return blank ? (
-        <Link to={url} target="_blank" rel="noopener noreferrer">
+        <Link to={url} title={url} target="_blank" rel="noopener noreferrer">
           {children}
         </Link>
       ) : (
-        <Link to={url}>{children}</Link>
+        <Link to={url} title={url}>
+          {children}
+        </Link>
       )
     },
   },

@@ -12,6 +12,7 @@ const Button = props => {
   return (
     <Link
       to={button.linkUrl}
+      title={button.text}
       sx={{
         display: "inline-block",
         alignSelf: button.alignment,

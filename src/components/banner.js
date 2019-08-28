@@ -91,7 +91,7 @@ const Banner = props => {
           <Img
             sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
             fluid={pageImage.asset.fluid}
-            alt={pageImage.asset.alt}
+            alt={pageImage.alt}
           />
         ) : sanityImage && fluidProps !== "null" ? (
           <Img
@@ -107,16 +107,11 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  pt: [6, 8, null, 10, 11],
-  width: [
-    "mobile",
-    null,
-    null,
-    theme => `calc(${theme.sizes.desktop} - 220px)`,
-  ],
+  pt: [6, 8, null, 10],
+  width: ["mobile", null, theme => `calc(${theme.sizes.desktop} - 220px)`],
   maxWidth: "content",
   display: "flex",
-  flexDirection: ["column", null, null, "row"],
+  flexDirection: ["column", null, "row"],
 }
 
 export default Banner

@@ -49,7 +49,7 @@ const DefaultTemplate = ({ data }) => {
         description={page.description}
         captcha={captcha}
       />
-      <Banner banner={page.banner} />
+      <Banner banner={page.banner} templateKey={page.templateKey} />
       <PortableText blocks={page._rawSections} />
     </Layout>
   )

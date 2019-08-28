@@ -26,7 +26,9 @@ export const HeaderWrapper = props => (
               variant: "textStyles.caps",
             }}
           >
-            <Link to={page.slug.current}>{page.title}</Link>
+            <Link to={page.slug.current} title={page.title}>
+              {page.title}
+            </Link>
           </li>
         ))}
       </ul>

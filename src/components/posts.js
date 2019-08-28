@@ -64,6 +64,7 @@ const Grid = props => (
           <Link
             sx={linkStyles}
             to={`${props.parent}/${item.node.slug.current}`}
+            title={item.node.title}
           >
             Read More
           </Link>
@@ -94,6 +95,7 @@ const List = props => (
           <Link
             sx={linkStyles}
             to={`${props.parent}/${item.node.slug.current}`}
+            title={item.node.title}
           >
             Read More
           </Link>

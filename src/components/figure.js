@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import Img from "gatsby-image"
 import { getFluidGatsbyImage } from "gatsby-source-sanity"
 
-const Figure = ({ node, grid, width }) => {
+const Figure = ({ node, grid, width, alt }) => {
   if (!node || !node.asset) {
     return null
   }
@@ -21,7 +21,7 @@ const Figure = ({ node, grid, width }) => {
     <figure sx={grid ? imageStyles : {}}>
       <Img
         fluid={fluidProps}
-        alt={node.alt}
+        alt={alt ? alt : node.alt}
         imgStyle={{
           width: "unset",
           left: "50%",

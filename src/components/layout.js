@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
       sanitySettings {
         title
         description
+        keywords
         colours {
           colourText {
             hex

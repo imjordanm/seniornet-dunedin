@@ -108,7 +108,9 @@ const Hamburger = props => {
                   sx={{ mb: 3, "&:last-of-type": { mb: 0 } }}
                   key={page.title}
                 >
-                  <Link to={page.slug.current}>{page.title}</Link>
+                  <Link to={page.slug.current} title={page.title}>
+                    {page.title}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -20,7 +20,6 @@ export default {
       type: "url",
       validation: Rule =>
         Rule.uri({
-          allowRelative: true,
           scheme: ["https", "http", "mailto", "tel"],
         }),
     },

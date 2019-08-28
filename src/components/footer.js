@@ -27,7 +27,9 @@ export const FooterWrapper = props => (
         <ul sx={listStyles}>
           {props.footer.footerPages.map(page => (
             <li key={page.title}>
-              <Link to={page.slug.current}>{page.title}</Link>
+              <Link to={page.slug.current} title={page.title}>
+                {page.title}
+              </Link>
             </li>
           ))}
         </ul>
