@@ -49,7 +49,7 @@ const Banner = props => {
             ? {
                 ...bannerStyles,
                 width: ["mobile", null, null, "desktop"],
-                maxWidth: "1600px",
+                maxWidth: "navigation",
               }
             : bannerStyles
         }
@@ -109,7 +109,7 @@ const bannerStyles = {
   margin: "0 auto",
   pt: [6, 8, null, 10],
   width: ["mobile", null, theme => `calc(${theme.sizes.desktop} - 220px)`],
-  maxWidth: "content",
+  maxWidth: "outer",
   display: "flex",
   flexDirection: ["column", null, "row"],
 }

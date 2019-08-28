@@ -100,7 +100,7 @@ export const FooterWrapper = props => (
 const footerStyles = {
   margin: "0 auto",
   width: ["mobile", null, null, "desktop"],
-  maxWidth: "1600px",
+  maxWidth: "navigation",
   display: "grid",
   gridTemplateColumns: [null, null, null, "repeat(2, 1fr)"],
   gridColumnGap: [null, 9],
@@ -146,6 +146,7 @@ const socialStyles = {
   alignItems: "center",
   textDecoration: "none",
   color: "#fff",
+  lineHeight: "heading",
   fontWeight: "regular",
   letterSpacing: "0.05em",
   fontSize: [0, "inherit"],

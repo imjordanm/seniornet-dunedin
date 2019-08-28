@@ -5,6 +5,7 @@ export default {
     desktop: "85vw",
     content: 1000,
     outer: 1216,
+    navigation: 1432,
   },
   space: [
     "0",
@@ -52,7 +53,7 @@ export default {
   },
   letterSpacings: {
     heading: "0em",
-    caps: "0.15em",
+    caps: "0.1em",
   },
   lineHeights: {
     body: "1.75",
@@ -152,7 +153,7 @@ export default {
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
       maxWidth: "content",
-      py: [8, 10, null, 11, 12],
+      py: [8, 10, null, 11],
     },
   },
   grid: {
@@ -165,11 +166,11 @@ export default {
     mb: [6, 8, null, 9],
     width: ["100%", null, null, "calc(100% + 220px)"],
   },
-  span: {
+  smallcaps: {
     variant: "textStyles.caps",
     fontFamily: "body",
     fontSize: ["0.633em", null, null, 0],
-    color: "#cccccc",
+    color: "#c3c3c3",
     mb: [5, 6, null, 7],
     mt: [-1, -4],
     display: "block",

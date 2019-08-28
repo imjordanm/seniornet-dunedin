@@ -48,9 +48,17 @@ const Grid = props => (
     {props.posts.slice(0, props.numPosts).map(item => (
       <div key={item.node.title} sx={itemStyles}>
         <div>
-          {item.node.title && <Styled.h3>{item.node.title}</Styled.h3>}
+          <Styled.h3>
+            <Link
+              to={`${props.parent}/${item.node.slug.current}`}
+              title={item.node.title}
+              style={{ color: "inherit" }}
+            >
+              {item.node.title}
+            </Link>
+          </Styled.h3>
           {item.node.publishedAt && (
-            <span sx={{ variant: "span" }}>{item.node.publishedAt}</span>
+            <span sx={{ variant: "smallcaps" }}>{item.node.publishedAt}</span>
           )}
           {item.node.excerpt && (
             <Styled.p
@@ -79,9 +87,17 @@ const List = props => (
     {props.posts.slice(0, props.numPosts).map(item => (
       <div key={item.node.title} sx={itemStyles}>
         <div>
-          {item.node.title && <Styled.h3>{item.node.title}</Styled.h3>}
+          <Styled.h3>
+            <Link
+              to={`${props.parent}/${item.node.slug.current}`}
+              title={item.node.title}
+              style={{ color: "inherit" }}
+            >
+              {item.node.title}
+            </Link>
+          </Styled.h3>
           {item.node.publishedAt && (
-            <span sx={{ variant: "span" }}>{item.node.publishedAt}</span>
+            <span sx={{ variant: "smallcaps" }}>{item.node.publishedAt}</span>
           )}
           {item.node.excerpt && (
             <Styled.p
@@ -108,7 +124,7 @@ const List = props => (
 const itemStyles = {
   bg: "background",
   p: [5, 6, null, 8],
-  boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
+  boxShadow: theme => `-1px 3px 6px rgba(150,150,150,0.4)`,
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
