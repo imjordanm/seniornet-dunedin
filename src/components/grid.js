@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
+import React from "react"
 import Figure from "./figure"
 
 const Grid = props => {
@@ -9,14 +10,12 @@ const Grid = props => {
   let grid = props.node.items
   let hasImage = grid.some(item => item.hasOwnProperty("itemImage"))
   return (
-    <div>
-      {hasImage ? <ImageGrid grid={grid} /> : <NoImageGrid grid={grid} />}
-    </div>
+    <>{hasImage ? <ImageGrid grid={grid} /> : <NoImageGrid grid={grid} />}</>
   )
 }
 
 const ImageGrid = props => (
-  <div sx={{ variant: "grid" }}>
+  <div sx={{ variant: "grid.two" }}>
     {props.grid.map(item => (
       <div key={item.heading} sx={{ textAlign: "center" }}>
         {item.itemImage.asset ? (
@@ -45,7 +44,7 @@ const ImageGrid = props => (
 )
 
 const NoImageGrid = props => (
-  <div sx={{ variant: "grid" }}>
+  <div sx={{ variant: "grid.two" }}>
     {props.grid.map(item => (
       <div key={item.heading} sx={itemStyles}>
         {item.heading && <Styled.h3>{item.heading}</Styled.h3>}

@@ -17,6 +17,7 @@ const PortableText = ({ blocks }) => {
 
   return blocks.map((section, index, sections) => (
     <div
+      key={section.sectionName}
       sx={
         index > 0 && section.waves
           ? {
@@ -52,8 +53,6 @@ const PortableText = ({ blocks }) => {
         serializers={serializers}
         projectId={process.env.SANITY_PROJECT_ID}
         dataset={process.env.SANITY_DATASET}
-        key={section.sectionName}
-        background={section.background}
       />
     </div>
   ))

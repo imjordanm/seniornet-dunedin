@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `SeniorNet Dunedin`,
     description: `SeniorNet Dunedin Description to change`,
-    siteUrl: `https://seniornetdunedin.co.nz`,
+    siteUrl: `https://seniornetdunedin.netlify.com`,
     author: `imjordanm@gmail.com`,
   },
   plugins: [

@@ -34,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const pages = result.data.allSanityPages.edges || []
+  const posts = result.data.allSanityPosts.edges || []
   let parentDir
 
   pages.forEach((edge, index) => {
@@ -48,10 +49,20 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     } else if (templateKey === "news") {
       parentDir = edge.node.slug.current
-      createPage({
-        path,
-        component: require.resolve("./src/templates/news.js"),
-        context: { slug: edge.node.slug.current },
+      const postsPerPage = 5
+      const numPages = Math.ceil(posts.length / postsPerPage)
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? path : `${path}/${i + 1}`,
+          component: require.resolve("./src/templates/news.js"),
+          context: {
+            slug: parentDir,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1,
+          },
+        })
       })
     } else {
       createPage({
@@ -62,7 +73,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  const posts = result.data.allSanityPosts.edges || []
   posts.forEach((edge, index) => {
     const path = `${parentDir}/${edge.node.slug.current}`
 

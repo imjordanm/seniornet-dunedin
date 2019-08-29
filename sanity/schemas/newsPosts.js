@@ -7,13 +7,6 @@ export default {
   icon: Posts,
   fields: [
     {
-      title: "No. of Posts",
-      name: "numPosts",
-      type: "number",
-      description:
-        "The number of news posts to show by default (1-6 for each page).",
-    },
-    {
       title: "Format Type",
       name: "formatType",
       type: "string",

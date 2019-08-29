@@ -3,8 +3,9 @@ import { jsx, Styled } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
+import List from "../components/list"
 
-const Posts = ({ node }) => {
+const Posts = props => {
   const data = useStaticQuery(graphql`
     query {
       sanityPages(templateKey: { eq: "news" }) {
@@ -13,7 +14,7 @@ const Posts = ({ node }) => {
         }
       }
 
-      allSanityPosts(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+      allSanityPosts(limit: 2, sort: { fields: [publishedAt], order: DESC }) {
         edges {
           node {
             title
@@ -34,57 +35,18 @@ const Posts = ({ node }) => {
 
   return (
     <>
-      {node.formatType === "grid" ? (
-        <Grid posts={posts} numPosts={node.numPosts} parent={parent} />
+      {props.node.formatType === "grid" ? (
+        <Grid posts={posts} parent={parent} />
       ) : (
-        <List posts={posts} numPosts={node.numPosts} parent={parent} />
+        <List posts={posts} parent={parent} />
       )}
     </>
   )
 }
 
 const Grid = props => (
-  <div sx={{ variant: "grid" }}>
-    {props.posts.slice(0, props.numPosts).map(item => (
-      <div key={item.node.title} sx={itemStyles}>
-        <div>
-          <Styled.h3>
-            <Link
-              to={`${props.parent}/${item.node.slug.current}`}
-              title={item.node.title}
-              style={{ color: "inherit" }}
-            >
-              {item.node.title}
-            </Link>
-          </Styled.h3>
-          {item.node.publishedAt && (
-            <span sx={{ variant: "smallcaps" }}>{item.node.publishedAt}</span>
-          )}
-          {item.node.excerpt && (
-            <Styled.p
-              sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
-            >
-              {`${item.node.excerpt}..`}
-            </Styled.p>
-          )}
-        </div>
-        {item.node.slug.current && (
-          <Link
-            sx={linkStyles}
-            to={`${props.parent}/${item.node.slug.current}`}
-            title={item.node.title}
-          >
-            Read More
-          </Link>
-        )}
-      </div>
-    ))}
-  </div>
-)
-
-const List = props => (
-  <div>
-    {props.posts.slice(0, props.numPosts).map(item => (
+  <div sx={{ variant: "grid.two" }}>
+    {props.posts.map(item => (
       <div key={item.node.title} sx={itemStyles}>
         <div>
           <Styled.h3>
@@ -124,7 +86,7 @@ const List = props => (
 const itemStyles = {
   bg: "background",
   p: [5, 6, null, 8],
-  boxShadow: theme => `-1px 3px 6px rgba(150,150,150,0.4)`,
+  boxShadow: theme => `-1px 1px 6px rgba(150,150,150,0.4)`,
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",

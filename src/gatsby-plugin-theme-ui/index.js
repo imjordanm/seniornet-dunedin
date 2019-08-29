@@ -157,14 +157,20 @@ export default {
     },
   },
   grid: {
-    display: "grid",
-    gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],
-    gridColumnGap: [0, 0, 6, 9],
-    gridRowGap: [7, 8, null, 9],
-    ml: [null, null, null, "-110px"],
-    mt: 4,
-    mb: [6, 8, null, 9],
-    width: ["100%", null, null, "calc(100% + 220px)"],
+    base: {
+      display: "grid",
+    },
+    one: { variant: "grid.base" },
+    two: {
+      variant: "grid.base",
+      gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],
+      ml: [null, null, null, "-110px"],
+      mt: 4,
+      mb: [6, 8, null, 9],
+      width: ["100%", null, null, "calc(100% + 220px)"],
+      gridColumnGap: [0, 0, 6, 9],
+      gridRowGap: [7, 8, null, 9],
+    },
   },
   smallcaps: {
     variant: "textStyles.caps",
