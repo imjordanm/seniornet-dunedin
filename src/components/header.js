@@ -10,7 +10,7 @@ export const HeaderWrapper = props => (
         <img
           sx={{
             width: "100%",
-            maxWidth: ["8em", null, "10em"],
+            maxWidth: ["7em", null, "8em", "10em"],
             display: "block",
           }}
           src={props.logo}
@@ -40,17 +40,8 @@ export const HeaderWrapper = props => (
 const headerStyles = {
   margin: "0 auto",
   width: ["mobile", null, null, "desktop"],
-  maxWidth: "navigation",
+  maxWidth: ["maxSmall", null, null, "navigation"],
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
 }
-
-/*
-<button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol='hamburger' />
-      </button>
-
-      <nav className={cn(styles.nav, showNav && styles.showNav)}>
-
-*/

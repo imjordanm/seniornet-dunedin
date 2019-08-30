@@ -35,7 +35,7 @@ const Banner = props => {
           display: "block",
           height: "5vw",
           mt: "-2vw",
-          transform: "scaleX(-1) scaleY(1.02)",
+          transform: "scaleX(-1) scaleY(1.06)",
           content: '""',
           mask: `url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22654%20312.5%201920%2083.5%22%3E%0D%0A%20%20%3Cpath%20d%3D%22M654%20737.5h1920V387.3s-304.7%206.5-676.9-32-906.6-42.8-906.6-42.8H654v425z%22%2F%3E%0D%0A%3C%2Fsvg%3E) no-repeat 100%`,
           maskSize: "cover",
@@ -49,12 +49,12 @@ const Banner = props => {
             ? {
                 ...bannerStyles,
                 width: ["mobile", null, null, "desktop"],
-                maxWidth: "navigation",
+                maxWidth: ["maxSmall", null, null, "navigation"],
               }
             : bannerStyles
         }
       >
-        <div sx={{ flex: "1 1", pb: [4, 6, null, 8, 9] }}>
+        <div sx={{ flex: "1 1", pb: [5, 7, null, 9] }}>
           {templateKey === "home" ? (
             <Styled.h1
               sx={{
@@ -107,9 +107,14 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  pt: [6, 8, null, 10],
-  width: ["mobile", null, theme => `calc(${theme.sizes.desktop} - 220px)`],
-  maxWidth: "outer",
+  pt: [6, 7, 8, 9, 10],
+  width: [
+    "mobile",
+    null,
+    null,
+    theme => `calc(${theme.sizes.desktop} - 220px)`,
+  ],
+  maxWidth: ["maxSmall", null, null, "outer"],
   display: "flex",
   flexDirection: ["column", null, "row"],
 }

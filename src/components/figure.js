@@ -10,7 +10,7 @@ const Figure = ({ node, grid, width, alt }) => {
 
   const fluidProps = getFluidGatsbyImage(
     node.asset._ref,
-    { maxWidth: `${width ? width : 1200}` },
+    { maxWidth: `${width ? width : 1000}` },
     {
       projectId: process.env.SANITY_PROJECT_ID,
       dataset: process.env.SANITY_DATASET,
@@ -18,12 +18,11 @@ const Figure = ({ node, grid, width, alt }) => {
   )
 
   return (
-    <figure sx={grid ? imageStyles : {}}>
+    <figure sx={grid && imageStyles}>
       <Img
         fluid={fluidProps}
         alt={alt ? alt : node.alt}
         imgStyle={{
-          width: "unset",
           left: "50%",
           transform: "translateX(-50%)",
         }}

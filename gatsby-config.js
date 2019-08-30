@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/preview`],
+        exclude: [`/preview/`],
       },
     },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [{ userAgent: "*", allow: "/", disallow: "/preview/" }],
       },
     },
     {

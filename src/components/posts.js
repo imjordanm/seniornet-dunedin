@@ -92,14 +92,6 @@ const itemStyles = {
   justifyContent: "space-between",
 }
 
-const imageStyles = {
-  bg: "rgba(255,255,255,0.15)",
-  boxShadow: theme => `-2px 3px 14px ${theme.colors.text}85`,
-  py: 7,
-  px: [null, null, 7, 9],
-  mb: [5, null, null, 7],
-}
-
 const linkStyles = {
   mt: [6, 7, 8, 9],
   fontSize: ["0.633em", 0],

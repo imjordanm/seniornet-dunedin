@@ -134,7 +134,7 @@ const FormSignup = props => (
       <input
         name="signupEmail"
         type="email"
-        id="signupemail"
+        id="signupEmail"
         required={true}
         placeholder="Enter email to join our mailing list."
       />
@@ -159,7 +159,7 @@ const formStyles = {
       mb: 4,
     },
     "input, textarea": {
-      border: theme => `.2em solid ${theme.colors.secondary}`,
+      border: theme => `.15em solid ${theme.colors.secondary}`,
       color: "text",
       padding: [2, 4],
       px: 4,

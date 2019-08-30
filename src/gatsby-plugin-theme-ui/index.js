@@ -3,7 +3,8 @@ export default {
   sizes: {
     mobile: "80vw",
     desktop: "85vw",
-    content: 1000,
+    maxSmall: 850,
+    maxLarge: 1000,
     outer: 1216,
     navigation: 1432,
   },
@@ -39,7 +40,7 @@ export default {
     background: "#fff",
     primary: "#066482",
     secondary: "#D5E02D",
-    muted: "#F3F3F3",
+    muted: "#ececec",
   },
   fonts: {
     body: '"Inter", Roboto, sans-serif',
@@ -152,7 +153,7 @@ export default {
         "mobile",
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
-      maxWidth: "content",
+      maxWidth: ["maxSmall", null, null, "maxLarge"],
       py: [8, 10, null, 11],
     },
   },
@@ -193,7 +194,7 @@ export default {
       zIndex: 2,
       color: "primary",
       fontWeight: "bold",
-      py: [5, null, 6],
+      py: [4, null, 5, null, 6],
       variant: "navigation",
     },
     Main: {},
@@ -206,7 +207,7 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [4, 5, null, 6],
+      fontSize: [3, 4, 5, 6],
       mb: 3,
     },
     h2: {

@@ -6,7 +6,7 @@ import Button from "./button"
 
 const List = props => (
   <>
-    <div sx={{ mt: [-6, -8, null, -9], mb: [6, 8, null, 9] }}>
+    <div id="newsList" sx={{ mt: [-6, -8, null, -9], mb: [6, 8, null, 9] }}>
       {props.posts.map(item => (
         <div key={item.node.title} sx={itemStyles}>
           <div>
@@ -42,41 +42,43 @@ const List = props => (
         </div>
       ))}
     </div>
-    <div style={{ textAlign: "center" }}>
-      {props.currentPage == 2 && (
-        <Button
-          node={{
-            text: "Prev",
-            linkUrl: `${props.parent}`,
-            alignment: "center",
-          }}
-        />
-      )}
-      {props.currentPage > 2 && (
-        <Button
-          node={{
-            text: "Prev",
-            linkUrl: `${props.parent}/${props.currentPage - 1}`,
-            alignment: "center",
-          }}
-        />
-      )}
-      {props.currentPage < props.numPages && (
-        <Button
-          node={{
-            text: "Next",
-            linkUrl: `${props.parent}/${props.currentPage + 1}`,
-            alignment: "center",
-          }}
-        />
-      )}
+    <div sx={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{ textAlign: "center" }}>
+        {props.currentPage === 2 && (
+          <Button
+            node={{
+              text: "Prev",
+              linkUrl: `${props.parent}#newsList`,
+              alignment: "center",
+            }}
+          />
+        )}
+        {props.currentPage > 2 && (
+          <Button
+            node={{
+              text: "Prev",
+              linkUrl: `${props.parent}/${props.currentPage - 1}#newsList`,
+              alignment: "center",
+            }}
+          />
+        )}
+        {props.currentPage < props.numPages && (
+          <Button
+            node={{
+              text: "Next",
+              linkUrl: `${props.parent}/${props.currentPage + 1}#newsList`,
+              alignment: "center",
+            }}
+          />
+        )}
+      </div>
     </div>
   </>
 )
 
 const itemStyles = {
   bg: "background",
-  p: [5, 6, null, 8],
+  p: [5, 7, null, 8],
   boxShadow: theme => `-1px 1px 6px rgba(150,150,150,0.4)`,
   display: "flex",
   flexDirection: "column",
