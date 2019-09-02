@@ -159,7 +159,7 @@ const formStyles = {
       mb: 4,
     },
     "input, textarea": {
-      border: theme => `.15em solid ${theme.colors.secondary}`,
+      border: theme => `.175em solid ${theme.colors.secondary}`,
       color: "text",
       padding: [2, 4],
       px: 4,

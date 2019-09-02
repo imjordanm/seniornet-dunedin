@@ -24,6 +24,7 @@ const Figure = ({ node, grid, width, alt }) => {
         alt={alt ? alt : node.alt}
         imgStyle={{
           left: "50%",
+          width: "unset",
           transform: "translateX(-50%)",
         }}
       />

@@ -86,7 +86,7 @@ const itemStyles = {
 }
 
 const linkStyles = {
-  mt: [6, 7, 8, 9],
+  mt: [6, 7, 8],
   fontSize: ["0.633em", 0],
   color: "primary",
   textDecoration: "none",
