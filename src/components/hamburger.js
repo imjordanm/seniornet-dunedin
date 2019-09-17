@@ -90,7 +90,7 @@ const Hamburger = props => {
           <nav
             sx={{
               margin: "0 auto",
-              width: "mobile",
+              width: ["mobile", "tablet"],
               maxWidth: "outer",
               color: isOpen ? "#fff" : "primary",
             }}

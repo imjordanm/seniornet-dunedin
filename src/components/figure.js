@@ -1,12 +1,20 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import React from "react"
 import Img from "gatsby-image"
+import Button from "./button"
 import { getFluidGatsbyImage } from "gatsby-source-sanity"
 
 const Figure = ({ node, grid, width, alt }) => {
   if (!node || !node.asset) {
     return null
   }
+
+  let button
+  if (node.text && node.linkUrl) {
+    button = { text: node.text, linkUrl: node.linkUrl }
+  }
+  console.log(button)
 
   const fluidProps = getFluidGatsbyImage(
     node.asset._ref,
@@ -18,9 +26,50 @@ const Figure = ({ node, grid, width, alt }) => {
   )
 
   return (
-    <figure sx={grid && imageStyles}>
+    <>
+      {!button ? (
+        <Image grid={grid} image={fluidProps} node={node} alt={alt} />
+      ) : (
+        <ImageButton image={fluidProps} node={node} alt={alt} button={button} />
+      )}
+    </>
+  )
+}
+
+const Image = ({ grid, image, node, alt }) => (
+  <figure sx={grid && imageStyles}>
+    <Img
+      fluid={image}
+      alt={alt ? alt : node.alt}
+      imgStyle={{
+        left: "50%",
+        width: "unset",
+        transform: "translateX(-50%)",
+      }}
+    />
+    <figcaption sx={{ opacity: "0" }}>{node.alt}</figcaption>
+    {node.overhang && <div sx={{ mb: [-6, -11, null, -12] }}></div>}
+  </figure>
+)
+
+const ImageButton = ({ image, node, alt, button }) => (
+  <div
+    sx={{
+      display: ["block", null, null, "flex"],
+      justifyContent: [null, null, null, "space-between"],
+      flexDirection: [null, null, null, "row-reverse"],
+    }}
+  >
+    <Button node={button} image={true} />
+    <figure
+      sx={{
+        flex: "8 1",
+        ml: [null, "0", "0", "-108px"],
+        pt: [6, 7, 7, "unset"],
+      }}
+    >
       <Img
-        fluid={fluidProps}
+        fluid={image}
         alt={alt ? alt : node.alt}
         imgStyle={{
           left: "50%",
@@ -29,9 +78,10 @@ const Figure = ({ node, grid, width, alt }) => {
         }}
       />
       <figcaption sx={{ opacity: "0" }}>{node.alt}</figcaption>
+      {node.overhang && <div sx={{ mb: [-10, -11, null, -13] }}></div>}
     </figure>
-  )
-}
+  </div>
+)
 
 const imageStyles = {
   margin: "0 auto",

@@ -13,10 +13,21 @@ const Button = props => {
     <Link
       to={button.linkUrl}
       title={button.text}
-      sx={{
-        display: "inline-block",
-        alignSelf: button.alignment,
-      }}
+      sx={
+        props.image
+          ? {
+              display: "inline-block",
+              width: ["100%", "initial"],
+              alignSelf: button.alignment,
+              flex: [null, null, null, "4 1"],
+              textAlign: "right",
+            }
+          : {
+              display: "inline-block",
+              width: ["100%", "initial"],
+              alignSelf: button.alignment,
+            }
+      }
     >
       <button
         sx={

@@ -1,7 +1,8 @@
 export default {
-  breakpoints: ["660px", "860px", "1280px", "1760px"],
+  breakpoints: ["660px", "860px", "1380px", "1760px"],
   sizes: {
-    mobile: "80vw",
+    mobile: "75vw",
+    tablet: "80vw",
     desktop: "85vw",
     maxSmall: 850,
     maxLarge: 1000,
@@ -98,13 +99,14 @@ export default {
   },
   buttons: {
     base: {
-      py: [4, 5],
+      py: 5,
       px: [6, 7],
       fontSize: ["0.633em", 0],
       textDecoration: "none",
       variant: "textStyles.caps",
       cursor: "pointer",
       bg: "transparent",
+      width: ["100%", "initial"],
     },
     primary: {
       variant: "buttons.base",
@@ -112,14 +114,12 @@ export default {
       color: "#fff",
       border: "none",
       fontSize: ["0.633em", 0],
-      py: 5,
       px: [5, 6],
       boxShadow: theme => `0px 2px 8px ${theme.colors.text}85`,
     },
     secondary: {
       variant: "buttons.base",
       border: theme => `.2em solid ${theme.colors.secondary}`,
-
       color: "#bfca1d",
       position: "relative",
 
@@ -149,8 +149,8 @@ export default {
       margin: "0 auto",
       width: [
         "mobile",
-        "mobile",
-        "mobile",
+        "tablet",
+        "tablet",
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
       maxWidth: ["maxSmall", null, null, "maxLarge"],
@@ -170,7 +170,7 @@ export default {
       mb: [6, 8, null, 9],
       width: ["100%", null, null, "calc(100% + 220px)"],
       gridColumnGap: [0, 0, 6, 9],
-      gridRowGap: [7, 8, null, 9],
+      gridRowGap: [6, 8, null, 9],
     },
   },
   smallcaps: {
@@ -215,7 +215,7 @@ export default {
       color: "secondary",
       position: "relative",
       fontSize: [1, 2, 2, 3],
-      mb: [4, 5, 5, 6],
+      mb: [4, 5],
       ml: [0, 7, 7, 0],
       "::before": {
         content: '""',
@@ -240,9 +240,6 @@ export default {
       "&:last-child": {
         mb: 0,
       },
-      "&:not(:last-child):last-of-type": {
-        mb: [5, 6, null, 7],
-      },
     },
     ul: {
       pl: 4,
@@ -252,7 +249,7 @@ export default {
       pl: 2,
       mb: 2,
       "&:last-of-type": {
-        mb: 0,
+        mb: 4,
       },
     },
   },

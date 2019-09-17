@@ -48,7 +48,7 @@ const Banner = props => {
           pageImage
             ? {
                 ...bannerStyles,
-                width: ["mobile", null, null, "desktop"],
+                width: ["mobile", "tablet", null, "desktop"],
                 maxWidth: ["maxSmall", null, null, "navigation"],
               }
             : bannerStyles
@@ -110,7 +110,7 @@ const bannerStyles = {
   pt: [6, 7, 8, 9, 10],
   width: [
     "mobile",
-    null,
+    "tablet",
     null,
     theme => `calc(${theme.sizes.desktop} - 220px)`,
   ],
