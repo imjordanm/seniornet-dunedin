@@ -37,18 +37,10 @@ export const query = graphql`
 
 const DefaultTemplate = ({ data }) => {
   let page = data.sanityPages
-  let captcha = false
-  if (page.templateKey === "contact") {
-    captcha = true
-  }
 
   return (
     <Layout>
-      <SEO
-        title={page.title}
-        description={page.description}
-        captcha={captcha}
-      />
+      <SEO title={page.title} description={page.description} captcha={true} />
       <Banner banner={page.banner} templateKey={page.templateKey} />
       <PortableText blocks={page._rawSections} />
     </Layout>

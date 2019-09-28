@@ -91,7 +91,7 @@ const Hamburger = props => {
             sx={{
               margin: "0 auto",
               width: ["mobile", "tablet"],
-              maxWidth: "outer",
+              maxWidth: "maxSmall",
               color: isOpen ? "#fff" : "primary",
             }}
           >

@@ -14,7 +14,6 @@ const Figure = ({ node, grid, width, alt }) => {
   if (node.text && node.linkUrl) {
     button = { text: node.text, linkUrl: node.linkUrl }
   }
-  console.log(button)
 
   const fluidProps = getFluidGatsbyImage(
     node.asset._ref,

@@ -29,7 +29,7 @@ export default class Form extends React.PureComponent {
   render() {
     let form
     if (this.props.node) {
-      form = this.props.node.fields
+      form = this.props.node.formFields
     }
     return (
       <>

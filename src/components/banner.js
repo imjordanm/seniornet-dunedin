@@ -15,7 +15,12 @@ const Banner = props => {
   let fluidProps = null
   let sanityImage = false
 
-  if (pageImage && !pageImage.asset.fluid && pageImage.asset._ref) {
+  if (
+    pageImage &&
+    pageImage.asset &&
+    !pageImage.asset.fluid &&
+    pageImage.asset._ref
+  ) {
     sanityImage = true
     fluidProps = getFluidGatsbyImage(
       pageImage.asset._ref,
@@ -87,7 +92,10 @@ const Banner = props => {
             <Button node={button} style="buttons.primary" />
           )}
         </div>
-        {!sanityImage && pageImage && pageImage.asset.fluid ? (
+        {!sanityImage &&
+        pageImage &&
+        pageImage.asset &&
+        pageImage.asset.fluid ? (
           <Img
             sx={{ width: "100%", mt: [6, 8, null, 0], flex: "1 1" }}
             fluid={pageImage.asset.fluid}
