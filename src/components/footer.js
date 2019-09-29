@@ -35,9 +35,8 @@ export const FooterWrapper = props => (
         </ul>
         <span
           sx={{
-            fontSize: ["0.633em", 0],
-            fontWeight: "normal",
-            opacity: "0.8",
+            fontSize: 0,
+            opacity: "0.6",
             display: ["none", null, null, "block"],
             mt: [null, 8, null, 8],
           }}
@@ -60,7 +59,7 @@ export const FooterWrapper = props => (
               "repeat(2, 1fr)",
             ],
             gridColumnGap: [null, null, 4],
-            gridRowGap: 4,
+            gridRowGap: [2, 3],
           }}
         >
           {props.footer.socialLinks.map(page => (
@@ -82,9 +81,8 @@ export const FooterWrapper = props => (
         </div>
         <span
           sx={{
-            fontSize: ["0.633em", 0],
-            fontWeight: "normal",
-            opacity: "0.8",
+            fontSize: "0.633em",
+            opacity: "0.6",
             display: ["block", null, null, "none"],
             mt: 7,
           }}
@@ -104,7 +102,7 @@ const footerStyles = {
   display: "grid",
   gridTemplateColumns: [null, null, null, "repeat(2, 1fr)"],
   gridColumnGap: [null, 9],
-  gridRowGap: [7, 8, null, 9],
+  gridRowGap: [7, null, null, 9],
 }
 
 const headingStyles = {
@@ -118,7 +116,7 @@ const headingStyles = {
     height: "4px",
     display: "block",
     mt: [2, 3],
-    mb: [5, 6],
+    mb: [5, null, null, 6],
   },
 }
 
@@ -130,7 +128,7 @@ const listStyles = {
     "repeat(3, 1fr)",
     "repeat(2, 1fr)",
   ],
-  gridRowGap: [3, 4],
+  gridRowGap: [2, null, null, 3],
   overflow: "hidden",
   maxWidth: ["mobile", "unset"],
   li: {

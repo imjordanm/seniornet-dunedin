@@ -39,7 +39,7 @@ export const HeaderWrapper = props => (
 
 const headerStyles = {
   margin: "0 auto",
-  width: ["mobile", null, null, "desktop"],
+  width: ["mobile", "tablet", null, "desktop"],
   maxWidth: ["maxSmall", null, null, "navigation"],
   display: "flex",
   justifyContent: "space-between",

@@ -59,7 +59,7 @@ const Banner = props => {
             : bannerStyles
         }
       >
-        <div sx={{ flex: "1 1", pb: [5, 7, null, 9] }}>
+        <div sx={{ flex: "1 1" }}>
           {templateKey === "home" ? (
             <Styled.h1
               sx={{
@@ -115,7 +115,7 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  pt: [6, 7, 8, 9, 10],
+  py: [7, 7, 8, 9, 10],
   width: [
     "mobile",
     "tablet",
