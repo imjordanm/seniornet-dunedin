@@ -59,6 +59,7 @@ export default {
   },
   lineHeights: {
     body: "1.75",
+    bodyMobile: "1.65",
     smallBody: "1.5",
     heading: "1.2",
   },
@@ -188,7 +189,7 @@ export default {
       color: "text",
       fontFamily: "default",
       fontSize: 1,
-      lineHeight: "body",
+      lineHeight: ["bodyMobile", null, "body"],
     },
     Header: {
       zIndex: 2,
@@ -196,6 +197,7 @@ export default {
       fontWeight: "bold",
       py: [4, null, 5, null, 6],
       variant: "navigation",
+      position: "relative",
     },
     Main: {},
     Footer: {

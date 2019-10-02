@@ -7,13 +7,13 @@ const Hamburger = props => {
   const [isOpen, setOpen] = useState(false)
 
   const shared = {
-    bg: isOpen ? "#fff" : "primary",
+    bg: "primary",
     height: 3,
     right: 0,
     width: "2em",
     content: `" "`,
     position: `absolute`,
-    transition: theme => `all 250ms`,
+    transition: `all 250ms`,
   }
 
   return (
@@ -30,7 +30,7 @@ const Hamburger = props => {
           border: 0,
           cursor: `pointer`,
           outline: "0",
-          transition: theme => `all 250ms`,
+          transition: `all 250ms`,
           "&.active": {
             "& .hamburger": {
               "&:after": {
@@ -70,53 +70,63 @@ const Hamburger = props => {
           }}
         />
       </button>
-      {isOpen && (
-        <div
+      <div
+        sx={{
+          display: [`flex`, null, null, `none`],
+          alignItems: `center`,
+          bg: "background",
+          borderTop: theme => `3px solid ${theme.colors.secondary}`,
+          transition: "opacity .35s",
+          opacity: isOpen ? `1` : `0`,
+          visibility: isOpen ? `visible` : `hidden`,
+          position: `absolute`,
+          margin: 0,
+          top: "100%",
+          zIndex: `1`,
+          boxShadow: "0px 1px 3px rgba(150,150,150,0.3)",
+        }}
+      >
+        <nav
           sx={{
-            display: [`flex`, null, null, `none`],
-            alignItems: `center`,
-            bg: `primary`,
-            transition: theme => `all 250ms`,
-            opacity: isOpen ? `1` : `0`,
-            position: `fixed`,
-            margin: 0,
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            zIndex: `1`,
+            margin: "0 auto",
+            width: ["mobile", "tablet"],
+            maxWidth: "maxSmall",
+            height: "100%",
+            color: "primary",
           }}
         >
-          <nav
+          <ul
             sx={{
-              margin: "0 auto",
-              width: ["mobile", "tablet"],
-              maxWidth: "maxSmall",
-              color: isOpen ? "#fff" : "primary",
+              listStyle: "none",
+              variant: "textStyles.caps",
+              fontSize: [0, null, 1],
             }}
           >
-            <ul
-              sx={{
-                alignItems: "center",
-                listStyle: "none",
-                variant: "textStyles.caps",
-                fontSize: [2, 3],
-              }}
-            >
-              {props.pages.map(page => (
+            {props.pages.map(page => (
+              <Link
+                to={page.slug.current}
+                title={page.title}
+                style={{
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
                 <li
-                  sx={{ mb: 3, "&:last-of-type": { mb: 0 } }}
+                  sx={{
+                    p: 5,
+                    borderBottom: theme => `1px solid ${theme.colors.muted}`,
+                    "&:last-of-type": { mb: 0 },
+                    "&:hover": { bg: "muted" },
+                  }}
                   key={page.title}
                 >
-                  <Link to={page.slug.current} title={page.title}>
-                    {page.title}
-                  </Link>
+                  {page.title}
                 </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
+              </Link>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </>
   )
 }

@@ -95,6 +95,10 @@ const FormContact = props => (
         id="recaptcha"
         className="g-recaptcha"
         data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
+        sx={{
+          transform: ["scale(0.85)", null, "none"],
+          transformOrigin: ["0 0", null, "none"],
+        }}
       />
     ) : (
       <div className="captcha-form">
@@ -102,6 +106,10 @@ const FormContact = props => (
           id="recaptcha"
           className="g-recaptcha"
           data-sitekey="6Lc4mrIUAAAAAM0a6jYOVL4kVHB03jnjPN5nQrQb"
+          sx={{
+            transform: ["scale(0.85)", null, "none"],
+            transformOrigin: ["0 0", null, "none"],
+          }}
         />
         <div className="captcha-text">
           <span>Please tick the reCAPTCHA before resubmitting the form.</span>
