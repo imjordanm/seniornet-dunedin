@@ -7,15 +7,12 @@ export default {
   icon: Posts,
   fields: [
     {
-      title: "Format Type",
-      name: "formatType",
+      title: "Columns",
+      name: "numColumns",
       type: "string",
       validation: Rule => Rule.required(),
       options: {
-        list: [
-          { title: "Grid", value: "grid" },
-          { title: "List", value: "list" },
-        ],
+        list: [{ title: "1", value: "one" }, { title: "2", value: "two" }],
       },
     },
   ],

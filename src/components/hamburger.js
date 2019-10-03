@@ -105,6 +105,7 @@ const Hamburger = props => {
             {props.pages.map(page => (
               <Link
                 to={page.slug.current}
+                key={page.title}
                 title={page.title}
                 style={{
                   color: "inherit",
@@ -118,7 +119,6 @@ const Hamburger = props => {
                     "&:last-of-type": { mb: 0 },
                     "&:hover": { bg: "muted" },
                   }}
-                  key={page.title}
                 >
                   {page.title}
                 </li>

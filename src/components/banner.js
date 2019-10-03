@@ -115,14 +115,10 @@ const Banner = props => {
 
 const bannerStyles = {
   margin: "0 auto",
-  py: [7, 7, 8, 9, 10],
-  width: [
-    "mobile",
-    "tablet",
-    null,
-    theme => `calc(${theme.sizes.desktop} - 220px)`,
-  ],
-  maxWidth: ["maxSmall", null, null, "outer"],
+  py: [8, 8, 9, 10, 11],
+  pb: [7, 7, 8, 9, 10],
+  width: ["mobile", "tablet", null, "desktop"],
+  maxWidth: ["maxSmall", null, null, "maxLarge"],
   display: "flex",
   flexDirection: ["column", null, "row"],
 }

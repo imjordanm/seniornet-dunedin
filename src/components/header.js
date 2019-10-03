@@ -11,6 +11,7 @@ export const HeaderWrapper = props => (
           sx={{
             width: "100%",
             maxWidth: ["7em", null, "8em", "10em"],
+            minWidth: "7em",
             display: "block",
           }}
           src={props.logo}

@@ -7,6 +7,15 @@ export default {
   icon: Grid,
   fields: [
     {
+      title: "Columns",
+      name: "numColumns",
+      type: "string",
+      validation: Rule => Rule.required(),
+      options: {
+        list: [{ title: "1", value: "one" }, { title: "2", value: "two" }],
+      },
+    },
+    {
       title: "Items",
       name: "items",
       type: "array",

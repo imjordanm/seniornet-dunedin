@@ -6,14 +6,14 @@ export default {
     { title: "Item Image", name: "itemImage", type: "image" },
     {
       type: "string",
-      name: "heading",
-      title: "Heading",
+      name: "title",
+      title: "Title",
       description: "Text displayed on the button.",
     },
     {
       type: "text",
-      name: "text",
-      title: "Text",
+      name: "description",
+      title: "Description",
     },
     { type: "button", name: "Button" },
   ],

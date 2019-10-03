@@ -5,62 +5,68 @@ import { Link } from "gatsby"
 import Figure from "./figure"
 
 const Grid = props => {
+  console.log(props)
   if (!props.node && !props.node.items) {
     return null
   }
-  let grid = props.node.items
-  let hasImage = grid.some(item => item.hasOwnProperty("itemImage"))
 
+  let grid = props.node.items
+  let hasImage = grid.some(item => item.itemImage.hasOwnProperty("asset"))
   return (
-    <>{hasImage ? <ImageGrid grid={grid} /> : <NoImageGrid grid={grid} />}</>
+    <NoImageGrid
+      grid={grid}
+      hasImage={hasImage}
+      numColumns={props.node.numColumns}
+    />
   )
 }
 
-const ImageGrid = props => (
-  <div sx={{ variant: "grid.two" }}>
+const NoImageGrid = props => (
+  <div sx={{ variant: `grid.${props.numColumns}` }}>
     {props.grid.map(item => (
-      <div key={item.heading} sx={{ textAlign: "center" }}>
-        {item.itemImage.asset ? (
+      <div
+        key={item.title}
+        sx={props.hasImage ? { textAlign: "center" } : itemStyles}
+      >
+        {props.hasImage && item.itemImage.asset ? (
           <div sx={imageStyles}>
             <Figure
               node={item.itemImage}
-              alt={item.heading}
+              alt={item.title}
               width={"500"}
               grid={true}
             />
           </div>
         ) : null}
-        <div sx={{ px: [3, 4] }}>
-          {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
-          {item.text && (
+        <div sx={props.hasImage && { px: [3, 4] }}>
+          {item.title && (
+            <Styled.h3>
+              {item.slug ? (
+                <Link
+                  to={item.slug.current}
+                  title={item.title}
+                  style={{ color: "inherit" }}
+                >
+                  {item.title}
+                </Link>
+              ) : (
+                item.title
+              )}
+            </Styled.h3>
+          )}
+          {item.publishedAt && (
+            <span sx={{ variant: "smallcaps" }}>{item.publishedAt}</span>
+          )}
+          {item.description && (
             <Styled.p
               sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
             >
-              {item.text}
+              {item.description}
             </Styled.p>
           )}
         </div>
-      </div>
-    ))}
-  </div>
-)
-
-const NoImageGrid = props => (
-  <div sx={{ variant: "grid.two" }}>
-    {props.grid.map(item => (
-      <div key={item.heading} sx={itemStyles}>
-        {item.heading && <Styled.h3>{item.heading}</Styled.h3>}
-        {item.text && (
-          <Styled.p sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}>
-            {item.text}
-          </Styled.p>
-        )}
-        {item.Button && (
-          <Link
-            sx={linkStyles}
-            to={item.Button.linkUrl}
-            title={item.Button.heading}
-          >
+        {!props.hasImage && item.slug.current && (
+          <Link sx={linkStyles} to={item.slug.current} title={item.title}>
             Read More
           </Link>
         )}
@@ -70,9 +76,13 @@ const NoImageGrid = props => (
 )
 
 const itemStyles = {
+  boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
   bg: "background",
   p: [5, 6, null, 8],
-  boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
+  //boxShadow: theme => `-1px 1px 6px rgba(150,150,150,0.4)`,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
 }
 
 const imageStyles = {

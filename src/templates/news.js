@@ -5,7 +5,8 @@ import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Banner from "../components/banner"
 import PortableText from "../components/portable-text"
-import List from "../components/list"
+import Grid from "../components/grid"
+import Button from "../components/button"
 
 // Declaring query here allows us to shadow components
 export const query = graphql`
@@ -57,9 +58,24 @@ export const query = graphql`
 
 const NewsTemplate = props => {
   let page = props.data.sanityPages
-  let posts = props.data.allSanityPosts.edges
+  let items = props.data.allSanityPosts.edges
   let parent = props.data.sanityPages.slug.current
   let newsPages = props.pageContext
+
+  for (var item in items) {
+    if (items[item].node) {
+      items[item] = {
+        title: items[item].node.title,
+        description: `${items[item].node.excerpt}..`,
+        slug: { current: `${parent}/${items[item].node.slug.current}` },
+        publishedAt: items[item].node.publishedAt,
+        itemImage: { _type: "image" },
+      }
+      delete items[item].node
+    }
+  }
+
+  items = { items, numColumns: "one" }
 
   return (
     <Layout>
@@ -72,12 +88,40 @@ const NewsTemplate = props => {
           pt: "0 !important",
         }}
       >
-        <List
-          posts={posts}
-          parent={parent}
-          currentPage={newsPages.currentPage}
-          numPages={newsPages.numPages}
-        />
+        <div sx={{ mt: [-7, -9, null, -10] }}>
+          <Grid node={items} parent={parent} />
+          <div sx={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ textAlign: "center" }}>
+              {newsPages.currentPage === 2 && (
+                <Button
+                  node={{
+                    text: "Prev",
+                    linkUrl: `${parent}#newsList`,
+                    alignment: "center",
+                  }}
+                />
+              )}
+              {newsPages.currentPage > 2 && (
+                <Button
+                  node={{
+                    text: "Prev",
+                    linkUrl: `${parent}/${newsPages.currentPage - 1}#newsList`,
+                    alignment: "center",
+                  }}
+                />
+              )}
+              {newsPages.currentPage < newsPages.numPages && (
+                <Button
+                  node={{
+                    text: "Next",
+                    linkUrl: `${parent}/${newsPages.currentPage + 1}#newsList`,
+                    alignment: "center",
+                  }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   )

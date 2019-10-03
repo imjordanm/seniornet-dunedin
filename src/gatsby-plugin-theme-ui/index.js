@@ -162,7 +162,7 @@ export default {
     base: {
       display: "grid",
     },
-    one: { variant: "grid.base" },
+    one: { variant: "grid.base", mt: 4, mb: [6, 8, null, 9] },
     two: {
       variant: "grid.base",
       gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],
@@ -249,10 +249,6 @@ export default {
     li: {
       fontSize: [null, 2, null, 3],
       pl: 2,
-      mb: 2,
-      "&:last-of-type": {
-        mb: 4,
-      },
     },
   },
 }
