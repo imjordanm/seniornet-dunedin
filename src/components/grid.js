@@ -68,7 +68,7 @@ const NoImageGrid = props => (
             </Styled.p>
           )}
         </div>
-        {!props.hasImage && item.slug.current && (
+        {!props.hasImage && item.slug && item.slug.current && (
           <Link sx={linkStyles} to={item.slug.current} title={item.title}>
             Read More
           </Link>
