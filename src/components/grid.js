@@ -11,7 +11,10 @@ const Grid = props => {
   }
 
   let grid = props.node.items
-  let hasImage = grid.some(item => item.itemImage.hasOwnProperty("asset"))
+  let hasImage = false
+  if (grid[0].itemImage) {
+    hasImage = grid.some(item => item.itemImage.hasOwnProperty("asset"))
+  }
   return (
     <NoImageGrid
       grid={grid}
