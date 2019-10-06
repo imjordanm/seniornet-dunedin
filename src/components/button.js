@@ -8,6 +8,7 @@ const Button = props => {
   if (!props.node) {
     return null
   }
+  console.log(props)
   let button = props.node
   return (
     <Link
@@ -26,6 +27,7 @@ const Button = props => {
               display: "inline-block",
               width: ["100%", "initial"],
               alignSelf: button.alignment,
+              ...props.gridButton,
             }
       }
     >

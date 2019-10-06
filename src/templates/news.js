@@ -96,7 +96,7 @@ const NewsTemplate = props => {
                 <Button
                   node={{
                     text: "Prev",
-                    linkUrl: `${parent}#newsList`,
+                    linkUrl: `${parent}#grid`,
                     alignment: "center",
                   }}
                 />
@@ -105,7 +105,7 @@ const NewsTemplate = props => {
                 <Button
                   node={{
                     text: "Prev",
-                    linkUrl: `${parent}/${newsPages.currentPage - 1}#newsList`,
+                    linkUrl: `${parent}/${newsPages.currentPage - 1}#grid`,
                     alignment: "center",
                   }}
                 />
@@ -114,7 +114,7 @@ const NewsTemplate = props => {
                 <Button
                   node={{
                     text: "Next",
-                    linkUrl: `${parent}/${newsPages.currentPage + 1}#newsList`,
+                    linkUrl: `${parent}/${newsPages.currentPage + 1}#grid`,
                     alignment: "center",
                   }}
                 />

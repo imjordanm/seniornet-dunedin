@@ -120,7 +120,7 @@ export default {
     },
     secondary: {
       variant: "buttons.base",
-      border: theme => `.2em solid ${theme.colors.secondary}`,
+      border: theme => `3px solid ${theme.colors.secondary}`,
       color: "#bfca1d",
       position: "relative",
 
@@ -162,7 +162,12 @@ export default {
     base: {
       display: "grid",
     },
-    one: { variant: "grid.base", mt: 4, mb: [6, 8, null, 9] },
+    one: {
+      variant: "grid.base",
+      mt: 4,
+      mb: [6, 8, null, 9],
+      gridRowGap: [6, 8, null, 9],
+    },
     two: {
       variant: "grid.base",
       gridTemplateColumns: ["none", "none", "repeat(2, 1fr)"],

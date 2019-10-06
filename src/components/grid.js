@@ -3,9 +3,9 @@ import { jsx, Styled } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 import Figure from "./figure"
+import Button from "./button"
 
 const Grid = props => {
-  console.log(props)
   if (!props.node && !props.node.items) {
     return null
   }
@@ -25,7 +25,7 @@ const Grid = props => {
 }
 
 const NoImageGrid = props => (
-  <div sx={{ variant: `grid.${props.numColumns}` }}>
+  <div id="grid" sx={{ variant: `grid.${props.numColumns}` }}>
     {props.grid.map(item => (
       <div
         key={item.title}
@@ -73,6 +73,22 @@ const NoImageGrid = props => (
             Read More
           </Link>
         )}
+        {item.Button &&
+          item.Button.linkUrl &&
+          (props.hasImage ? (
+            <Button
+              node={{ text: item.Button.text, linkUrl: item.Button.linkUrl }}
+              gridButton={{ mt: [5, 6, null, 7] }}
+            />
+          ) : (
+            <Link
+              sx={linkStyles}
+              to={item.Button.linkUrl}
+              title={item.Button.text}
+            >
+              Read More
+            </Link>
+          ))}
       </div>
     ))}
   </div>

@@ -64,7 +64,7 @@ const ImageButton = ({ image, node, alt, button }) => (
       sx={{
         flex: "8 1",
         ml: [null, "0", "0", "-108px"],
-        pt: [6, 7, 7, "unset"],
+        pt: [null, 7, 7, "unset"],
       }}
     >
       <Img

@@ -123,7 +123,7 @@ const saveImage = async (field, getImageURL) => {
       imageUrl,
     }
   } else {
-    console.error(`Erro em salvar uma imagem.`)
+    console.error(`Error while saving the image.`)
   }
 
   return newField
