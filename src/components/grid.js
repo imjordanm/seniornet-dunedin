@@ -26,85 +26,80 @@ const Grid = props => {
 
 const NoImageGrid = props => (
   <div id="grid" sx={{ variant: `grid.${props.numColumns}` }}>
-    {props.grid.map(
-      item => (
-        console.log(item.itemButton),
-        (
-          <div
-            key={item.title}
-            sx={props.hasImage ? { textAlign: "center" } : itemStyles}
-          >
-            {props.hasImage && item.itemImage.asset ? (
-              <div sx={imageStyles}>
-                <Figure
-                  node={item.itemImage}
-                  alt={item.title}
-                  width={"500"}
-                  grid={true}
-                />
-              </div>
-            ) : null}
-            <div sx={props.hasImage && { px: [3, 4] }}>
-              {item.title && (
-                <Styled.h3>
-                  {item.slug || (item.itemButton && item.itemButton[0]) ? (
-                    <Link
-                      to={
-                        item.slug
-                          ? item.slug.current
-                          : item.itemButton[0]
-                          ? item.itemButton[0].linkUrl
-                          : null
-                      }
-                      title={item.title}
-                      style={{ color: "inherit" }}
-                    >
-                      {item.title}
-                    </Link>
-                  ) : (
-                    item.title
-                  )}
-                </Styled.h3>
-              )}
-              {item.publishedAt && (
-                <span sx={{ variant: "smallcaps" }}>{item.publishedAt}</span>
-              )}
-              {item.description && (
-                <Styled.p
-                  sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
-                >
-                  {item.description}
-                </Styled.p>
-              )}
-            </div>
-            {!props.hasImage && item.slug && item.slug.current && (
-              <Link sx={linkStyles} to={item.slug.current} title={item.title}>
-                Read More
-              </Link>
-            )}
-            {item.itemButton &&
-              item.itemButton[0] &&
-              (props.hasImage ? (
-                <Button
-                  node={{
-                    text: item.itemButton[0].text,
-                    linkUrl: item.itemButton[0].linkUrl,
-                  }}
-                  gridButton={{ mt: [5, 6, null, 7] }}
-                />
-              ) : (
-                <Link
-                  sx={linkStyles}
-                  to={item.itemButton[0].linkUrl}
-                  title={item.itemButton[0].text}
-                >
-                  Read More
-                </Link>
-              ))}
+    {props.grid.map(item => (
+      <div
+        key={item.title}
+        sx={props.hasImage ? { textAlign: "center" } : itemStyles}
+      >
+        {props.hasImage && item.itemImage.asset ? (
+          <div sx={imageStyles}>
+            <Figure
+              node={item.itemImage}
+              alt={item.title}
+              width={"500"}
+              grid={true}
+            />
           </div>
-        )
-      )
-    )}
+        ) : null}
+        <div sx={props.hasImage && { px: [3, 4] }}>
+          {item.title && (
+            <Styled.h3>
+              {item.slug || (item.itemButton && item.itemButton[0]) ? (
+                <Link
+                  to={
+                    item.slug
+                      ? item.slug.current
+                      : item.itemButton[0]
+                      ? item.itemButton[0].linkUrl
+                      : null
+                  }
+                  title={item.title}
+                  style={{ color: "inherit" }}
+                >
+                  {item.title}
+                </Link>
+              ) : (
+                item.title
+              )}
+            </Styled.h3>
+          )}
+          {item.publishedAt && (
+            <span sx={{ variant: "smallcaps" }}>{item.publishedAt}</span>
+          )}
+          {item.description && (
+            <Styled.p
+              sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
+            >
+              {item.description}
+            </Styled.p>
+          )}
+        </div>
+        {!props.hasImage && item.slug && item.slug.current && (
+          <Link sx={linkStyles} to={item.slug.current} title={item.title}>
+            Read More
+          </Link>
+        )}
+        {item.itemButton &&
+          item.itemButton[0] &&
+          (props.hasImage ? (
+            <Button
+              node={{
+                text: item.itemButton[0].text,
+                linkUrl: item.itemButton[0].linkUrl,
+              }}
+              gridButton={{ mt: [5, 6, null, 7] }}
+            />
+          ) : (
+            <Link
+              sx={linkStyles}
+              to={item.itemButton[0].linkUrl}
+              title={item.itemButton[0].text}
+            >
+              Read More
+            </Link>
+          ))}
+      </div>
+    ))}
   </div>
 )
 

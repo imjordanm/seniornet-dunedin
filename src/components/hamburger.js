@@ -5,6 +5,13 @@ import { Link } from "gatsby"
 
 const Hamburger = props => {
   const [isOpen, setOpen] = useState(false)
+  const pages = [].concat(
+    {
+      title: "Home",
+      slug: { current: "/" },
+    },
+    props.pages
+  )
 
   const shared = {
     bg: "primary",
@@ -85,6 +92,7 @@ const Hamburger = props => {
           zIndex: `1`,
           boxShadow: "0px 1px 3px rgba(150,150,150,0.3)",
         }}
+        onClick={() => setOpen(!isOpen)}
       >
         <nav
           sx={{
@@ -102,7 +110,7 @@ const Hamburger = props => {
               fontSize: [0, null, 1],
             }}
           >
-            {props.pages.map(page => (
+            {pages.map(page => (
               <Link
                 to={page.slug.current}
                 key={page.title}

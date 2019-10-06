@@ -19,7 +19,6 @@ export class PagePreview extends React.Component {
     const { pageId, isDraft } = query
     // Fetch data from Sanity by using a helper function
     const sanityData = await fetchDataFromSanity(pageId, isDraft)
-    console.log(sanityData)
 
     // If there's data, send it to state
     if (sanityData) {
