@@ -8,7 +8,6 @@ const Button = props => {
   if (!props.node) {
     return null
   }
-  console.log(props)
   let button = props.node
   return (
     <Link

@@ -15,6 +15,19 @@ export default {
       name: "description",
       title: "Description",
     },
-    { type: "button", name: "Button" },
+
+    {
+      title: "Item Button",
+      name: "itemButton",
+      validation: Rule => Rule.max(1),
+      type: "array",
+      of: [
+        {
+          type: "button",
+          name: "button",
+          options: { collapsible: true, collapsed: true },
+        },
+      ],
+    },
   ],
 }
