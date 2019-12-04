@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ["660px", "860px", "1380px", "1760px"],
+  breakpoints: ["660px", "860px", "1520px", "1760px"],
   sizes: {
     mobile: "75vw",
     tablet: "80vw",
@@ -155,7 +155,7 @@ export default {
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
       maxWidth: ["maxSmall", null, null, "maxLarge"],
-      py: [8, 10, null, 11],
+      py: [8, 10, null, 11, 12],
     },
   },
   grid: {
@@ -166,7 +166,7 @@ export default {
       variant: "grid.base",
       mt: 4,
       mb: [6, 8, null, 9],
-      gridRowGap: [6, 8, null, 9],
+      gridRowGap: [4, 6, null, 7],
     },
     two: {
       variant: "grid.base",
@@ -184,8 +184,6 @@ export default {
     fontFamily: "body",
     fontSize: ["0.633em", null, null, 0],
     color: "#c3c3c3",
-    mb: [5, 6, null, 7],
-    mt: [-1, -4],
     display: "block",
   },
   styles: {

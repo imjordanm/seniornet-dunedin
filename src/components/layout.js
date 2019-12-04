@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
 }
 
 const globalStyles = `
-  body, div, ul, ol, li, h1, h2, h3, p, form, figure, fieldset, button, input, textarea { 
+  body, div, ul, ol, li, h1, h2, h3, p, form, figure, fieldset, button, input, textarea, select { 
     margin: 0; padding: 0; font: inherit; 
   } 
   button { 

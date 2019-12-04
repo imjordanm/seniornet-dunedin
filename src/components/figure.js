@@ -62,22 +62,14 @@ const ImageButton = ({ image, node, alt, button }) => (
     <Button node={button} image={true} />
     <figure
       sx={{
-        flex: "8 1",
+        flex: "7 1",
         ml: [null, "0", "0", "-108px"],
         pt: [null, 7, 7, "unset"],
       }}
     >
-      <Img
-        fluid={image}
-        alt={alt ? alt : node.alt}
-        imgStyle={{
-          left: "50%",
-          width: "unset",
-          transform: "translateX(-50%)",
-        }}
-      />
+      <Img fluid={image} alt={alt ? alt : node.alt} />
       <figcaption sx={{ opacity: "0" }}>{node.alt}</figcaption>
-      {node.overhang && <div sx={{ mb: [-10, -11, null, -13] }}></div>}
+      {node.overhang && <div sx={{ mb: [-10, -11, null, -12, -13] }}></div>}
     </figure>
   </div>
 )

@@ -19,6 +19,7 @@ export default {
       type: "string",
       description:
         "The name of the page that will be displayed for search engines.",
+      validation: Rule => Rule.required(),
     },
     {
       name: "description",
@@ -26,6 +27,7 @@ export default {
       title: "Description",
       description:
         "Describe what the page is about for search engines and social media.",
+      validation: Rule => Rule.required(),
     },
     {
       name: "slug",
@@ -37,8 +39,14 @@ export default {
       },
       description:
         "The path of the page that you enter in the address bar to find it (use generate button).",
+      validation: Rule => Rule.required(),
     },
-    { type: "banner", name: "banner", title: "Banner" },
+    {
+      type: "banner",
+      name: "banner",
+      title: "Banner",
+      validation: Rule => Rule.required(),
+    },
     {
       title: "Sections",
       name: "sections",

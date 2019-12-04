@@ -9,8 +9,9 @@ export default {
       name: "heading",
       type: "string",
       description: "Heading to describe the page.",
+      validation: Rule => Rule.required(),
     },
-    { type: "button", name: "button" },
-    { type: "pageImage", name: "pageImage" },
+    { type: "button", name: "button", description: "Optional" },
+    { type: "pageImage", name: "pageImage", description: "Optional" },
   ],
 }

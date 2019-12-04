@@ -24,7 +24,6 @@ export default {
       title: "Alignment",
       name: "alignment",
       type: "string",
-      validation: Rule => Rule.required(),
       options: {
         list: [
           { title: "Left", value: "flex-start" },

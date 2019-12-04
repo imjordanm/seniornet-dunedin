@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 //import { keyframes } from '@emotion/core'
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Button = props => {
@@ -41,11 +40,6 @@ const Button = props => {
       </button>
     </Link>
   )
-}
-
-Button.propTypes = {
-  linkUrl: PropTypes.string,
-  text: PropTypes.string,
 }
 
 export default Button

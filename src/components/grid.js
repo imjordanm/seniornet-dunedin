@@ -2,6 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
+import format from "date-fns/format"
 import Figure from "./figure"
 import Button from "./button"
 
@@ -15,6 +16,7 @@ const Grid = props => {
   if (grid[0].itemImage) {
     hasImage = grid.some(item => item.itemImage.hasOwnProperty("asset"))
   }
+
   return (
     <NoImageGrid
       grid={grid}
@@ -63,9 +65,16 @@ const NoImageGrid = props => (
               )}
             </Styled.h3>
           )}
-          {item.publishedAt && (
-            <span sx={{ variant: "smallcaps" }}>{item.publishedAt}</span>
-          )}
+
+          <div sx={{ mb: [5, 6, null, 7], mt: [-1, -4] }}>
+            {item.publishedAt && (
+              <span sx={{ variant: "smallcaps", display: "inline-block" }}>
+                {format(new Date(item.publishedAt), "MMMM dd yyyy, hh:mm a")}
+              </span>
+            )}
+            {item.category && <span sx={categoryStyles}>{item.category}</span>}
+          </div>
+
           {item.description && (
             <Styled.p
               sx={{ fontSize: [0, 1, null, 2], lineHeight: "smallBody" }}
@@ -104,10 +113,10 @@ const NoImageGrid = props => (
 )
 
 const itemStyles = {
-  boxShadow: "-2px 3px 8px rgba(150,150,150,0.2)",
+  boxShadow: "-.075em .125em .25em rgba(150,150,150,0.15)",
+  border: "1px solid #e4e4e4",
   bg: "background",
   p: [5, 6, null, 8],
-  //boxShadow: theme => `-1px 1px 6px rgba(150,150,150,0.4)`,
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -115,10 +124,21 @@ const itemStyles = {
 
 const imageStyles = {
   bg: "rgba(255,255,255,0.15)",
-  boxShadow: theme => `-2px 3px 14px ${theme.colors.text}85`,
+  boxShadow: theme => `-2px 3px 14px ${theme.colors.text}`,
   py: 7,
   px: [null, null, 7, 9],
   mb: [5, null, null, 7],
+}
+
+const categoryStyles = {
+  py: 1,
+  px: 4,
+  borderRadius: "20px",
+  display: "inline-block",
+  border: theme => `1px solid ${theme.colors.secondary}`,
+  color: "primary",
+  ml: 4,
+  fontSize: ["0.633em", null, null, 0],
 }
 
 const linkStyles = {

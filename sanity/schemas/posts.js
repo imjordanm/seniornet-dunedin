@@ -10,6 +10,7 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: Rule => Rule.required(),
     },
     {
       name: "description",
@@ -17,6 +18,20 @@ export default {
       title: "Description",
       description:
         "Describe what the page is about for search engines and social media.",
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: "category",
+      type: "string",
+      title: "Category",
+      description:
+        "Add tags that describe the type of post it is (e.g 'news' or 'tips').",
+      options: {
+        list: [
+          { title: "News", value: "News" },
+          { title: "Help", value: "Help" },
+        ],
+      },
     },
     {
       name: "slug",
@@ -26,6 +41,7 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      validation: Rule => Rule.required(),
     },
     { type: "banner", name: "banner", title: "Banner" },
     {
@@ -40,6 +56,7 @@ export default {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
+      validation: Rule => Rule.required(),
     },
     {
       title: "Excerpt",

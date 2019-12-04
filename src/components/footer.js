@@ -154,7 +154,7 @@ const iconStyles = {
   p: 4,
   bg: "rgba(255,255,255,0.15)",
   borderRadius: "4px",
-  boxShadow: theme => `0px 3px 6px ${theme.colors.text}85`,
+  boxShadow: theme => `0px 3px 6px ${theme.colors.text}`,
   height: "1em",
   width: "1em",
   display: "flex",

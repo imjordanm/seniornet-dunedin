@@ -5,12 +5,12 @@ import { SEO } from "../components/seo"
 import Layout from "../components/layout"
 import Banner from "../components/banner"
 import PortableText from "../components/portable-text"
-import Grid from "../components/grid"
+import PostOptions from "../components/postoptions"
 import Button from "../components/button"
 
 // Declaring query here allows us to shadow components
 export const query = graphql`
-  query($slug: String!, $skip: Int!, $limit: Int!) {
+  query($slug: String!) {
     sanityPages(slug: { current: { eq: $slug } }) {
       title
       description
@@ -35,20 +35,24 @@ export const query = graphql`
       }
     }
 
-    allSanityPosts(
-      limit: $limit
-      skip: $skip
-      sort: { fields: [publishedAt], order: DESC }
-    ) {
+    allSanityPosts(sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
           title
           description
+          category
+          mainImage {
+            asset {
+              fluid(maxWidth: 400) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
           excerpt
           slug {
             current
           }
-          publishedAt(formatString: "MMMM DD, YYYY")
+          publishedAt
           _rawSections
         }
       }
@@ -70,12 +74,14 @@ const NewsTemplate = props => {
         slug: { current: `${parent}/${items[item].node.slug.current}` },
         publishedAt: items[item].node.publishedAt,
         itemImage: { _type: "image" },
+        category: items[item].node.category,
       }
       delete items[item].node
     }
   }
 
   items = { items, numColumns: "one" }
+  //filter based on tag, sort based on tag, publisheddate, title - make a postsOptions component and call Grid with updated items
 
   return (
     <Layout>
@@ -88,39 +94,8 @@ const NewsTemplate = props => {
           pt: "0 !important",
         }}
       >
-        <div sx={{ mt: [-7, -9, null, -10] }}>
-          <Grid node={items} parent={parent} />
-          <div sx={{ display: "flex", justifyContent: "space-between" }}>
-            <div style={{ textAlign: "center" }}>
-              {newsPages.currentPage === 2 && (
-                <Button
-                  node={{
-                    text: "Prev",
-                    linkUrl: `${parent}#grid`,
-                    alignment: "center",
-                  }}
-                />
-              )}
-              {newsPages.currentPage > 2 && (
-                <Button
-                  node={{
-                    text: "Prev",
-                    linkUrl: `${parent}/${newsPages.currentPage - 1}#grid`,
-                    alignment: "center",
-                  }}
-                />
-              )}
-              {newsPages.currentPage < newsPages.numPages && (
-                <Button
-                  node={{
-                    text: "Next",
-                    linkUrl: `${parent}/${newsPages.currentPage + 1}#grid`,
-                    alignment: "center",
-                  }}
-                />
-              )}
-            </div>
-          </div>
+        <div sx={{ mt: [-6, -9, null, -10, -11] }}>
+          <PostOptions posts={items} parent={parent} />
         </div>
       </div>
     </Layout>

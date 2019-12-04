@@ -6,7 +6,12 @@ export default {
   type: "object",
   fieldsets: [{ name: "background", title: "Background" }],
   fields: [
-    { title: "Section Name", name: "sectionName", type: "string" },
+    {
+      title: "Section Name",
+      name: "sectionName",
+      type: "string",
+      validation: Rule => Rule.required(),
+    },
     {
       title: "Background",
       name: "background",

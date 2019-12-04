@@ -20,6 +20,13 @@ const Posts = props => {
             title
             description
             excerpt
+            mainImage {
+              asset {
+                fluid(maxWidth: 400) {
+                  ...GatsbySanityImageFluid
+                }
+              }
+            }
             slug {
               current
             }
@@ -40,7 +47,7 @@ const Posts = props => {
         description: `${items[item].node.excerpt}..`,
         slug: { current: `${parent}/${items[item].node.slug.current}` },
         publishedAt: items[item].node.publishedAt,
-        itemImage: { _type: "image" },
+        itemImage: { _type: "image" }, //items[item].node.mainImage,
       }
       delete items[item].node
     }
