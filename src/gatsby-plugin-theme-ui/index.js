@@ -206,7 +206,6 @@ export default {
     Footer: {
       bg: "primary",
       color: "background",
-      fontWeight: "bold",
       py: [8, 9, null, 10],
       variant: "navigation",
     },

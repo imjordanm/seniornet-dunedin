@@ -133,7 +133,6 @@ const listStyles = {
   maxWidth: ["mobile", "unset"],
   li: {
     mr: 0,
-    fontWeight: "regular",
     letterSpacing: "0.05em",
     fontSize: [0, "inherit"],
   },
@@ -145,7 +144,6 @@ const socialStyles = {
   textDecoration: "none",
   color: "#fff",
   lineHeight: "heading",
-  fontWeight: "regular",
   letterSpacing: "0.05em",
   fontSize: [0, "inherit"],
 }
