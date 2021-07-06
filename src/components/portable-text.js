@@ -28,7 +28,7 @@ const PortableText = ({ blocks }) => {
                 mt: "-2vw",
                 transform: `scaleX(${
                   section.waveDirection ? 1 : -1
-                }) scaleY(-1.06)`,
+                }) scaleY(-1.15)`,
                 content: '""',
                 mask: `url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22654%20312.5%201920%2083.5%22%3E%0D%0A%20%20%3Cpath%20d%3D%22M654%20737.5h1920V387.3s-304.7%206.5-676.9-32-906.6-42.8-906.6-42.8H654v425z%22%2F%3E%0D%0A%3C%2Fsvg%3E) no-repeat 100%`,
                 maskSize: "cover",

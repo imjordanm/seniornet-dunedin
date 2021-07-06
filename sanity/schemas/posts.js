@@ -1,4 +1,4 @@
-import Posts from "react-icons/lib/io/android-list"
+import { IoMdQuote as Posts } from "react-icons/io"
 
 export default {
   name: "posts",

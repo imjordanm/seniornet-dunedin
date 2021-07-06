@@ -18,7 +18,9 @@ const PreviewTemplate = ({ data }) => {
         description={page.description}
         captcha={captcha}
       />
-      <Banner banner={page.banner} templateKey={page.templateKey} />
+      {page.templateKey === "home" && (
+        <Banner banner={page.banner} templateKey={page.templateKey} />
+      )}
       <PortableText blocks={page.sections} />
     </Layout>
   )

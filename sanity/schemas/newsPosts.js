@@ -1,4 +1,4 @@
-import Posts from "react-icons/lib/io/android-list"
+import { IoMdListBox as Posts } from "react-icons/io"
 
 export default {
   title: "Posts",
@@ -12,7 +12,10 @@ export default {
       type: "string",
       validation: Rule => Rule.required(),
       options: {
-        list: [{ title: "1", value: "one" }, { title: "2", value: "two" }],
+        list: [
+          { title: "1", value: "one" },
+          { title: "2", value: "two" },
+        ],
       },
     },
   ],

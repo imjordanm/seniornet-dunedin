@@ -1,4 +1,4 @@
-import Grid from "react-icons/lib/ti/th-large"
+import { IoMdApps as Grid } from "react-icons/io"
 
 export default {
   title: "Grid",
@@ -12,7 +12,10 @@ export default {
       type: "string",
       validation: Rule => Rule.required(),
       options: {
-        list: [{ title: "1", value: "one" }, { title: "2", value: "two" }],
+        list: [
+          { title: "1", value: "one" },
+          { title: "2", value: "two" },
+        ],
       },
     },
     {

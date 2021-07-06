@@ -41,7 +41,7 @@ const HomePageTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={page.title} description={page.description} />
-      <Banner banner={page.banner} templateKey={page.templateKey} />
+      {/*<Banner banner={page.banner} templateKey={page.templateKey} />*/}
       <PortableText blocks={page._rawSections} />
     </Layout>
   )

@@ -14,10 +14,10 @@ const Hamburger = props => {
   )
 
   const shared = {
-    bg: "primary",
+    bg: "background",
     height: 3,
     right: 0,
-    width: "2em",
+    width: "1.5em",
     content: `" "`,
     position: `absolute`,
     transition: `all 250ms`,
@@ -61,7 +61,7 @@ const Hamburger = props => {
             margin: `10px 0`,
             position: `relative`,
             zIndex: "2",
-            bg: isOpen ? "transparent" : "primary",
+            bg: isOpen ? "transparent" : "background",
             transition: `all 250ms cubic-bezier(.68,-.55,.265,1.55)`,
             ":before": {
               content: JSON.stringify(``),

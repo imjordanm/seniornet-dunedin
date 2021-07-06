@@ -14,21 +14,6 @@ export const query = graphql`
     sanityPages(slug: { current: { eq: $slug } }) {
       title
       description
-      banner {
-        heading
-        button {
-          text
-          linkUrl
-        }
-        pageImage {
-          alt
-          asset {
-            fluid(maxWidth: 1000) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
       _rawSections
       slug {
         current
@@ -86,7 +71,6 @@ const NewsTemplate = props => {
   return (
     <Layout>
       <SEO title={page.title} description={page.description} />
-      <Banner banner={page.banner} />
       <PortableText blocks={page._rawSections} />
       <div
         sx={{

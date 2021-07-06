@@ -1,4 +1,4 @@
-import Link from "react-icons/lib/go/link"
+import { IoIosAddCircle as Link } from "react-icons/io"
 
 export default {
   title: "Section",

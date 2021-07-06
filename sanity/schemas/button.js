@@ -1,4 +1,4 @@
-import Button from "react-icons/lib/io/share"
+import { IoIosShare as Button } from "react-icons/io"
 
 export default {
   title: "Button",

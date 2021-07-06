@@ -1,4 +1,4 @@
-import Pages from "react-icons/lib/io/android-document"
+import { IoIosBook as Pages } from "react-icons/io"
 
 export default {
   name: "pages",

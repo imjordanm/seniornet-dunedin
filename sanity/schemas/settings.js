@@ -1,4 +1,4 @@
-import Settings from "react-icons/lib/io/android-settings"
+import { IoIosBuild as Settings } from "react-icons/io"
 
 export default {
   name: "settings",

@@ -1,7 +1,7 @@
 export default {
-  breakpoints: ["660px", "860px", "1520px", "1760px"],
+  breakpoints: ["660px", "860px", "1380px", "1680px"],
   sizes: {
-    mobile: "75vw",
+    mobile: "80vw",
     tablet: "80vw",
     desktop: "85vw",
     maxSmall: 850,
@@ -155,7 +155,7 @@ export default {
         theme => `calc(${theme.sizes.desktop} - 220px)`,
       ],
       maxWidth: ["maxSmall", null, null, "maxLarge"],
-      py: [8, 10, null, 11, 12],
+      py: [9, 11, null, null, 12],
     },
   },
   grid: {
@@ -196,11 +196,25 @@ export default {
     },
     Header: {
       zIndex: 2,
-      color: "primary",
+      bg: "primary",
+      color: "background",
       fontWeight: "bold",
-      py: [4, null, 5, null, 6],
       variant: "navigation",
       position: "relative",
+      display: "flex",
+      flexDirection: "column",
+      overflowX: "clip",
+      ":after": {
+        display: "block",
+        width: "105%",
+        height: "4vw",
+        mt: "0vw",
+        transform: "scaleX(-1) scaleY(1.15)",
+        content: '""',
+        mask: `url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22654%20312.5%201920%2083.5%22%3E%0D%0A%20%20%3Cpath%20d%3D%22M654%20737.5h1920V387.3s-304.7%206.5-676.9-32-906.6-42.8-906.6-42.8H654v425z%22%2F%3E%0D%0A%3C%2Fsvg%3E) no-repeat 100%`,
+        maskSize: "cover",
+        bg: "background",
+      },
     },
     Main: {},
     Footer: {
@@ -211,7 +225,7 @@ export default {
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [3, 4, 5, 6],
+      fontSize: [4, 5, 6, null, 7],
       mb: 3,
     },
     h2: {

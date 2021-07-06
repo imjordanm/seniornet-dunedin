@@ -1,4 +1,4 @@
-import Form from "react-icons/lib/ti/th-list"
+import { IoIosList as Form } from "react-icons/io"
 
 export default {
   title: "Form",

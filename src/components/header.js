@@ -10,8 +10,10 @@ export const HeaderWrapper = props => (
         <img
           sx={{
             width: "100%",
-            maxWidth: ["7em", null, "8em", "10em"],
-            minWidth: "7em",
+            maxWidth: ["9em", "12em", "14em", "17em"],
+            position: [null, null, "absolute", null],
+            top: "0",
+            minWidth: "9em",
             display: "block",
           }}
           src={props.logo}
@@ -40,9 +42,10 @@ export const HeaderWrapper = props => (
 
 const headerStyles = {
   margin: "0 auto",
-  width: ["mobile", "tablet", null, "desktop"],
-  maxWidth: ["maxSmall", null, null, "navigation"],
+  width: ["mobile", "tablet", "desktop"],
+  maxWidth: ["maxSmall", null, "none", null],
   display: "flex",
   justifyContent: "space-between",
-  alignItems: "center",
+  py: [null, null, 7, null],
+  zIndex: "99",
 }

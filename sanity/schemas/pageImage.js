@@ -1,4 +1,4 @@
-import Image from "react-icons/lib/ti/image"
+import { IoIosCamera as Image } from "react-icons/io"
 
 export default {
   title: "Image",

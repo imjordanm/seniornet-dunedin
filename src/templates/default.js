@@ -12,21 +12,6 @@ export const query = graphql`
       templateKey
       title
       description
-      banner {
-        heading
-        button {
-          text
-          linkUrl
-        }
-        pageImage {
-          alt
-          asset {
-            fluid(maxWidth: 1000) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
       _rawSections
       slug {
         current
@@ -41,7 +26,6 @@ const DefaultTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={page.title} description={page.description} captcha={true} />
-      <Banner banner={page.banner} templateKey={page.templateKey} />
       <PortableText blocks={page._rawSections} />
     </Layout>
   )
